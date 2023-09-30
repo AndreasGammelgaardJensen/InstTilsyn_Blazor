@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "VuggestueTilsynScraper": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
