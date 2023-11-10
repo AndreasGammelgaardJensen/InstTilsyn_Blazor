@@ -196,6 +196,7 @@ namespace VuggestueTilsynScraper.Repositories
             address.Vej = institution.address.Vej;
             address.City = institution.address.City;
             address.Zip_code = institution.address.Zip_code;
+            address.Number = institution.address.Number;
 
 
             //Update coordianetes

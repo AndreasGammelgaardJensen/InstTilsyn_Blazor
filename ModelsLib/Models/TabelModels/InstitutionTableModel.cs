@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ModelsLib.Models
+namespace ModelsLib.Models.TabelModels
 {
-    internal class InstitutionTableModel
+    public class InstitutionTableModel
     {
+        public InstitutionFrontPageModel InstitutionFrontPageModel { get; set; }
+        public List<CriteriaModel> CriteriaModel { get; set; }
     }
 }

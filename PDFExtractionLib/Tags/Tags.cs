@@ -39,8 +39,7 @@ namespace PDFExtractionLib.Tags
             "vedligehold indsats",
             "tilpas indsat",
             "ændre indsatsen",
-            "ny indsats"
-
+            "ny indsats",
         };
 
 

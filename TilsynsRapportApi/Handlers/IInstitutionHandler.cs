@@ -2,5 +2,6 @@
 {
     public interface IInstitutionHandler
     {
+        public IEnumerable<object> GetInstitutionTableModel();
     }
 }

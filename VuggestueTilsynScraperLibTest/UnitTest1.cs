@@ -75,5 +75,6 @@ namespace VuggestueTilsynScraperLibTest
             Assert.Equal(expected.Zip_code, addressObject.Zip_code);
 
         }
+
     }
 }

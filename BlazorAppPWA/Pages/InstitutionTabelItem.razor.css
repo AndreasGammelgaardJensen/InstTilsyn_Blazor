@@ -1,0 +1,73 @@
+﻿.bob {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: start;
+}
+
+.card-content {
+    text-align: center;
+}
+
+.inst-info {
+    width: 150px;
+    justify-items:center;
+}
+
+
+
+.card {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 20px;
+
+}
+
+/* Left side (Name) styles */
+.name {
+    justify-content: space-between;
+    align-items:start;
+    display:flex;
+    flex: 1; /* Take up all available horizontal space */
+}
+
+/* Right side (Table) styles */
+.table-container {
+    flex: 1; /* Take up all available horizontal space */
+}
+
+/* Example table styles (you can customize this further) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+    background-color: lightgrey;
+}
+
+th {
+    background-color: grey !important;
+}
+
+.pladser {
+    display: flex;
+    flex-direction:column;
+}
+
+p {
+    margin: 0
+}
+
+.rapport {
+    display: flex;
+    flex-direction: row;
+}

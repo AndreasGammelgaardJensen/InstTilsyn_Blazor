@@ -1,0 +1,11 @@
+2023-10-07 22:24:28.487 +02:00 [INF] Data Source=localhost,1433;Initial Catalog=InstitutionDB;User ID=SA;Password=And12345;TrustServerCertificate=True;
+2023-10-07 22:24:41.789 +02:00 [INF] Data Source=localhost,1433;Initial Catalog=InstitutionDB;User ID=SA;Password=And12345;TrustServerCertificate=True;
+2023-10-07 22:26:32.618 +02:00 [INF] Data Source=localhost,1433;Initial Catalog=InstitutionDB;User ID=SA;Password=And12345;TrustServerCertificate=True;
+2023-10-07 22:26:46.475 +02:00 [INF] Data Source=localhost,1433;Initial Catalog=InstitutionDB;User ID=SA;Password=And12345;TrustServerCertificate=True;
+2023-10-07 22:27:27.473 +02:00 [INF] Data Source=localhost,1433;Initial Catalog=InstitutionDB;User ID=SA;Password=And12345;TrustServerCertificate=True;
+2023-10-07 22:27:59.460 +02:00 [INF] Data Source=localhost,1433;Initial Catalog=InstitutionDB;User ID=SA;Password=And12345;TrustServerCertificate=True;
+2023-10-07 22:28:42.401 +02:00 [INF] Data Source=localhost,1433;Initial Catalog=InstitutionDB;User ID=SA;Password=And12345;TrustServerCertificate=True;
+2023-10-07 22:29:19.548 +02:00 [INF] Data Source=localhost,1433;Initial Catalog=InstitutionDB;User ID=SA;Password=And12345;TrustServerCertificate=True;
+2023-10-07 22:29:27.873 +02:00 [INF] Data Source=localhost,1433;Initial Catalog=InstitutionDB;User ID=SA;Password=And12345;TrustServerCertificate=True;
+2023-10-07 23:09:06.346 +02:00 [INF] Data Source=localhost,1433;Initial Catalog=InstitutionDB;User ID=SA;Password=And12345;TrustServerCertificate=True;
+2023-10-07 23:09:13.612 +02:00 [INF] Data Source=localhost,1433;Initial Catalog=InstitutionDB;User ID=SA;Password=And12345;TrustServerCertificate=True;

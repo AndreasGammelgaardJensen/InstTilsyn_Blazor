@@ -1,8 +1,10 @@
-﻿using ModelsLib.DatabaseModels;
+﻿using Microsoft.EntityFrameworkCore;
+using ModelsLib.DatabaseModels;
 using ModelsLib.Models.RabbitMQ;
 using PDFExtractionLib.Handlers;
 using PDFExtractionServiceWorker.Database;
 using Serilog;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace PDFExtractionServiceWorker.Handlers
 {
@@ -30,39 +32,65 @@ namespace PDFExtractionServiceWorker.Handlers
 
                     IDownloadFile downLoadFile = new DownloadFileHandler(new HttpClient(), _logger);
                     IPDFExtraction pdfExtractor = new PDFExtractionPDFText(_logger);
-
-                    if(context.InstitutionReportCriterieaDatabasemodel.Any(x => x.ReportId == pdfExtractionModel.id)) return true;
-
                     var filePath = Directory.GetCurrentDirectory() + _configuration.GetValue<string>("DownloadPath:folderPath");
-                    _logger.Information("File path: {filepath}", filePath);
-                    var filename = pdfExtractionModel.id.ToString() +"."+ pdfExtractionModel.documentExtention;
-                    await downLoadFile.DownloadFile(filePath, filename, pdfExtractionModel.downloadUrl);
-                    var test = pdfExtractor.Extract_Categories(filePath + "/" + filename);
+                    var filename = pdfExtractionModel.id.ToString() + "." + pdfExtractionModel.documentExtention;
 
-                    var instRepCategories = new InstitutionReportCriterieaDatabasemodel
-                    {
-                        Id = Guid.NewGuid(),
-                        CreatedAt = DateTime.Now,
-                        LastChangedAt = DateTime.Now,
-                        InstitutionId = pdfExtractionModel.institutionId,
-                        ReportId = pdfExtractionModel.id,
-                        Categories = new List<CategoriClass>(),
-                        fileUrl = pdfExtractionModel.downloadUrl,
-                    };
 
-                    foreach (var instRepCategory in test)
+                    var reportDatabaseModel = await context.InstitutionReportCriterieaDatabasemodel.Include(x=>x.Categories).SingleOrDefaultAsync(x => x.ReportId == pdfExtractionModel.id);
+
+                    if (reportDatabaseModel is not null && reportDatabaseModel.Categories.Any()) 
                     {
-                        instRepCategories.Categories.Add(new CategoriClass
+                        _logger.Information("Filereport and categoryies exist");
+                        return true;
+                    } else if (reportDatabaseModel is null)
+                    {
+                        _logger.Information("Add report");
+                        _logger.Information("File path: {filepath}", filePath);
+                        await downLoadFile.DownloadFile(filePath, filename, pdfExtractionModel.downloadUrl);
+                        var test = pdfExtractor.Extract_Categories(filePath + "/" + filename);
+
+                        var instRepCategories = new InstitutionReportCriterieaDatabasemodel
                         {
                             Id = Guid.NewGuid(),
                             CreatedAt = DateTime.Now,
                             LastChangedAt = DateTime.Now,
-                            CategoriText = instRepCategory.Key,
-                            Indsats = instRepCategory.Value
-                        });
-                    }
+                            InstitutionId = pdfExtractionModel.institutionId,
+                            ReportId = pdfExtractionModel.id,
+                            Categories = new List<CategoriClass>(),
+                            fileUrl = pdfExtractionModel.downloadUrl,
+                        };
 
-                    context.InstitutionReportCriterieaDatabasemodel.Add(instRepCategories);
+                        foreach (var instRepCategory in test)
+                        {
+                            instRepCategories.Categories.Add(new CategoriClass
+                            {
+                                Id = Guid.NewGuid(),
+                                CreatedAt = DateTime.Now,
+                                LastChangedAt = DateTime.Now,
+                                CategoriText = instRepCategory.Key,
+                                Indsats = instRepCategory.Value
+                            });
+                        }
+
+                        context.InstitutionReportCriterieaDatabasemodel.Add(instRepCategories);
+                    } else
+                    {
+                        _logger.Information("Updating Categories");
+
+                        var categories = pdfExtractor.Extract_Categories(filePath + "/" + filename);
+                        _logger.Information("Category count: {categories}", categories.Count());
+                        foreach (var instRepCategory in categories)
+                        {
+                            reportDatabaseModel.Categories.Add(new CategoriClass
+                            {
+                                Id = Guid.NewGuid(),
+                                CreatedAt = DateTime.Now,
+                                LastChangedAt = DateTime.Now,
+                                CategoriText = instRepCategory.Key,
+                                Indsats = instRepCategory.Value
+                            });
+                        }
+                    }
 
                     context.SaveChanges();
 

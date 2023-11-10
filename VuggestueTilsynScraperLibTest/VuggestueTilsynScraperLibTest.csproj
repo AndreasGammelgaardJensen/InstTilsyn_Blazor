@@ -22,7 +22,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PDFExtractionLib\PDFExtractionLib.csproj" />
     <ProjectReference Include="..\VuggestueTilsynScraperLib\VuggestueTilsynScraperLib.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Resources\Pdf\" />
   </ItemGroup>
 
 </Project>

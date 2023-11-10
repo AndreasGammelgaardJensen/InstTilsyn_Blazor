@@ -27,7 +27,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "File", "File", "{5E4197A2-1
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TilsynsRapportApi", "TilsynsRapportApi\TilsynsRapportApi.csproj", "{3495673B-A4BE-484F-A7B0-75D035C3CF80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorAppPWA", "BlazorAppPWA\BlazorAppPWA.csproj", "{229C75D6-9502-472A-A4BD-DED117DCB533}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorAppPWA", "BlazorAppPWA\BlazorAppPWA.csproj", "{229C75D6-9502-472A-A4BD-DED117DCB533}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

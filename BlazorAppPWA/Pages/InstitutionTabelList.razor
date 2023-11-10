@@ -1,0 +1,95 @@
+﻿@page "/institutions"
+@using ModelsLib.Models.TabelModels;
+@inject HttpClient Http
+<PageTitle>Institutions</PageTitle>
+
+<h3>Institutioner: @institutions.Count()</h3>
+<p>Listen der vises er dannet ud fra københavn kommunes dagtilbud:</p>
+<a href="https://www.kk.dk/borger/pasning-og-skole/pasning-0-6-aar/skriv-op-til-vuggestue-og-dagpleje/se-vuggestuer-og-dagplejere">https://www.kk.dk/borger/pasning-og-skole/pasning-0-6-aar/skriv-op-til-vuggestue-og-dagpleje/se-vuggestuer-og-dagplejere</a>
+    @if (institutions == null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else
+    {
+      @*   <table class="table">
+            <thead>
+                <tr>
+                    <th>Navn</th>
+                    <th>Hjemmeside</th>
+                    <th>Indsatser</th>
+               
+                </tr>
+            </thead> *@
+            @* <tbody> *@
+                @foreach (var inst in institutions)
+                {
+                    <InstitutionTabelItem model="@inst"/>
+
+                 @*    <tr>
+                        <td>@inst.InstitutionFrontPageModel.Name</td>
+                    <td>
+                        <a href=@inst.InstitutionFrontPageModel.InstitutionTilsynsRapports?.FirstOrDefault()?.fileUrl>
+                            @inst.InstitutionFrontPageModel.InstitutionTilsynsRapports?.FirstOrDefault()?.fileUrl
+                        </a>
+                        
+                    </td>
+
+                    <tr>
+                    @foreach (var cr in inst.CriteriaModel)
+                    {
+                    
+                        <td>
+                            <b>@cr.CategoriText</b>
+                        </td>
+                    }
+
+                    </tr>
+                    <tr>
+                    @foreach(var cr in inst.CriteriaModel)
+                    {
+                        
+                            <td>
+                                    @cr.Indsats
+                            </td>
+
+               
+                    }
+                    </tr>
+                    </tr> *@
+                }
+            @* </tbody> *@
+        @* </table> *@
+    };
+
+    @code {
+        private IEnumerable<InstitutionTableModel>? institutions;
+
+        protected override async Task OnInitializedAsync()
+        {
+            try
+            {
+                var client = new HttpClient();
+            var ts = await client.GetFromJsonAsync<List<InstitutionTableModel>>("https://localhost:7051/api/Institution");
+
+                // var ts = await Http.GetAsync();
+                Console.WriteLine(ts);
+
+            institutions = ts.OrderByDescending(x=>x.InstitutionFrontPageModel.TypeEnum).ToArray();
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
+
+        public class WeatherForecast
+        {
+            public DateTime Date { get; set; }
+
+            public int TemperatureC { get; set; }
+
+            public string? Summary { get; set; }
+
+            public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+        }
+    }

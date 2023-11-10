@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ModelsLib.Models
+namespace ModelsLib.Models.TabelModels
 {
-    internal class CriteriaModel
+    public class CriteriaModel
     {
+        public string CategoriText { get; set; }
+        public string Indsats { get; set; }
     }
 }

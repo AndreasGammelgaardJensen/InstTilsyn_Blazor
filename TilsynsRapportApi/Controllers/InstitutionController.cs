@@ -1,6 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DataAccess.Interface;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ModelsLib.DatabaseModels;
+using ModelsLib.Models;
+using ModelsLib.Models.TabelModels;
 using TilsynsRapportApi.Database;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -11,19 +14,21 @@ namespace TilsynsRapportApi.Controllers
     [ApiController]
     public class InstitutionController : ControllerBase
     {
-        private readonly BaseContext _dbContext;
+        private readonly IInstitutionTableRepository _repository;
 
-        public InstitutionController(BaseContext dbContext)
+        public InstitutionController(IInstitutionTableRepository repository)
         {
-            _dbContext = dbContext;
+            _repository = repository;
         }
 
         // GET: api/<InstitutionController>
         [HttpGet]
-        public async Task<IEnumerable<InstitutionFrontPageModelDatabasemodel>> Get()
+        public async Task<IEnumerable<InstitutionTableModel>> Get()
         {
-            var allePageDbModels = await _dbContext.InstitutionFrontPageModel.ToListAsync();
-            return allePageDbModels;
+
+            var tabelModel = await _repository.GetInstitutionTableModels();
+
+            return tabelModel;
         }
 
         // GET api/<InstitutionController>/5

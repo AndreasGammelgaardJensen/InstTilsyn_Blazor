@@ -38,6 +38,10 @@ namespace VuggestueTilsynScraper.Migrations
                     b.Property<DateTime>("LastChangedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Number")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Vej")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

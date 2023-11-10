@@ -1,5 +1,7 @@
+using DataAccess.Interface;
 using Microsoft.EntityFrameworkCore;
 using TilsynsRapportApi.Database;
+using TilsynsRapportApi.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +11,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddTransient<IInstitutionTableRepository, InstitutionTabelReporisory>();
 builder.Services.AddDbContext<BaseContext>();
+builder.Services.AddDbContext<ReportDBContext>();
+builder.Services.AddMemoryCache();
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(builder =>

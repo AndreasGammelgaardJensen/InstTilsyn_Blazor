@@ -1,0 +1,1439 @@
+2023-10-10 20:17:45.024 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:18:04.560 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:18:04.574 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:18:04.577 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:18:04.582 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:18:24.138 +02:00 [INF] Updating Categories
+2023-10-10 20:18:27.855 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/14e48e83-f8eb-4874-8049-86bf80802a2c.pdf
+2023-10-10 20:18:28.068 +02:00 [INF] Samspil og relationer mellem børn
+2023-10-10 20:18:28.070 +02:00 [INF] justere indsatsen
+2023-10-10 20:18:28.091 +02:00 [INF] Børnefællesskaber og leg
+2023-10-10 20:18:28.092 +02:00 [INF] justere indsatsen
+2023-10-10 20:18:28.100 +02:00 [INF] Sprog og bevægelse
+2023-10-10 20:18:28.101 +02:00 [INF] justere indsatsen
+2023-10-10 20:18:28.108 +02:00 [INF] Forældresamarbejde
+2023-10-10 20:18:28.110 +02:00 [INF] vedligeholde indsatsen
+2023-10-10 20:18:28.114 +02:00 [INF] Sammenhæng i overgange
+2023-10-10 20:18:28.115 +02:00 [INF] vedligeholde indsatsen
+2023-10-10 20:18:28.121 +02:00 [INF] Evalueringskultur
+2023-10-10 20:18:28.122 +02:00 [INF] i ndsatsen
+2023-10-10 20:19:02.150 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:19:02.233 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:19:02.239 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:19:02.244 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:19:02.249 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:19:02.253 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:19:02.258 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:19:44.446 +02:00 [INF] Updating Categories
+2023-10-10 20:19:45.370 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/5dab7faf-67d1-440e-af27-5a09cb318540.pdf
+2023-10-10 20:19:49.191 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:19:49.196 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:19:49.200 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:20:05.936 +02:00 [INF] Updating Categories
+2023-10-10 20:20:05.938 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/df69ad54-d73f-4a9c-a4c1-1c80386e24b8.pdf
+2023-10-10 20:20:22.818 +02:00 [INF] Updating Categories
+2023-10-10 20:20:22.821 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/928ce1f4-1756-4ddc-9edf-81824ce396b9.pdf
+2023-10-10 20:20:22.856 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:20:22.864 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:20:22.917 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:20:22.924 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:20:22.930 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:20:22.935 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:20:40.808 +02:00 [INF] Updating Categories
+2023-10-10 20:20:40.812 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/9ce3cc64-e669-4933-a0bd-1b049ceef31d.pdf
+2023-10-10 20:20:40.847 +02:00 [INF] Samspil og relationer mellem børn
+2023-10-10 20:20:40.849 +02:00 [INF] institutionen skal
+2023-10-10 20:20:40.859 +02:00 [INF] Børnefællesskaber og leg
+2023-10-10 20:20:40.862 +02:00 [INF] skal 
+2023-10-10 20:20:40.864 +02:00 [INF] Sprog og bevægelse
+2023-10-10 20:20:40.865 +02:00 [INF] skal 
+2023-10-10 20:20:40.868 +02:00 [INF] Forældresamarbejde
+2023-10-10 20:20:40.869 +02:00 [INF] institutionen skal
+2023-10-10 20:20:40.873 +02:00 [INF] Sammenhæng i overgange
+2023-10-10 20:20:40.875 +02:00 [INF] institutionen skal
+2023-10-10 20:20:40.878 +02:00 [INF] Evalueringskultur
+2023-10-10 20:20:40.879 +02:00 [INF] institutionen skal
+2023-10-10 20:20:40.896 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:20:40.900 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:20:40.904 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:20:40.908 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:20:40.913 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:20:40.916 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:20:40.920 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:20:40.924 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:20:40.927 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:20:59.493 +02:00 [INF] Updating Categories
+2023-10-10 20:20:59.495 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/544d5f4e-1f7c-4f2d-afd5-c0c5dfe69443.pdf
+2023-10-10 20:20:59.533 +02:00 [INF] Samspil og relationer mellem børn
+2023-10-10 20:20:59.536 +02:00 [INF] institutionen skal
+2023-10-10 20:20:59.539 +02:00 [INF] Børnefællesskaber og leg
+2023-10-10 20:20:59.540 +02:00 [INF] skal 
+2023-10-10 20:20:59.543 +02:00 [INF] Sprog og bevægelse
+2023-10-10 20:20:59.544 +02:00 [INF] skal 
+2023-10-10 20:20:59.549 +02:00 [INF] Forældresamarbejde
+2023-10-10 20:20:59.550 +02:00 [INF] institutionen skal
+2023-10-10 20:20:59.554 +02:00 [INF] Sammenhæng i overgange
+2023-10-10 20:20:59.555 +02:00 [INF] institutionen skal
+2023-10-10 20:20:59.557 +02:00 [INF] Evalueringskultur
+2023-10-10 20:20:59.558 +02:00 [INF] institutionen skal
+2023-10-10 20:20:59.575 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:21:17.069 +02:00 [INF] Updating Categories
+2023-10-10 20:21:17.075 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/1a8247e6-79e7-4833-946d-5b6537b7748d.pdf
+2023-10-10 20:21:17.151 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:21:30.311 +02:00 [INF] Updating Categories
+2023-10-10 20:21:30.314 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/3411c87b-0bc7-4c3f-ad1b-01b3c4791279.pdf
+2023-10-10 20:21:30.355 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:21:30.361 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:21:30.365 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:21:30.368 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:21:30.373 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:21:30.377 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:21:30.382 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:21:30.386 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:21:30.390 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:21:30.394 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:21:30.398 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:21:30.402 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:21:30.406 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:21:30.411 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:21:48.618 +02:00 [INF] Updating Categories
+2023-10-10 20:21:48.622 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/089158a5-0a4e-4067-bae0-731ea4d43b09.pdf
+2023-10-10 20:21:48.663 +02:00 [INF] Samspil og relationer mellem børn
+2023-10-10 20:21:48.666 +02:00 [INF] institutionen skal
+2023-10-10 20:21:48.670 +02:00 [INF] Børnefællesskaber og leg
+2023-10-10 20:21:48.671 +02:00 [INF] skal 
+2023-10-10 20:21:48.675 +02:00 [INF] Sprog og bevægelse
+2023-10-10 20:21:48.676 +02:00 [INF] skal 
+2023-10-10 20:21:48.680 +02:00 [INF] Forældresamarbejde
+2023-10-10 20:21:48.683 +02:00 [INF] institutionen skal
+2023-10-10 20:21:48.686 +02:00 [INF] Sammenhæng i overgange
+2023-10-10 20:21:48.687 +02:00 [INF] institutionen skal
+2023-10-10 20:21:48.690 +02:00 [INF] Evalueringskultur
+2023-10-10 20:21:48.691 +02:00 [INF] institutionen skal
+2023-10-10 20:21:48.714 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:22:07.409 +02:00 [INF] Updating Categories
+2023-10-10 20:22:07.415 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/bf6e4995-6a21-4a33-882e-0a523c4d02ea.pdf
+2023-10-10 20:22:07.499 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:22:07.506 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:22:07.511 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:22:24.711 +02:00 [INF] Updating Categories
+2023-10-10 20:22:24.714 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/0d7aa1c9-a5ba-4df9-b58c-47677a64d796.pdf
+2023-10-10 20:22:24.747 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:22:24.793 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:22:24.799 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:22:41.233 +02:00 [INF] Updating Categories
+2023-10-10 20:22:41.235 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/68197467-ce55-414a-9ff2-c029bfb1519c.pdf
+2023-10-10 20:22:41.276 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:22:59.474 +02:00 [INF] Updating Categories
+2023-10-10 20:22:59.477 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/7ca63036-09cd-420d-9147-57a8284ecc3e.pdf
+2023-10-10 20:22:59.523 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:22:59.528 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:22:59.532 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:22:59.536 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:22:59.539 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:22:59.542 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:22:59.548 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:23:14.198 +02:00 [INF] Updating Categories
+2023-10-10 20:23:14.202 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/15665e5d-2a30-47c4-a8ea-f8e3362877d8.pdf
+2023-10-10 20:23:14.235 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:23:14.241 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:23:14.246 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:23:14.250 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:23:25.878 +02:00 [INF] Updating Categories
+2023-10-10 20:23:25.885 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/f8bf4a12-c4c5-464e-bba0-cea5954f9217.pdf
+2023-10-10 20:23:25.932 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:23:25.938 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:23:59.578 +02:00 [INF] Updating Categories
+2023-10-10 20:23:59.583 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/4e960932-675e-44e9-9e4b-fcc4032c8c50.pdf
+2023-10-10 20:23:59.650 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:24:12.371 +02:00 [INF] Updating Categories
+2023-10-10 20:24:12.374 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/30910831-c1a8-43b7-98ac-746a61479494.pdf
+2023-10-10 20:24:12.407 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:24:12.413 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:24:25.397 +02:00 [INF] Updating Categories
+2023-10-10 20:24:25.399 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/b33cf57b-dbcf-4d80-851f-9f1f560b5ad0.pdf
+2023-10-10 20:24:25.457 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:24:42.285 +02:00 [INF] Updating Categories
+2023-10-10 20:24:42.290 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/f8961a6d-fe43-4246-860e-13aa3888d889.pdf
+2023-10-10 20:24:42.325 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:24:42.332 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:24:42.337 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:24:42.341 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:24:42.345 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:25:07.947 +02:00 [INF] Updating Categories
+2023-10-10 20:25:08.492 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/b4e602f8-9740-4287-a8c2-1e9fe40807b9.pdf
+2023-10-10 20:25:13.777 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:26:34.872 +02:00 [INF] Updating Categories
+2023-10-10 20:26:34.921 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/a1039187-b372-46db-96b1-03fecce17581.pdf
+2023-10-10 20:26:35.080 +02:00 [INF] Category count: 0
+2023-10-10 20:26:35.154 +02:00 [INF] Updating Categories
+2023-10-10 20:26:35.155 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/e1cdcba8-c3f5-4437-bf65-4fdd7c599b4e.pdf
+2023-10-10 20:26:35.175 +02:00 [INF] Category count: 0
+2023-10-10 20:26:35.198 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:26:35.204 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:26:35.208 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:26:35.213 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:26:35.217 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:26:35.221 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:26:35.225 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:26:35.229 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:26:35.233 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:26:35.237 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:26:35.241 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:26:35.245 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:26:35.249 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:26:35.253 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:26:35.257 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:29:24.393 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:29:32.734 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:29:38.513 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:29:43.736 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:29:48.372 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:29:53.252 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:29:57.973 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:30:02.730 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:30:07.601 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:30:12.491 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:30:17.206 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:30:22.017 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:30:27.524 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:30:34.028 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:30:39.059 +02:00 [INF] Updating Categories
+2023-10-10 20:30:39.060 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/384998c0-1ab6-44ce-9293-27f9ab75c734.pdf
+2023-10-10 20:30:39.088 +02:00 [INF] Category count: 0
+2023-10-10 20:30:44.726 +02:00 [INF] Updating Categories
+2023-10-10 20:30:44.727 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/fcf42960-9a7d-4687-bc73-1469960c630c.pdf
+2023-10-10 20:30:44.745 +02:00 [INF] Category count: 0
+2023-10-10 20:30:50.551 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:30:55.582 +02:00 [INF] Updating Categories
+2023-10-10 20:30:55.583 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/d952e5cc-e4ca-45f2-b8ca-27b9422f740e.pdf
+2023-10-10 20:30:55.628 +02:00 [INF] Category count: 0
+2023-10-10 20:31:00.202 +02:00 [INF] Updating Categories
+2023-10-10 20:31:00.203 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/07ccf346-276f-4223-b1ea-ffbece5d859e.pdf
+2023-10-10 20:31:00.228 +02:00 [INF] Category count: 0
+2023-10-10 20:31:04.800 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:31:09.483 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:31:14.259 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:31:18.922 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:31:23.617 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:31:28.468 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:31:33.134 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:31:38.012 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:31:42.922 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:31:48.007 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:31:52.911 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:31:57.666 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:32:02.298 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:32:08.771 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:32:13.727 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:34:07.171 +02:00 [INF] Updating Categories
+2023-10-10 20:34:07.172 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/d380bcd3-b8fd-4d9a-b0e9-cbf8f1de19b2.pdf
+2023-10-10 20:34:07.204 +02:00 [INF] Category count: 0
+2023-10-10 20:34:12.132 +02:00 [INF] Updating Categories
+2023-10-10 20:34:12.133 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/2606cde3-cd56-4d53-b53e-a3b7f534aac8.pdf
+2023-10-10 20:34:12.167 +02:00 [INF] Category count: 0
+2023-10-10 20:34:17.001 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:34:22.047 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:34:27.511 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:34:32.362 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:34:37.433 +02:00 [INF] Updating Categories
+2023-10-10 20:34:37.434 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/7b595e93-adba-4932-be86-b21cbbece7e2.pdf
+2023-10-10 20:34:37.449 +02:00 [INF] Category count: 0
+2023-10-10 20:34:42.574 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:34:47.903 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:34:53.037 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:34:58.335 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:35:03.751 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:35:09.168 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:35:14.293 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:35:19.310 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:35:24.019 +02:00 [INF] Updating Categories
+2023-10-10 20:35:24.020 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/264e8697-6d65-4614-98c8-41c69e3b5d8d.pdf
+2023-10-10 20:35:24.052 +02:00 [INF] Samspil og relationer mellem børn
+2023-10-10 20:35:24.053 +02:00 [INF] institutionen skal
+2023-10-10 20:35:24.067 +02:00 [INF] Børnefællesskaber og leg
+2023-10-10 20:35:24.068 +02:00 [INF] skal 
+2023-10-10 20:35:24.071 +02:00 [INF] Sprog og bevægelse
+2023-10-10 20:35:24.073 +02:00 [INF] skal 
+2023-10-10 20:35:24.077 +02:00 [INF] Forældresamarbejde
+2023-10-10 20:35:24.078 +02:00 [INF] institutionen skal
+2023-10-10 20:35:24.082 +02:00 [INF] Sammenhæng i overgange
+2023-10-10 20:35:24.084 +02:00 [INF] institutionen skal
+2023-10-10 20:35:24.086 +02:00 [INF] Evalueringskultur
+2023-10-10 20:35:24.087 +02:00 [INF] institutionen skal
+2023-10-10 20:35:24.099 +02:00 [INF] Category count: 0
+2023-10-10 20:35:29.090 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:35:34.296 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:35:39.337 +02:00 [INF] Updating Categories
+2023-10-10 20:35:39.338 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/36249908-85fc-4808-9445-2a71927a84ce.pdf
+2023-10-10 20:35:39.367 +02:00 [INF] Category count: 0
+2023-10-10 20:35:44.428 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:35:49.504 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:35:54.558 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:35:59.848 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:36:05.301 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:36:10.600 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:36:16.066 +02:00 [INF] Updating Categories
+2023-10-10 20:36:16.067 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/d3ddac26-a344-4610-bd78-5e520f1ab644.pdf
+2023-10-10 20:36:16.096 +02:00 [INF] Category count: 0
+2023-10-10 20:36:21.006 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:36:26.309 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:36:31.440 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:36:36.955 +02:00 [INF] Updating Categories
+2023-10-10 20:36:36.956 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/669f4294-1ac9-478d-9484-c66b6ac310ba.pdf
+2023-10-10 20:36:36.984 +02:00 [INF] Category count: 0
+2023-10-10 20:36:43.179 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:36:49.622 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:36:54.463 +02:00 [INF] Updating Categories
+2023-10-10 20:36:54.464 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/889a9025-31aa-46ba-aece-a284a360d9d6.pdf
+2023-10-10 20:36:54.513 +02:00 [INF] Samspil og relationer mellem børn
+2023-10-10 20:36:54.514 +02:00 [INF] institutionen skal
+2023-10-10 20:36:54.517 +02:00 [INF] Børnefællesskaber og leg
+2023-10-10 20:36:54.518 +02:00 [INF] skal 
+2023-10-10 20:36:54.522 +02:00 [INF] Sprog og bevægelse
+2023-10-10 20:36:54.523 +02:00 [INF] skal 
+2023-10-10 20:36:54.526 +02:00 [INF] Forældresamarbejde
+2023-10-10 20:36:54.527 +02:00 [INF] institutionen skal
+2023-10-10 20:36:54.531 +02:00 [INF] Sammenhæng i overgange
+2023-10-10 20:36:54.532 +02:00 [INF] institutionen skal
+2023-10-10 20:36:54.535 +02:00 [INF] Evalueringskultur
+2023-10-10 20:36:54.540 +02:00 [INF] institutionen skal
+2023-10-10 20:36:54.558 +02:00 [INF] Category count: 0
+2023-10-10 20:36:59.801 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:37:05.467 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:37:10.626 +02:00 [INF] Updating Categories
+2023-10-10 20:37:10.627 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/8c4675fd-6a4a-4a68-a8d9-a8672b9d76c4.pdf
+2023-10-10 20:37:10.660 +02:00 [INF] Category count: 0
+2023-10-10 20:37:15.641 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:37:20.783 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:37:25.936 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:37:31.313 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:37:36.616 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:37:41.716 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:37:46.957 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:37:52.278 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:37:57.433 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:38:03.734 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:38:09.073 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:38:14.904 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:38:20.757 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:38:26.487 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:38:33.494 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:38:38.778 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:38:44.064 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:38:51.068 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:38:56.664 +02:00 [INF] Updating Categories
+2023-10-10 20:38:56.667 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/df8320c4-805e-4624-b415-510ad6f324b2.pdf
+2023-10-10 20:38:56.716 +02:00 [INF] Samspil og relationer mellem børn
+2023-10-10 20:38:56.718 +02:00 [INF] institutionen skal
+2023-10-10 20:38:56.725 +02:00 [INF] Børnefællesskaber og leg
+2023-10-10 20:38:56.727 +02:00 [INF] skal 
+2023-10-10 20:38:56.733 +02:00 [INF] Sprog og bevægelse
+2023-10-10 20:38:56.735 +02:00 [INF] skal 
+2023-10-10 20:38:56.741 +02:00 [INF] Forældresamarbejde
+2023-10-10 20:38:56.742 +02:00 [INF] institutionen skal
+2023-10-10 20:38:56.747 +02:00 [INF] Sammenhæng i overgange
+2023-10-10 20:38:56.748 +02:00 [INF] institutionen skal
+2023-10-10 20:38:56.754 +02:00 [INF] Evalueringskultur
+2023-10-10 20:38:56.755 +02:00 [INF] institutionen skal
+2023-10-10 20:38:56.769 +02:00 [INF] Category count: 0
+2023-10-10 20:39:02.319 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:39:08.067 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:39:13.425 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:39:18.812 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:39:24.342 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:39:30.460 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:39:35.940 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:39:41.023 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:39:46.245 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:39:52.250 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:39:57.322 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:40:03.414 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:40:08.729 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:40:14.517 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:40:19.843 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:40:25.004 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:40:30.347 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:40:36.176 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:40:42.466 +02:00 [INF] Updating Categories
+2023-10-10 20:40:42.467 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/df02872a-2ef3-4492-87d6-a9ead2a630ee.pdf
+2023-10-10 20:40:42.511 +02:00 [INF] Category count: 0
+2023-10-10 20:40:48.268 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:40:53.490 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:40:58.634 +02:00 [INF] Updating Categories
+2023-10-10 20:40:58.635 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/a1d5fb2b-21ea-497e-8582-65781b62ce08.pdf
+2023-10-10 20:40:58.647 +02:00 [INF] Category count: 0
+2023-10-10 20:41:09.074 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:41:14.202 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:41:19.421 +02:00 [INF] Updating Categories
+2023-10-10 20:41:19.422 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/e12a4d55-ddd6-4df2-a041-baeecc2282b2.pdf
+2023-10-10 20:41:19.438 +02:00 [INF] Category count: 0
+2023-10-10 20:41:47.003 +02:00 [INF] Add report
+2023-10-10 20:41:47.074 +02:00 [INF] File path: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded
+2023-10-10 20:41:47.652 +02:00 [INF] PDF file downloaded successfully!
+2023-10-10 20:41:47.676 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/9cbcbc52-2b71-4d3a-a488-df20e1b92b15.pdf
+2023-10-10 20:41:47.953 +02:00 [INF] Samspil og relationer mellem børn
+2023-10-10 20:41:47.954 +02:00 [INF] vedligeholde indsatsen
+2023-10-10 20:41:47.980 +02:00 [INF] Børnefællesskaber og leg
+2023-10-10 20:41:47.980 +02:00 [INF] vedligeholde indsatsen
+2023-10-10 20:41:47.986 +02:00 [INF] Sprog og bevægelse
+2023-10-10 20:41:47.987 +02:00 [INF] vedligeholde indsatsen
+2023-10-10 20:41:47.998 +02:00 [INF] Forældresamarbejde
+2023-10-10 20:41:47.998 +02:00 [INF] vedligeholde indsatsen
+2023-10-10 20:41:48.004 +02:00 [INF] Sammenhæng i overgange
+2023-10-10 20:41:48.005 +02:00 [INF] vedligeholde indsatsen
+2023-10-10 20:41:48.015 +02:00 [INF] Evalueringskultur
+2023-10-10 20:41:48.016 +02:00 [INF] justere indsatsen
+2023-10-10 20:41:48.493 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:41:48.500 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:41:48.506 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:41:53.066 +02:00 [INF] Updating Categories
+2023-10-10 20:41:53.067 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/b7113831-660b-4142-bc6f-21239d0680e3.pdf
+2023-10-10 20:41:53.090 +02:00 [INF] Category count: 0
+2023-10-10 20:41:58.686 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:42:04.484 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:42:10.303 +02:00 [INF] Updating Categories
+2023-10-10 20:42:10.304 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/99e9ed3f-2e5b-4141-8c6a-3b1cb052ac73.pdf
+2023-10-10 20:42:10.344 +02:00 [INF] Samspil og relationer mellem børn
+2023-10-10 20:42:10.345 +02:00 [INF] institutionen skal
+2023-10-10 20:42:10.360 +02:00 [INF] Forældresamarbejde
+2023-10-10 20:42:10.362 +02:00 [INF] institutionen skal
+2023-10-10 20:42:10.368 +02:00 [INF] Evalueringskultur
+2023-10-10 20:42:10.369 +02:00 [INF] institutionen skal
+2023-10-10 20:42:10.381 +02:00 [INF] Category count: 0
+2023-10-10 20:42:15.917 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:42:22.072 +02:00 [INF] Updating Categories
+2023-10-10 20:42:22.073 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/88ccaeda-a75c-4f8a-8cc7-0f5bdb5eb157.pdf
+2023-10-10 20:42:22.116 +02:00 [INF] Category count: 0
+2023-10-10 20:42:27.376 +02:00 [INF] Updating Categories
+2023-10-10 20:42:27.377 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/b4ba20dc-de82-41f2-86fc-9f0613feb0bd.pdf
+2023-10-10 20:42:27.400 +02:00 [INF] Category count: 0
+2023-10-10 20:42:32.659 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:42:38.328 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:42:43.642 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:42:49.459 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:42:55.102 +02:00 [INF] Updating Categories
+2023-10-10 20:42:55.103 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/b8c2e9a5-d6b2-4aea-9b6e-bb00158fb231.pdf
+2023-10-10 20:42:55.131 +02:00 [INF] Category count: 0
+2023-10-10 20:43:00.531 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:43:05.832 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:43:11.105 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:43:16.536 +02:00 [INF] Updating Categories
+2023-10-10 20:43:16.537 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/5e2e06a7-e673-49c7-b644-46446d36bdd6.pdf
+2023-10-10 20:43:16.552 +02:00 [INF] Category count: 0
+2023-10-10 20:43:22.123 +02:00 [INF] Updating Categories
+2023-10-10 20:43:22.124 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/edbaf3d5-baf4-4a30-a9c4-acf2e2cb2fb4.pdf
+2023-10-10 20:43:22.154 +02:00 [INF] Category count: 0
+2023-10-10 20:43:27.764 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:43:33.177 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:43:38.712 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:43:44.205 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:43:49.642 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:43:55.215 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:44:01.089 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:44:06.953 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:44:12.507 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:44:17.877 +02:00 [INF] Updating Categories
+2023-10-10 20:44:17.878 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/df41232f-a878-4192-bf6b-2c3dff9fc555.pdf
+2023-10-10 20:44:17.907 +02:00 [INF] Category count: 0
+2023-10-10 20:44:23.632 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:44:29.688 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:44:35.569 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:44:41.150 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:44:46.618 +02:00 [INF] Updating Categories
+2023-10-10 20:44:46.618 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/1902725d-0839-4b74-ae15-791d917f16e3.pdf
+2023-10-10 20:44:46.642 +02:00 [INF] Category count: 0
+2023-10-10 20:44:52.508 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:44:58.693 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:45:04.035 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:45:09.431 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:45:15.897 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:45:21.257 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:45:27.188 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:45:33.888 +02:00 [INF] Updating Categories
+2023-10-10 20:45:33.889 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/dc0f0944-c31b-4bb6-a67c-833182503342.pdf
+2023-10-10 20:45:33.927 +02:00 [INF] Category count: 0
+2023-10-10 20:45:40.535 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:45:46.644 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:45:52.289 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:45:57.776 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:46:03.347 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:46:09.949 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:46:15.492 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:46:21.378 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:46:27.016 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:46:32.739 +02:00 [INF] Updating Categories
+2023-10-10 20:46:32.740 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/79e9aa70-daf2-4216-8be5-3c543d7081c7.pdf
+2023-10-10 20:46:32.773 +02:00 [INF] Category count: 0
+2023-10-10 20:46:38.331 +02:00 [INF] Updating Categories
+2023-10-10 20:46:38.333 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/9f8bf25b-8524-4661-8b80-ab7653784c05.pdf
+2023-10-10 20:46:38.372 +02:00 [INF] Samspil og relationer mellem børn
+2023-10-10 20:46:38.373 +02:00 [INF] institutionen skal
+2023-10-10 20:46:38.377 +02:00 [INF] Børnefællesskaber og leg
+2023-10-10 20:46:38.378 +02:00 [INF] skal 
+2023-10-10 20:46:38.381 +02:00 [INF] Sprog og bevægelse
+2023-10-10 20:46:38.382 +02:00 [INF] skal 
+2023-10-10 20:46:38.386 +02:00 [INF] Forældresamarbejde
+2023-10-10 20:46:38.387 +02:00 [INF] institutionen skal
+2023-10-10 20:46:38.422 +02:00 [INF] Sammenhæng i overgange
+2023-10-10 20:46:38.423 +02:00 [INF] institutionen skal
+2023-10-10 20:46:38.428 +02:00 [INF] Evalueringskultur
+2023-10-10 20:46:38.431 +02:00 [INF] institutionen skal
+2023-10-10 20:46:38.448 +02:00 [INF] Category count: 0
+2023-10-10 20:46:44.005 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:46:49.340 +02:00 [INF] Add report
+2023-10-10 20:46:49.341 +02:00 [INF] File path: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded
+2023-10-10 20:46:49.511 +02:00 [INF] PDF file downloaded successfully!
+2023-10-10 20:46:49.512 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/40fc98ff-b24c-4854-88c1-129fedd16dd8.pdf
+2023-10-10 20:46:49.540 +02:00 [INF] Samspil og relationer mellem børn
+2023-10-10 20:46:49.542 +02:00 [INF] vedligeholde indsatsen
+2023-10-10 20:46:49.554 +02:00 [INF] Børnefællesskaber og leg
+2023-10-10 20:46:49.556 +02:00 [INF] vedligeholde indsatsen
+2023-10-10 20:46:49.570 +02:00 [INF] Sprog og bevægelse
+2023-10-10 20:46:49.571 +02:00 [INF] vedligeholde indsatsen
+2023-10-10 20:46:49.578 +02:00 [INF] Forældresamarbejde
+2023-10-10 20:46:49.579 +02:00 [INF] vedligeholde indsatsen
+2023-10-10 20:46:49.588 +02:00 [INF] Sammenhæng i overgange
+2023-10-10 20:46:49.591 +02:00 [INF] vedligeholde indsatsen
+2023-10-10 20:46:49.599 +02:00 [INF] Evalueringskultur
+2023-10-10 20:46:49.602 +02:00 [INF] vedligeholde indsatsen
+2023-10-10 20:46:54.885 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:47:00.347 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:47:05.955 +02:00 [INF] Updating Categories
+2023-10-10 20:47:05.956 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/e29e356f-0316-476f-b071-c0f0d3e9cc78.pdf
+2023-10-10 20:47:05.983 +02:00 [INF] Category count: 0
+2023-10-10 20:47:11.550 +02:00 [INF] Updating Categories
+2023-10-10 20:47:11.551 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/bde6a1ec-6634-4653-a088-cbf850ae2257.pdf
+2023-10-10 20:47:11.589 +02:00 [INF] Samspil og relationer mellem børn
+2023-10-10 20:47:11.591 +02:00 [INF] institutionen skal
+2023-10-10 20:47:11.594 +02:00 [INF] Børnefællesskaber og leg
+2023-10-10 20:47:11.594 +02:00 [INF] skal 
+2023-10-10 20:47:11.598 +02:00 [INF] Sprog og bevægelse
+2023-10-10 20:47:11.599 +02:00 [INF] skal 
+2023-10-10 20:47:11.601 +02:00 [INF] Forældresamarbejde
+2023-10-10 20:47:11.602 +02:00 [INF] institutionen skal
+2023-10-10 20:47:11.605 +02:00 [INF] Sammenhæng i overgange
+2023-10-10 20:47:11.606 +02:00 [INF] institutionen skal
+2023-10-10 20:47:11.609 +02:00 [INF] Evalueringskultur
+2023-10-10 20:47:11.610 +02:00 [INF] institutionen skal
+2023-10-10 20:47:11.622 +02:00 [INF] Category count: 0
+2023-10-10 20:47:17.168 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:47:22.753 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:47:28.245 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:47:34.171 +02:00 [INF] Updating Categories
+2023-10-10 20:47:34.172 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/160e3fef-73d9-48c1-b929-f47e5fe5e86a.pdf
+2023-10-10 20:47:34.193 +02:00 [INF] Category count: 0
+2023-10-10 20:47:39.659 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:47:45.246 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:47:52.185 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:48:01.384 +02:00 [INF] Updating Categories
+2023-10-10 20:48:01.385 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/152074e7-7e9d-4da0-b181-173db0212fa3.pdf
+2023-10-10 20:48:01.409 +02:00 [INF] Category count: 0
+2023-10-10 20:48:07.331 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:48:13.112 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:48:18.819 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:48:24.905 +02:00 [INF] Updating Categories
+2023-10-10 20:48:24.905 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/d811a00b-587c-4c7b-b4ca-9fb5e8142741.pdf
+2023-10-10 20:48:24.931 +02:00 [INF] Category count: 0
+2023-10-10 20:48:31.543 +02:00 [INF] Updating Categories
+2023-10-10 20:48:31.544 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/f4c9a65c-b707-4c9d-8ed4-31f62d620826.pdf
+2023-10-10 20:48:31.588 +02:00 [INF] Samspil og relationer mellem børn
+2023-10-10 20:48:31.590 +02:00 [INF] institutionen skal
+2023-10-10 20:48:31.593 +02:00 [INF] Børnefællesskaber og leg
+2023-10-10 20:48:31.594 +02:00 [INF] skal 
+2023-10-10 20:48:31.596 +02:00 [INF] Sprog og bevægelse
+2023-10-10 20:48:31.597 +02:00 [INF] skal 
+2023-10-10 20:48:31.601 +02:00 [INF] Forældresamarbejde
+2023-10-10 20:48:31.602 +02:00 [INF] institutionen skal
+2023-10-10 20:48:31.605 +02:00 [INF] Sammenhæng i overgange
+2023-10-10 20:48:31.607 +02:00 [INF] institutionen skal
+2023-10-10 20:48:31.611 +02:00 [INF] Evalueringskultur
+2023-10-10 20:48:31.612 +02:00 [INF] institutionen skal
+2023-10-10 20:48:31.630 +02:00 [INF] Category count: 0
+2023-10-10 20:48:37.302 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:48:43.375 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:48:49.569 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:48:55.122 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:49:01.066 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:49:08.103 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:49:16.069 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:49:22.289 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:49:28.386 +02:00 [INF] Updating Categories
+2023-10-10 20:49:28.387 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/51fb1943-6183-47fb-8138-e8ac64e4f460.pdf
+2023-10-10 20:49:28.416 +02:00 [INF] Category count: 0
+2023-10-10 20:49:34.355 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:49:40.706 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:49:46.339 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:49:52.294 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:49:58.075 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:50:04.517 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:50:10.921 +02:00 [INF] Updating Categories
+2023-10-10 20:50:10.922 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/5203a853-aa8b-4315-b2c4-2758531a454e.pdf
+2023-10-10 20:50:10.961 +02:00 [INF] Samspil og relationer mellem børn
+2023-10-10 20:50:10.963 +02:00 [INF] institutionen skal
+2023-10-10 20:50:10.967 +02:00 [INF] Børnefællesskaber og leg
+2023-10-10 20:50:10.970 +02:00 [INF] skal 
+2023-10-10 20:50:10.976 +02:00 [INF] Sprog og bevægelse
+2023-10-10 20:50:10.978 +02:00 [INF] skal 
+2023-10-10 20:50:10.982 +02:00 [INF] Forældresamarbejde
+2023-10-10 20:50:10.983 +02:00 [INF] institutionen skal
+2023-10-10 20:50:10.986 +02:00 [INF] Sammenhæng i overgange
+2023-10-10 20:50:10.988 +02:00 [INF] institutionen skal
+2023-10-10 20:50:10.991 +02:00 [INF] Evalueringskultur
+2023-10-10 20:50:10.992 +02:00 [INF] institutionen skal
+2023-10-10 20:50:11.002 +02:00 [INF] Category count: 0
+2023-10-10 20:50:17.405 +02:00 [INF] Updating Categories
+2023-10-10 20:50:17.406 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/319a3e79-3c5c-41bc-8b75-784a63d2b186.pdf
+2023-10-10 20:50:17.440 +02:00 [INF] Category count: 0
+2023-10-10 20:50:24.145 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:50:30.156 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:50:36.404 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:50:42.230 +02:00 [INF] Updating Categories
+2023-10-10 20:50:42.232 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/c381e95e-529e-44a1-8e9f-10188b6154c2.pdf
+2023-10-10 20:50:42.247 +02:00 [INF] Category count: 0
+2023-10-10 20:50:48.927 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:50:55.315 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:51:01.348 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:51:08.004 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:51:14.623 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:51:21.809 +02:00 [INF] Updating Categories
+2023-10-10 20:51:21.810 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/1145a2c4-1f84-4d52-925a-1b64785bd6c3.pdf
+2023-10-10 20:51:21.828 +02:00 [INF] Category count: 0
+2023-10-10 20:51:35.282 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:51:41.803 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:51:48.281 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:51:54.631 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:52:01.463 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:52:08.679 +02:00 [INF] Updating Categories
+2023-10-10 20:52:08.680 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/6e8704d8-68d9-47eb-8406-3f8c1b09e411.pdf
+2023-10-10 20:52:08.693 +02:00 [INF] Category count: 0
+2023-10-10 20:52:16.124 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:52:24.147 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:52:31.131 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:52:37.834 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:52:44.019 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:52:50.952 +02:00 [INF] Updating Categories
+2023-10-10 20:52:50.953 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/72a7532d-2e24-4a58-81f8-4f21afbb6688.pdf
+2023-10-10 20:52:50.970 +02:00 [INF] Category count: 0
+2023-10-10 20:52:57.027 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:53:03.440 +02:00 [INF] Updating Categories
+2023-10-10 20:53:03.441 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/f98bc87a-b7b6-47b3-8e54-94cf31ca415e.pdf
+2023-10-10 20:53:03.471 +02:00 [INF] Category count: 0
+2023-10-10 20:53:10.012 +02:00 [INF] Updating Categories
+2023-10-10 20:53:10.012 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/b60e6c85-96b8-4d0d-9fb4-85b8a66f526a.pdf
+2023-10-10 20:53:10.032 +02:00 [INF] Category count: 0
+2023-10-10 20:53:16.637 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:53:23.254 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:53:30.081 +02:00 [INF] Updating Categories
+2023-10-10 20:53:30.082 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/0e0910a8-fc39-470f-b36c-3a329dc4c98c.pdf
+2023-10-10 20:53:30.106 +02:00 [INF] Category count: 0
+2023-10-10 20:53:36.070 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:53:48.928 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:53:54.627 +02:00 [INF] Updating Categories
+2023-10-10 20:53:54.628 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/e4934414-b187-44b7-8b78-09263412de26.pdf
+2023-10-10 20:53:54.662 +02:00 [INF] Samspil og relationer mellem børn
+2023-10-10 20:53:54.664 +02:00 [INF] institutionen skal
+2023-10-10 20:53:54.667 +02:00 [INF] Børnefællesskaber og leg
+2023-10-10 20:53:54.668 +02:00 [INF] skal 
+2023-10-10 20:53:54.673 +02:00 [INF] Sprog og bevægelse
+2023-10-10 20:53:54.674 +02:00 [INF] skal 
+2023-10-10 20:53:54.676 +02:00 [INF] Forældresamarbejde
+2023-10-10 20:53:54.678 +02:00 [INF] institutionen skal
+2023-10-10 20:53:54.680 +02:00 [INF] Sammenhæng i overgange
+2023-10-10 20:53:54.683 +02:00 [INF] institutionen skal
+2023-10-10 20:53:54.687 +02:00 [INF] Evalueringskultur
+2023-10-10 20:53:54.688 +02:00 [INF] institutionen skal
+2023-10-10 20:53:54.697 +02:00 [INF] Category count: 0
+2023-10-10 20:54:00.552 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:54:07.179 +02:00 [INF] Updating Categories
+2023-10-10 20:54:07.181 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/19011672-4f2d-4479-a357-0342161c3bcf.pdf
+2023-10-10 20:54:07.208 +02:00 [INF] Category count: 0
+2023-10-10 20:54:13.356 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:54:25.355 +02:00 [INF] Updating Categories
+2023-10-10 20:54:25.356 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/af67141f-7ff7-45d4-8d45-f94d35d684a8.pdf
+2023-10-10 20:54:25.386 +02:00 [INF] Category count: 0
+2023-10-10 20:54:31.668 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:54:38.173 +02:00 [INF] Updating Categories
+2023-10-10 20:54:38.174 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/7348e731-4a21-4783-918b-2a4c218aa482.pdf
+2023-10-10 20:54:38.187 +02:00 [INF] Category count: 0
+2023-10-10 20:54:43.945 +02:00 [INF] Updating Categories
+2023-10-10 20:54:43.946 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/87a39396-01fb-42ed-97fa-1821ba517e01.pdf
+2023-10-10 20:54:43.965 +02:00 [INF] Category count: 0
+2023-10-10 20:54:50.380 +02:00 [INF] Updating Categories
+2023-10-10 20:54:50.382 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/32e1740c-da9e-4e87-a9b7-b45008c6c7bf.pdf
+2023-10-10 20:54:50.404 +02:00 [INF] Category count: 0
+2023-10-10 20:54:57.073 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:55:03.471 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:55:08.984 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:55:15.503 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:55:21.616 +02:00 [INF] Updating Categories
+2023-10-10 20:55:21.618 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/ef0cd2a2-4656-4cf5-a37b-7d3bafe4fe3d.pdf
+2023-10-10 20:55:21.642 +02:00 [INF] Category count: 0
+2023-10-10 20:57:05.911 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:57:09.840 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:57:13.642 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:57:17.785 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:57:23.587 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:57:29.364 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:57:33.346 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:57:37.520 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:57:42.441 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:57:46.457 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:57:50.641 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:57:54.475 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:57:58.761 +02:00 [INF] Add report
+2023-10-10 20:57:58.762 +02:00 [INF] File path: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded
+2023-10-10 20:57:58.942 +02:00 [INF] PDF file downloaded successfully!
+2023-10-10 20:57:58.944 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/6ec9b564-4fc0-426e-ae41-66629b504947.pdf
+2023-10-10 20:57:58.976 +02:00 [INF] Samspil og relationer mellem børn
+2023-10-10 20:57:58.978 +02:00 [INF] justere indsatsen
+2023-10-10 20:57:58.985 +02:00 [INF] Børnefællesskaber og leg
+2023-10-10 20:57:58.985 +02:00 [INF] justere indsatsen
+2023-10-10 20:57:58.998 +02:00 [INF] Sprog og bevægelse
+2023-10-10 20:57:59.000 +02:00 [INF] justere indsatsen
+2023-10-10 20:57:59.010 +02:00 [INF] Forældresamarbejde
+2023-10-10 20:57:59.011 +02:00 [INF] vedligeholde indsatsen
+2023-10-10 20:57:59.021 +02:00 [INF] Sammenhæng i overgange
+2023-10-10 20:57:59.022 +02:00 [INF] vedligeholde indsatsen
+2023-10-10 20:57:59.035 +02:00 [INF] Evalueringskultur
+2023-10-10 20:57:59.036 +02:00 [INF] vedligeholde indsatsen
+2023-10-10 20:58:03.118 +02:00 [INF] Updating Categories
+2023-10-10 20:58:03.119 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/5dab7faf-67d1-440e-af27-5a09cb318540.pdf
+2023-10-10 20:58:03.135 +02:00 [INF] Category count: 0
+2023-10-10 20:58:07.574 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:58:11.599 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:58:15.481 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:58:19.346 +02:00 [INF] Updating Categories
+2023-10-10 20:58:19.347 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/df69ad54-d73f-4a9c-a4c1-1c80386e24b8.pdf
+2023-10-10 20:58:19.372 +02:00 [INF] Category count: 0
+2023-10-10 20:58:23.565 +02:00 [INF] Updating Categories
+2023-10-10 20:58:23.566 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/928ce1f4-1756-4ddc-9edf-81824ce396b9.pdf
+2023-10-10 20:58:23.579 +02:00 [INF] Category count: 0
+2023-10-10 20:58:27.603 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:58:31.503 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:58:43.432 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:58:47.622 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:58:51.533 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:58:55.567 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:58:59.500 +02:00 [INF] Updating Categories
+2023-10-10 20:58:59.501 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/9ce3cc64-e669-4933-a0bd-1b049ceef31d.pdf
+2023-10-10 20:58:59.538 +02:00 [INF] Samspil og relationer mellem børn
+2023-10-10 20:58:59.541 +02:00 [INF] institutionen skal
+2023-10-10 20:58:59.543 +02:00 [INF] Børnefællesskaber og leg
+2023-10-10 20:58:59.545 +02:00 [INF] skal 
+2023-10-10 20:58:59.548 +02:00 [INF] Sprog og bevægelse
+2023-10-10 20:58:59.549 +02:00 [INF] skal 
+2023-10-10 20:58:59.552 +02:00 [INF] Forældresamarbejde
+2023-10-10 20:58:59.553 +02:00 [INF] institutionen skal
+2023-10-10 20:58:59.556 +02:00 [INF] Sammenhæng i overgange
+2023-10-10 20:58:59.557 +02:00 [INF] institutionen skal
+2023-10-10 20:58:59.559 +02:00 [INF] Evalueringskultur
+2023-10-10 20:58:59.560 +02:00 [INF] institutionen skal
+2023-10-10 20:58:59.574 +02:00 [INF] Category count: 0
+2023-10-10 20:59:03.574 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:59:07.841 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:59:12.130 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:59:16.396 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:59:20.279 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:59:24.818 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:59:29.677 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:59:33.973 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:59:38.048 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:59:42.160 +02:00 [INF] Updating Categories
+2023-10-10 20:59:42.162 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/544d5f4e-1f7c-4f2d-afd5-c0c5dfe69443.pdf
+2023-10-10 20:59:42.187 +02:00 [INF] Samspil og relationer mellem børn
+2023-10-10 20:59:42.189 +02:00 [INF] institutionen skal
+2023-10-10 20:59:42.192 +02:00 [INF] Børnefællesskaber og leg
+2023-10-10 20:59:42.193 +02:00 [INF] skal 
+2023-10-10 20:59:42.197 +02:00 [INF] Sprog og bevægelse
+2023-10-10 20:59:42.198 +02:00 [INF] skal 
+2023-10-10 20:59:42.201 +02:00 [INF] Forældresamarbejde
+2023-10-10 20:59:42.202 +02:00 [INF] institutionen skal
+2023-10-10 20:59:42.205 +02:00 [INF] Sammenhæng i overgange
+2023-10-10 20:59:42.206 +02:00 [INF] institutionen skal
+2023-10-10 20:59:42.210 +02:00 [INF] Evalueringskultur
+2023-10-10 20:59:42.211 +02:00 [INF] institutionen skal
+2023-10-10 20:59:42.221 +02:00 [INF] Category count: 0
+2023-10-10 20:59:46.947 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 20:59:51.819 +02:00 [INF] Updating Categories
+2023-10-10 20:59:51.821 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/1a8247e6-79e7-4833-946d-5b6537b7748d.pdf
+2023-10-10 20:59:51.848 +02:00 [INF] Category count: 0
+2023-10-10 20:59:56.411 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:00:01.068 +02:00 [INF] Updating Categories
+2023-10-10 21:00:01.070 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/3411c87b-0bc7-4c3f-ad1b-01b3c4791279.pdf
+2023-10-10 21:00:01.116 +02:00 [INF] Category count: 0
+2023-10-10 21:00:05.408 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:00:09.583 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:00:14.094 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:00:19.232 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:00:23.352 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:00:27.888 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:00:32.402 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:00:37.042 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:00:41.200 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:00:45.288 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:00:49.845 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:00:54.206 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:00:58.578 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:01:03.371 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:01:07.620 +02:00 [INF] Updating Categories
+2023-10-10 21:01:07.621 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/089158a5-0a4e-4067-bae0-731ea4d43b09.pdf
+2023-10-10 21:01:07.651 +02:00 [INF] Samspil og relationer mellem børn
+2023-10-10 21:01:07.652 +02:00 [INF] institutionen skal
+2023-10-10 21:01:07.656 +02:00 [INF] Børnefællesskaber og leg
+2023-10-10 21:01:07.658 +02:00 [INF] skal 
+2023-10-10 21:01:07.662 +02:00 [INF] Sprog og bevægelse
+2023-10-10 21:01:07.663 +02:00 [INF] skal 
+2023-10-10 21:01:07.669 +02:00 [INF] Forældresamarbejde
+2023-10-10 21:01:07.670 +02:00 [INF] institutionen skal
+2023-10-10 21:01:07.675 +02:00 [INF] Sammenhæng i overgange
+2023-10-10 21:01:07.676 +02:00 [INF] institutionen skal
+2023-10-10 21:01:07.681 +02:00 [INF] Evalueringskultur
+2023-10-10 21:01:07.682 +02:00 [INF] institutionen skal
+2023-10-10 21:01:07.696 +02:00 [INF] Category count: 0
+2023-10-10 21:01:15.734 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:01:19.844 +02:00 [INF] Updating Categories
+2023-10-10 21:01:19.845 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/bf6e4995-6a21-4a33-882e-0a523c4d02ea.pdf
+2023-10-10 21:01:19.871 +02:00 [INF] Category count: 0
+2023-10-10 21:01:24.178 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:01:28.820 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:01:33.346 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:01:37.576 +02:00 [INF] Updating Categories
+2023-10-10 21:01:37.577 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/0d7aa1c9-a5ba-4df9-b58c-47677a64d796.pdf
+2023-10-10 21:01:37.603 +02:00 [INF] Category count: 0
+2023-10-10 21:01:41.740 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:01:45.843 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:01:50.111 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:01:54.415 +02:00 [INF] Updating Categories
+2023-10-10 21:01:54.416 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/68197467-ce55-414a-9ff2-c029bfb1519c.pdf
+2023-10-10 21:01:54.451 +02:00 [INF] Category count: 0
+2023-10-10 21:01:58.994 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:02:03.516 +02:00 [INF] Updating Categories
+2023-10-10 21:02:03.518 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/7ca63036-09cd-420d-9147-57a8284ecc3e.pdf
+2023-10-10 21:02:03.546 +02:00 [INF] Category count: 0
+2023-10-10 21:02:07.615 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:02:11.637 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:02:15.805 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:02:20.484 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:02:24.869 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:02:29.832 +02:00 [INF] Updating Categories
+2023-10-10 21:02:29.833 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/15665e5d-2a30-47c4-a8ea-f8e3362877d8.pdf
+2023-10-10 21:02:29.848 +02:00 [INF] Category count: 0
+2023-10-10 21:02:34.583 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:02:39.488 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:02:43.792 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:02:48.584 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:02:52.809 +02:00 [INF] Updating Categories
+2023-10-10 21:02:52.810 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/f8bf4a12-c4c5-464e-bba0-cea5954f9217.pdf
+2023-10-10 21:02:52.842 +02:00 [INF] Category count: 0
+2023-10-10 21:02:57.179 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:03:01.655 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:03:06.433 +02:00 [INF] Updating Categories
+2023-10-10 21:03:06.434 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/4e960932-675e-44e9-9e4b-fcc4032c8c50.pdf
+2023-10-10 21:03:06.462 +02:00 [INF] Category count: 0
+2023-10-10 21:03:10.521 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:03:14.895 +02:00 [INF] Updating Categories
+2023-10-10 21:03:14.896 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/30910831-c1a8-43b7-98ac-746a61479494.pdf
+2023-10-10 21:03:14.931 +02:00 [INF] Category count: 0
+2023-10-10 21:03:19.197 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:03:23.842 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:03:28.249 +02:00 [INF] Updating Categories
+2023-10-10 21:03:28.250 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/b33cf57b-dbcf-4d80-851f-9f1f560b5ad0.pdf
+2023-10-10 21:03:28.293 +02:00 [INF] Category count: 0
+2023-10-10 21:03:32.510 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:03:36.886 +02:00 [INF] Updating Categories
+2023-10-10 21:03:36.887 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/f8961a6d-fe43-4246-860e-13aa3888d889.pdf
+2023-10-10 21:03:36.924 +02:00 [INF] Category count: 0
+2023-10-10 21:03:41.506 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:03:45.988 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:03:50.153 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:03:54.822 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:03:59.400 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:04:03.732 +02:00 [INF] Updating Categories
+2023-10-10 21:04:03.733 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/b4e602f8-9740-4287-a8c2-1e9fe40807b9.pdf
+2023-10-10 21:04:03.751 +02:00 [INF] Category count: 0
+2023-10-10 21:04:07.995 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:04:12.505 +02:00 [INF] Updating Categories
+2023-10-10 21:04:12.507 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/a1039187-b372-46db-96b1-03fecce17581.pdf
+2023-10-10 21:04:12.522 +02:00 [INF] Category count: 0
+2023-10-10 21:04:17.096 +02:00 [INF] Updating Categories
+2023-10-10 21:04:17.097 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/e1cdcba8-c3f5-4437-bf65-4fdd7c599b4e.pdf
+2023-10-10 21:04:17.115 +02:00 [INF] Category count: 0
+2023-10-10 21:04:21.322 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:04:25.672 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:04:30.334 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:04:34.792 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:04:39.158 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:04:43.415 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:04:47.557 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:04:52.272 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:04:57.159 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:05:02.448 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:05:06.858 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:05:11.207 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:05:16.040 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:05:20.448 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:05:24.751 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:09:22.465 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:09:27.949 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:09:34.074 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:09:39.201 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:09:43.902 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:09:48.904 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:09:53.747 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:09:58.340 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:10:03.220 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:10:08.167 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:10:13.137 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:10:18.282 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:10:23.489 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:10:28.093 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:10:33.314 +02:00 [INF] Updating Categories
+2023-10-10 21:10:33.315 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/384998c0-1ab6-44ce-9293-27f9ab75c734.pdf
+2023-10-10 21:10:33.344 +02:00 [INF] Category count: 0
+2023-10-10 21:10:38.734 +02:00 [INF] Updating Categories
+2023-10-10 21:10:38.736 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/fcf42960-9a7d-4687-bc73-1469960c630c.pdf
+2023-10-10 21:10:38.754 +02:00 [INF] Category count: 0
+2023-10-10 21:10:43.578 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:10:49.568 +02:00 [INF] Updating Categories
+2023-10-10 21:10:49.569 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/d952e5cc-e4ca-45f2-b8ca-27b9422f740e.pdf
+2023-10-10 21:10:49.627 +02:00 [INF] Category count: 0
+2023-10-10 21:10:54.719 +02:00 [INF] Updating Categories
+2023-10-10 21:10:54.720 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/07ccf346-276f-4223-b1ea-ffbece5d859e.pdf
+2023-10-10 21:10:54.749 +02:00 [INF] Category count: 0
+2023-10-10 21:11:00.710 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:11:05.936 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:11:10.661 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:11:15.987 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:11:20.763 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:11:25.523 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:11:30.352 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:11:35.532 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:11:41.338 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:11:46.410 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:11:51.486 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:11:56.333 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:12:01.512 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:12:06.487 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:12:11.255 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:14:14.892 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:14:19.949 +02:00 [INF] Updating Categories
+2023-10-10 21:14:19.951 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/d380bcd3-b8fd-4d9a-b0e9-cbf8f1de19b2.pdf
+2023-10-10 21:14:19.986 +02:00 [INF] Category count: 0
+2023-10-10 21:14:25.176 +02:00 [INF] Updating Categories
+2023-10-10 21:14:25.177 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/2606cde3-cd56-4d53-b53e-a3b7f534aac8.pdf
+2023-10-10 21:14:25.206 +02:00 [INF] Category count: 0
+2023-10-10 21:14:30.487 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:14:36.629 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:14:41.659 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:14:47.256 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:14:53.184 +02:00 [INF] Updating Categories
+2023-10-10 21:14:53.185 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/7b595e93-adba-4932-be86-b21cbbece7e2.pdf
+2023-10-10 21:14:53.200 +02:00 [INF] Category count: 0
+2023-10-10 21:14:58.208 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:15:04.348 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:15:09.727 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:15:15.086 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:15:20.979 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:15:26.367 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:15:31.745 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:15:37.694 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:15:42.597 +02:00 [INF] Updating Categories
+2023-10-10 21:15:42.599 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/264e8697-6d65-4614-98c8-41c69e3b5d8d.pdf
+2023-10-10 21:15:42.628 +02:00 [INF] Samspil og relationer mellem børn
+2023-10-10 21:15:42.629 +02:00 [INF] institutionen skal
+2023-10-10 21:15:42.632 +02:00 [INF] Børnefællesskaber og leg
+2023-10-10 21:15:42.633 +02:00 [INF] skal 
+2023-10-10 21:15:42.635 +02:00 [INF] Sprog og bevægelse
+2023-10-10 21:15:42.636 +02:00 [INF] skal 
+2023-10-10 21:15:42.639 +02:00 [INF] Forældresamarbejde
+2023-10-10 21:15:42.640 +02:00 [INF] institutionen skal
+2023-10-10 21:15:42.644 +02:00 [INF] Sammenhæng i overgange
+2023-10-10 21:15:42.645 +02:00 [INF] institutionen skal
+2023-10-10 21:15:42.647 +02:00 [INF] Evalueringskultur
+2023-10-10 21:15:42.648 +02:00 [INF] institutionen skal
+2023-10-10 21:15:42.657 +02:00 [INF] Category count: 0
+2023-10-10 21:15:47.592 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:15:52.714 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:15:58.649 +02:00 [INF] Updating Categories
+2023-10-10 21:15:58.651 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/36249908-85fc-4808-9445-2a71927a84ce.pdf
+2023-10-10 21:15:58.683 +02:00 [INF] Category count: 0
+2023-10-10 21:16:03.998 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:16:09.539 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:16:15.041 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:16:20.145 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:16:25.168 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:16:30.543 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:16:36.677 +02:00 [INF] Updating Categories
+2023-10-10 21:16:36.678 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/d3ddac26-a344-4610-bd78-5e520f1ab644.pdf
+2023-10-10 21:16:36.703 +02:00 [INF] Category count: 0
+2023-10-10 21:16:43.239 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:16:50.275 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:16:55.832 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:17:01.435 +02:00 [INF] Updating Categories
+2023-10-10 21:17:01.437 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/669f4294-1ac9-478d-9484-c66b6ac310ba.pdf
+2023-10-10 21:17:01.474 +02:00 [INF] Category count: 0
+2023-10-10 21:17:07.033 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:17:12.140 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:17:17.316 +02:00 [INF] Updating Categories
+2023-10-10 21:17:17.318 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/889a9025-31aa-46ba-aece-a284a360d9d6.pdf
+2023-10-10 21:17:17.360 +02:00 [INF] Samspil og relationer mellem børn
+2023-10-10 21:17:17.361 +02:00 [INF] institutionen skal
+2023-10-10 21:17:17.365 +02:00 [INF] Børnefællesskaber og leg
+2023-10-10 21:17:17.366 +02:00 [INF] skal 
+2023-10-10 21:17:17.370 +02:00 [INF] Sprog og bevægelse
+2023-10-10 21:17:17.371 +02:00 [INF] skal 
+2023-10-10 21:17:17.375 +02:00 [INF] Forældresamarbejde
+2023-10-10 21:17:17.377 +02:00 [INF] institutionen skal
+2023-10-10 21:17:17.381 +02:00 [INF] Sammenhæng i overgange
+2023-10-10 21:17:17.383 +02:00 [INF] institutionen skal
+2023-10-10 21:17:17.386 +02:00 [INF] Evalueringskultur
+2023-10-10 21:17:17.386 +02:00 [INF] institutionen skal
+2023-10-10 21:17:17.397 +02:00 [INF] Category count: 0
+2023-10-10 21:17:23.062 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:17:28.770 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:17:34.510 +02:00 [INF] Updating Categories
+2023-10-10 21:17:34.512 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/8c4675fd-6a4a-4a68-a8d9-a8672b9d76c4.pdf
+2023-10-10 21:17:34.544 +02:00 [INF] Category count: 0
+2023-10-10 21:17:41.559 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:17:46.961 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:17:52.326 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:17:57.924 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:18:03.784 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:18:09.081 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:18:14.338 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:18:19.906 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:18:25.100 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:18:30.274 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:18:35.700 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:18:41.858 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:18:48.295 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:18:54.079 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:18:59.361 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:19:05.288 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:19:11.699 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:19:17.410 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:19:24.263 +02:00 [INF] Updating Categories
+2023-10-10 21:19:24.265 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/df8320c4-805e-4624-b415-510ad6f324b2.pdf
+2023-10-10 21:19:24.299 +02:00 [INF] Samspil og relationer mellem børn
+2023-10-10 21:19:24.301 +02:00 [INF] institutionen skal
+2023-10-10 21:19:24.307 +02:00 [INF] Børnefællesskaber og leg
+2023-10-10 21:19:24.311 +02:00 [INF] skal 
+2023-10-10 21:19:24.317 +02:00 [INF] Sprog og bevægelse
+2023-10-10 21:19:24.318 +02:00 [INF] skal 
+2023-10-10 21:19:24.323 +02:00 [INF] Forældresamarbejde
+2023-10-10 21:19:24.324 +02:00 [INF] institutionen skal
+2023-10-10 21:19:24.329 +02:00 [INF] Sammenhæng i overgange
+2023-10-10 21:19:24.330 +02:00 [INF] institutionen skal
+2023-10-10 21:19:24.333 +02:00 [INF] Evalueringskultur
+2023-10-10 21:19:24.333 +02:00 [INF] institutionen skal
+2023-10-10 21:19:24.362 +02:00 [INF] Category count: 0
+2023-10-10 21:19:29.623 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:19:36.575 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:19:42.480 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:19:48.125 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:19:53.815 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:19:59.131 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:20:04.809 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:20:10.742 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:20:16.325 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:20:22.545 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:20:28.319 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:20:34.761 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:20:41.000 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:20:47.379 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:20:52.935 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:20:58.795 +02:00 [INF] Add report
+2023-10-10 21:20:58.797 +02:00 [INF] File path: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded
+2023-10-10 21:20:59.005 +02:00 [INF] PDF file downloaded successfully!
+2023-10-10 21:20:59.007 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/65f4b93e-2a3b-401d-b8f5-b3eeb64445b1.pdf
+2023-10-10 21:20:59.034 +02:00 [INF] Sociale relationer – positiv voksenkontakt hver dag
+2023-10-10 21:20:59.038 +02:00 [INF] Vedligehold indsats
+2023-10-10 21:20:59.049 +02:00 [INF] Inklusion og fællesskab – børne- og ungefællesskaber til alle
+2023-10-10 21:20:59.051 +02:00 [INF] Tilpas indsats
+2023-10-10 21:20:59.063 +02:00 [INF] Sprogindsatsen – muligheder gennem sprog
+2023-10-10 21:20:59.065 +02:00 [INF] Vedligehold indsats
+2023-10-10 21:20:59.071 +02:00 [INF] Forældresamarbejde
+2023-10-10 21:20:59.072 +02:00 [INF] Vedligehold indsats
+2023-10-10 21:20:59.082 +02:00 [INF] Sammenhæng - også i overgange
+2023-10-10 21:20:59.083 +02:00 [INF] Vedligehold indsats
+2023-10-10 21:20:59.092 +02:00 [INF] Krav om refleksion og metodisk systematik i den pædagogiske praksis
+2023-10-10 21:20:59.093 +02:00 [INF] Vedligehold indsats
+2023-10-10 21:21:04.193 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:21:09.654 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:21:15.442 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:21:22.085 +02:00 [INF] Updating Categories
+2023-10-10 21:21:22.087 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/df02872a-2ef3-4492-87d6-a9ead2a630ee.pdf
+2023-10-10 21:21:22.125 +02:00 [INF] Category count: 0
+2023-10-10 21:21:28.491 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:21:34.245 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:21:40.070 +02:00 [INF] Updating Categories
+2023-10-10 21:21:40.071 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/a1d5fb2b-21ea-497e-8582-65781b62ce08.pdf
+2023-10-10 21:21:40.083 +02:00 [INF] Category count: 0
+2023-10-10 21:21:45.976 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:21:51.958 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:21:57.804 +02:00 [INF] Updating Categories
+2023-10-10 21:21:57.805 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/e12a4d55-ddd6-4df2-a041-baeecc2282b2.pdf
+2023-10-10 21:21:57.822 +02:00 [INF] Category count: 0
+2023-10-10 21:22:03.311 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:22:08.786 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:22:14.547 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:22:23.438 +02:00 [INF] Updating Categories
+2023-10-10 21:22:23.439 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/b7113831-660b-4142-bc6f-21239d0680e3.pdf
+2023-10-10 21:22:23.464 +02:00 [INF] Category count: 0
+2023-10-10 21:22:28.496 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:22:33.985 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:22:39.916 +02:00 [INF] Updating Categories
+2023-10-10 21:22:39.918 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/99e9ed3f-2e5b-4141-8c6a-3b1cb052ac73.pdf
+2023-10-10 21:22:39.968 +02:00 [INF] Samspil og relationer mellem børn
+2023-10-10 21:22:39.972 +02:00 [INF] institutionen skal
+2023-10-10 21:22:40.000 +02:00 [INF] Forældresamarbejde
+2023-10-10 21:22:40.004 +02:00 [INF] institutionen skal
+2023-10-10 21:22:40.016 +02:00 [INF] Evalueringskultur
+2023-10-10 21:22:40.018 +02:00 [INF] institutionen skal
+2023-10-10 21:22:40.037 +02:00 [INF] Category count: 0
+2023-10-10 21:22:46.454 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:22:52.800 +02:00 [INF] Updating Categories
+2023-10-10 21:22:52.801 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/88ccaeda-a75c-4f8a-8cc7-0f5bdb5eb157.pdf
+2023-10-10 21:22:52.835 +02:00 [INF] Category count: 0
+2023-10-10 21:22:58.333 +02:00 [INF] Updating Categories
+2023-10-10 21:22:58.334 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/b4ba20dc-de82-41f2-86fc-9f0613feb0bd.pdf
+2023-10-10 21:22:58.358 +02:00 [INF] Category count: 0
+2023-10-10 21:23:04.098 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:23:11.903 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:23:18.786 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:23:24.411 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:23:30.185 +02:00 [INF] Updating Categories
+2023-10-10 21:23:30.186 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/b8c2e9a5-d6b2-4aea-9b6e-bb00158fb231.pdf
+2023-10-10 21:23:30.228 +02:00 [INF] Category count: 0
+2023-10-10 21:23:37.593 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:23:43.133 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:23:49.200 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:23:55.434 +02:00 [INF] Updating Categories
+2023-10-10 21:23:55.435 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/5e2e06a7-e673-49c7-b644-46446d36bdd6.pdf
+2023-10-10 21:23:55.457 +02:00 [INF] Category count: 0
+2023-10-10 21:24:01.328 +02:00 [INF] Updating Categories
+2023-10-10 21:24:01.329 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/edbaf3d5-baf4-4a30-a9c4-acf2e2cb2fb4.pdf
+2023-10-10 21:24:01.354 +02:00 [INF] Category count: 0
+2023-10-10 21:24:07.379 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:24:13.214 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:24:18.964 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:24:25.482 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:24:31.710 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:24:37.665 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:24:44.124 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:24:50.041 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:24:56.728 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:25:02.369 +02:00 [INF] Updating Categories
+2023-10-10 21:25:02.370 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/df41232f-a878-4192-bf6b-2c3dff9fc555.pdf
+2023-10-10 21:25:02.395 +02:00 [INF] Category count: 0
+2023-10-10 21:25:08.227 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:25:14.238 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:25:20.346 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:25:26.241 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:25:32.587 +02:00 [INF] Updating Categories
+2023-10-10 21:25:32.593 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/1902725d-0839-4b74-ae15-791d917f16e3.pdf
+2023-10-10 21:25:32.619 +02:00 [INF] Category count: 0
+2023-10-10 21:25:38.221 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:25:44.564 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:25:50.098 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:25:56.479 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:26:03.575 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:26:09.814 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:26:16.245 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:26:22.520 +02:00 [INF] Updating Categories
+2023-10-10 21:26:22.522 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/dc0f0944-c31b-4bb6-a67c-833182503342.pdf
+2023-10-10 21:26:22.559 +02:00 [INF] Category count: 0
+2023-10-10 21:26:28.637 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:26:34.629 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:26:41.090 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:26:47.879 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:26:53.651 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:26:59.360 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:27:05.839 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:27:12.347 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:27:18.459 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:27:25.154 +02:00 [INF] Updating Categories
+2023-10-10 21:27:25.155 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/79e9aa70-daf2-4216-8be5-3c543d7081c7.pdf
+2023-10-10 21:27:25.184 +02:00 [INF] Category count: 0
+2023-10-10 21:27:31.570 +02:00 [INF] Updating Categories
+2023-10-10 21:27:31.572 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/9f8bf25b-8524-4661-8b80-ab7653784c05.pdf
+2023-10-10 21:27:31.602 +02:00 [INF] Samspil og relationer mellem børn
+2023-10-10 21:27:31.603 +02:00 [INF] institutionen skal
+2023-10-10 21:27:31.607 +02:00 [INF] Børnefællesskaber og leg
+2023-10-10 21:27:31.608 +02:00 [INF] skal 
+2023-10-10 21:27:31.614 +02:00 [INF] Sprog og bevægelse
+2023-10-10 21:27:31.615 +02:00 [INF] skal 
+2023-10-10 21:27:31.619 +02:00 [INF] Forældresamarbejde
+2023-10-10 21:27:31.621 +02:00 [INF] institutionen skal
+2023-10-10 21:27:31.625 +02:00 [INF] Sammenhæng i overgange
+2023-10-10 21:27:31.626 +02:00 [INF] institutionen skal
+2023-10-10 21:27:31.630 +02:00 [INF] Evalueringskultur
+2023-10-10 21:27:31.632 +02:00 [INF] institutionen skal
+2023-10-10 21:27:31.657 +02:00 [INF] Category count: 0
+2023-10-10 21:27:37.677 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:27:43.629 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:27:51.095 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:27:57.950 +02:00 [INF] Updating Categories
+2023-10-10 21:27:57.951 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/e29e356f-0316-476f-b071-c0f0d3e9cc78.pdf
+2023-10-10 21:27:57.981 +02:00 [INF] Category count: 0
+2023-10-10 21:28:04.356 +02:00 [INF] Updating Categories
+2023-10-10 21:28:04.358 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/bde6a1ec-6634-4653-a088-cbf850ae2257.pdf
+2023-10-10 21:28:04.400 +02:00 [INF] Samspil og relationer mellem børn
+2023-10-10 21:28:04.403 +02:00 [INF] institutionen skal
+2023-10-10 21:28:04.406 +02:00 [INF] Børnefællesskaber og leg
+2023-10-10 21:28:04.409 +02:00 [INF] skal 
+2023-10-10 21:28:04.415 +02:00 [INF] Sprog og bevægelse
+2023-10-10 21:28:04.417 +02:00 [INF] skal 
+2023-10-10 21:28:04.423 +02:00 [INF] Forældresamarbejde
+2023-10-10 21:28:04.425 +02:00 [INF] institutionen skal
+2023-10-10 21:28:04.428 +02:00 [INF] Sammenhæng i overgange
+2023-10-10 21:28:04.429 +02:00 [INF] institutionen skal
+2023-10-10 21:28:04.432 +02:00 [INF] Evalueringskultur
+2023-10-10 21:28:04.433 +02:00 [INF] institutionen skal
+2023-10-10 21:28:04.447 +02:00 [INF] Category count: 0
+2023-10-10 21:28:11.028 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:28:17.360 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:28:23.871 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:28:30.160 +02:00 [INF] Updating Categories
+2023-10-10 21:28:30.161 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/160e3fef-73d9-48c1-b929-f47e5fe5e86a.pdf
+2023-10-10 21:28:30.185 +02:00 [INF] Category count: 0
+2023-10-10 21:28:36.197 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:28:42.086 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:28:47.950 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:28:54.324 +02:00 [INF] Updating Categories
+2023-10-10 21:28:54.326 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/152074e7-7e9d-4da0-b181-173db0212fa3.pdf
+2023-10-10 21:28:54.338 +02:00 [INF] Category count: 0
+2023-10-10 21:29:02.472 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:29:09.541 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:29:15.533 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:29:21.589 +02:00 [INF] Updating Categories
+2023-10-10 21:29:21.590 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/d811a00b-587c-4c7b-b4ca-9fb5e8142741.pdf
+2023-10-10 21:29:21.619 +02:00 [INF] Category count: 0
+2023-10-10 21:29:28.145 +02:00 [INF] Updating Categories
+2023-10-10 21:29:28.146 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/f4c9a65c-b707-4c9d-8ed4-31f62d620826.pdf
+2023-10-10 21:29:28.194 +02:00 [INF] Samspil og relationer mellem børn
+2023-10-10 21:29:28.195 +02:00 [INF] institutionen skal
+2023-10-10 21:29:28.199 +02:00 [INF] Børnefællesskaber og leg
+2023-10-10 21:29:28.201 +02:00 [INF] skal 
+2023-10-10 21:29:28.204 +02:00 [INF] Sprog og bevægelse
+2023-10-10 21:29:28.206 +02:00 [INF] skal 
+2023-10-10 21:29:28.209 +02:00 [INF] Forældresamarbejde
+2023-10-10 21:29:28.210 +02:00 [INF] institutionen skal
+2023-10-10 21:29:28.212 +02:00 [INF] Sammenhæng i overgange
+2023-10-10 21:29:28.214 +02:00 [INF] institutionen skal
+2023-10-10 21:29:28.219 +02:00 [INF] Evalueringskultur
+2023-10-10 21:29:28.221 +02:00 [INF] institutionen skal
+2023-10-10 21:29:28.236 +02:00 [INF] Category count: 0
+2023-10-10 21:29:35.412 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:29:41.802 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:29:48.270 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:29:54.446 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:30:01.893 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:30:08.453 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:30:14.991 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:30:21.502 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:30:29.205 +02:00 [INF] Updating Categories
+2023-10-10 21:30:29.207 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/51fb1943-6183-47fb-8138-e8ac64e4f460.pdf
+2023-10-10 21:30:29.250 +02:00 [INF] Category count: 0
+2023-10-10 21:30:36.540 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:30:43.161 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:30:49.382 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:30:56.143 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:31:02.750 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:31:08.793 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:31:16.000 +02:00 [INF] Updating Categories
+2023-10-10 21:31:16.001 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/5203a853-aa8b-4315-b2c4-2758531a454e.pdf
+2023-10-10 21:31:16.045 +02:00 [INF] Samspil og relationer mellem børn
+2023-10-10 21:31:16.048 +02:00 [INF] institutionen skal
+2023-10-10 21:31:16.052 +02:00 [INF] Børnefællesskaber og leg
+2023-10-10 21:31:16.054 +02:00 [INF] skal 
+2023-10-10 21:31:16.059 +02:00 [INF] Sprog og bevægelse
+2023-10-10 21:31:16.060 +02:00 [INF] skal 
+2023-10-10 21:31:16.063 +02:00 [INF] Forældresamarbejde
+2023-10-10 21:31:16.065 +02:00 [INF] institutionen skal
+2023-10-10 21:31:16.068 +02:00 [INF] Sammenhæng i overgange
+2023-10-10 21:31:16.070 +02:00 [INF] institutionen skal
+2023-10-10 21:31:16.075 +02:00 [INF] Evalueringskultur
+2023-10-10 21:31:16.076 +02:00 [INF] institutionen skal
+2023-10-10 21:31:16.092 +02:00 [INF] Category count: 0
+2023-10-10 21:31:22.289 +02:00 [INF] Updating Categories
+2023-10-10 21:31:22.290 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/319a3e79-3c5c-41bc-8b75-784a63d2b186.pdf
+2023-10-10 21:31:22.317 +02:00 [INF] Category count: 0
+2023-10-10 21:31:28.574 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:31:34.945 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:31:41.732 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:31:47.958 +02:00 [INF] Updating Categories
+2023-10-10 21:31:47.959 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/c381e95e-529e-44a1-8e9f-10188b6154c2.pdf
+2023-10-10 21:31:47.975 +02:00 [INF] Category count: 0
+2023-10-10 21:31:54.177 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:32:00.959 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:32:07.840 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:32:14.175 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:32:20.909 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:32:27.027 +02:00 [INF] Updating Categories
+2023-10-10 21:32:27.028 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/1145a2c4-1f84-4d52-925a-1b64785bd6c3.pdf
+2023-10-10 21:32:27.041 +02:00 [INF] Category count: 0
+2023-10-10 21:32:40.344 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:32:47.418 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:32:54.101 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:33:00.781 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:33:06.993 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:33:14.664 +02:00 [INF] Updating Categories
+2023-10-10 21:33:14.665 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/6e8704d8-68d9-47eb-8406-3f8c1b09e411.pdf
+2023-10-10 21:33:14.681 +02:00 [INF] Category count: 0
+2023-10-10 21:33:21.194 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:33:27.683 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:33:35.298 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:33:41.733 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:33:47.715 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:33:54.193 +02:00 [INF] Updating Categories
+2023-10-10 21:33:54.194 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/72a7532d-2e24-4a58-81f8-4f21afbb6688.pdf
+2023-10-10 21:33:54.212 +02:00 [INF] Category count: 0
+2023-10-10 21:34:01.174 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:34:07.676 +02:00 [INF] Updating Categories
+2023-10-10 21:34:07.677 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/f98bc87a-b7b6-47b3-8e54-94cf31ca415e.pdf
+2023-10-10 21:34:07.703 +02:00 [INF] Category count: 0
+2023-10-10 21:34:14.205 +02:00 [INF] Updating Categories
+2023-10-10 21:34:14.206 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/b60e6c85-96b8-4d0d-9fb4-85b8a66f526a.pdf
+2023-10-10 21:34:14.239 +02:00 [INF] Category count: 0
+2023-10-10 21:34:21.008 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:34:29.017 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:34:35.661 +02:00 [INF] Updating Categories
+2023-10-10 21:34:35.662 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/0e0910a8-fc39-470f-b36c-3a329dc4c98c.pdf
+2023-10-10 21:34:35.688 +02:00 [INF] Category count: 0
+2023-10-10 21:34:42.021 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:34:54.648 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:35:01.064 +02:00 [INF] Updating Categories
+2023-10-10 21:35:01.065 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/e4934414-b187-44b7-8b78-09263412de26.pdf
+2023-10-10 21:35:01.102 +02:00 [INF] Samspil og relationer mellem børn
+2023-10-10 21:35:01.104 +02:00 [INF] institutionen skal
+2023-10-10 21:35:01.109 +02:00 [INF] Børnefællesskaber og leg
+2023-10-10 21:35:01.111 +02:00 [INF] skal 
+2023-10-10 21:35:01.115 +02:00 [INF] Sprog og bevægelse
+2023-10-10 21:35:01.116 +02:00 [INF] skal 
+2023-10-10 21:35:01.119 +02:00 [INF] Forældresamarbejde
+2023-10-10 21:35:01.120 +02:00 [INF] institutionen skal
+2023-10-10 21:35:01.125 +02:00 [INF] Sammenhæng i overgange
+2023-10-10 21:35:01.126 +02:00 [INF] institutionen skal
+2023-10-10 21:35:01.129 +02:00 [INF] Evalueringskultur
+2023-10-10 21:35:01.130 +02:00 [INF] institutionen skal
+2023-10-10 21:35:01.143 +02:00 [INF] Category count: 0
+2023-10-10 21:35:07.841 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:35:14.289 +02:00 [INF] Updating Categories
+2023-10-10 21:35:14.290 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/19011672-4f2d-4479-a357-0342161c3bcf.pdf
+2023-10-10 21:35:14.315 +02:00 [INF] Category count: 0
+2023-10-10 21:35:20.355 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:35:33.145 +02:00 [INF] Updating Categories
+2023-10-10 21:35:33.146 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/af67141f-7ff7-45d4-8d45-f94d35d684a8.pdf
+2023-10-10 21:35:33.170 +02:00 [INF] Category count: 0
+2023-10-10 21:35:39.410 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:35:46.569 +02:00 [INF] Updating Categories
+2023-10-10 21:35:46.570 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/7348e731-4a21-4783-918b-2a4c218aa482.pdf
+2023-10-10 21:35:46.586 +02:00 [INF] Category count: 0
+2023-10-10 21:35:53.540 +02:00 [INF] Updating Categories
+2023-10-10 21:35:53.541 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/87a39396-01fb-42ed-97fa-1821ba517e01.pdf
+2023-10-10 21:35:53.562 +02:00 [INF] Category count: 0
+2023-10-10 21:35:59.276 +02:00 [INF] Updating Categories
+2023-10-10 21:35:59.277 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/32e1740c-da9e-4e87-a9b7-b45008c6c7bf.pdf
+2023-10-10 21:35:59.296 +02:00 [INF] Category count: 0
+2023-10-10 21:36:05.447 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:36:14.725 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:36:20.919 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:36:27.615 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:36:34.489 +02:00 [INF] Updating Categories
+2023-10-10 21:36:34.490 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/ef0cd2a2-4656-4cf5-a37b-7d3bafe4fe3d.pdf
+2023-10-10 21:36:34.527 +02:00 [INF] Category count: 0
+2023-10-10 21:38:20.387 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:38:24.225 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:38:28.125 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:38:32.055 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:38:35.921 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:38:39.777 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:38:43.607 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:38:47.424 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:38:51.304 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:38:55.166 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:38:58.920 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:39:02.789 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:39:06.646 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:39:10.572 +02:00 [INF] Updating Categories
+2023-10-10 21:39:10.573 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/5dab7faf-67d1-440e-af27-5a09cb318540.pdf
+2023-10-10 21:39:10.591 +02:00 [INF] Category count: 0
+2023-10-10 21:39:14.411 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:39:18.316 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:39:22.246 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:39:26.261 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:39:30.183 +02:00 [INF] Updating Categories
+2023-10-10 21:39:30.184 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/df69ad54-d73f-4a9c-a4c1-1c80386e24b8.pdf
+2023-10-10 21:39:30.209 +02:00 [INF] Category count: 0
+2023-10-10 21:39:34.047 +02:00 [INF] Updating Categories
+2023-10-10 21:39:34.048 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/928ce1f4-1756-4ddc-9edf-81824ce396b9.pdf
+2023-10-10 21:39:34.062 +02:00 [INF] Category count: 0
+2023-10-10 21:39:37.883 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:39:41.872 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:39:53.238 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:39:57.082 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:40:01.028 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:40:04.845 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:40:08.783 +02:00 [INF] Updating Categories
+2023-10-10 21:40:08.784 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/9ce3cc64-e669-4933-a0bd-1b049ceef31d.pdf
+2023-10-10 21:40:08.836 +02:00 [INF] Samspil og relationer mellem børn
+2023-10-10 21:40:08.837 +02:00 [INF] institutionen skal
+2023-10-10 21:40:08.839 +02:00 [INF] Børnefællesskaber og leg
+2023-10-10 21:40:08.840 +02:00 [INF] skal 
+2023-10-10 21:40:08.842 +02:00 [INF] Sprog og bevægelse
+2023-10-10 21:40:08.843 +02:00 [INF] skal 
+2023-10-10 21:40:08.846 +02:00 [INF] Forældresamarbejde
+2023-10-10 21:40:08.847 +02:00 [INF] institutionen skal
+2023-10-10 21:40:08.851 +02:00 [INF] Sammenhæng i overgange
+2023-10-10 21:40:08.852 +02:00 [INF] institutionen skal
+2023-10-10 21:40:08.856 +02:00 [INF] Evalueringskultur
+2023-10-10 21:40:08.857 +02:00 [INF] institutionen skal
+2023-10-10 21:40:08.867 +02:00 [INF] Category count: 0
+2023-10-10 21:40:13.135 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:40:17.589 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:40:22.459 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:40:26.416 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:40:30.388 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:40:34.918 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:40:39.311 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:40:43.273 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:40:47.375 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:40:51.875 +02:00 [INF] Updating Categories
+2023-10-10 21:40:51.877 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/544d5f4e-1f7c-4f2d-afd5-c0c5dfe69443.pdf
+2023-10-10 21:40:51.920 +02:00 [INF] Samspil og relationer mellem børn
+2023-10-10 21:40:51.922 +02:00 [INF] institutionen skal
+2023-10-10 21:40:51.926 +02:00 [INF] Børnefællesskaber og leg
+2023-10-10 21:40:51.928 +02:00 [INF] skal 
+2023-10-10 21:40:51.933 +02:00 [INF] Sprog og bevægelse
+2023-10-10 21:40:51.935 +02:00 [INF] skal 
+2023-10-10 21:40:51.939 +02:00 [INF] Forældresamarbejde
+2023-10-10 21:40:51.940 +02:00 [INF] institutionen skal
+2023-10-10 21:40:51.945 +02:00 [INF] Sammenhæng i overgange
+2023-10-10 21:40:51.947 +02:00 [INF] institutionen skal
+2023-10-10 21:40:51.950 +02:00 [INF] Evalueringskultur
+2023-10-10 21:40:51.951 +02:00 [INF] institutionen skal
+2023-10-10 21:40:51.966 +02:00 [INF] Category count: 0
+2023-10-10 21:40:55.972 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:41:00.425 +02:00 [INF] Updating Categories
+2023-10-10 21:41:00.427 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/1a8247e6-79e7-4833-946d-5b6537b7748d.pdf
+2023-10-10 21:41:00.463 +02:00 [INF] Category count: 0
+2023-10-10 21:41:04.731 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:41:08.749 +02:00 [INF] Updating Categories
+2023-10-10 21:41:08.750 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/3411c87b-0bc7-4c3f-ad1b-01b3c4791279.pdf
+2023-10-10 21:41:08.791 +02:00 [INF] Category count: 0
+2023-10-10 21:41:13.076 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:41:17.290 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:41:21.592 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:41:26.048 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:41:29.996 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:41:33.793 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:41:38.496 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:41:43.157 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:41:47.335 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:41:51.502 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:41:55.851 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:42:00.012 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:42:03.990 +02:00 [INF] Filereport and categoryies exist
+2023-10-10 21:42:08.064 +02:00 [INF] Filereport and categoryies exist

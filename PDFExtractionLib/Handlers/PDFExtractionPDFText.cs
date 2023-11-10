@@ -19,7 +19,7 @@ namespace PDFExtractionLib.Handlers
         {
             Dictionary<string, string> indsatsDict = new Dictionary<string, string>();
 
-            _logger.Information("Reading from: {filePath}", filePath);
+            _logger?.Information("Reading from: {filePath}", filePath);
             PdfReader reader = new PdfReader(filePath);
             int intPageNum = reader.NumberOfPages;
             string[] words;
@@ -45,9 +45,9 @@ namespace PDFExtractionLib.Handlers
                             var lineArray = line.Trim().Split(' ');
                             var indsats = string.Join(" ", lineArray[lineArray.Length - 2], lineArray[lineArray.Length - 1]);
                             indsats = indsats.Replace(".", "");
-                            _logger.Information(Tags.Tags.TagConverter(categories));
+                            _logger?.Information(Tags.Tags.TagConverter(categories));
 
-                            _logger.Information(indsats);
+                            _logger?.Information(indsats);
 
                             if(Tags.Tags.Validate_Indsats(indsats))
                                 indsatsDict.Add(Tags.Tags.TagConverter(categories), indsats);
@@ -59,21 +59,21 @@ namespace PDFExtractionLib.Handlers
                             var lineArray = line.Trim().Split(' ');
                             var indsats = string.Join(" ", lineArray[lineArray.Length - 2], lineArray[lineArray.Length - 1]);
                             indsats = indsats.Replace(".", "");
-                            _logger.Information(Tags.Tags.TagConverter(categories));
+                            _logger?.Information(Tags.Tags.TagConverter(categories));
 
-                            _logger.Information(indsats);
+                            _logger?.Information(indsats);
 
                             if (Tags.Tags.Validate_Indsats(indsats))
                                 indsatsDict.Add(Tags.Tags.TagConverter(categories), indsats);
                         }
                     }catch(IndexOutOfRangeException e)
                     {
-                        _logger.Warning("Index was out of bound: {error}", Tags.Tags.TagConverter(categories));
+                        _logger?.Warning("Index was out of bound: {error}", Tags.Tags.TagConverter(categories));
                     }catch(System.ArgumentException e) {
 
-                        _logger.Warning(e.Message);
+                        _logger?.Warning(e.Message);
                         indsatsDict.TryGetValue(Tags.Tags.TagConverter(categories), out var res);
-                        _logger.Warning(res);
+                        _logger?.Warning(res);
                     }
                 }
             }

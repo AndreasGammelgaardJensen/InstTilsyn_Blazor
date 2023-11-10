@@ -1,0 +1,5 @@
+2023-10-07 23:10:22.821 +02:00 [INF] File path: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded
+2023-10-07 23:10:23.613 +02:00 [ERR] An error occurred: Could not find a part of the path 'C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker\FilesDownloaded\6ec9b564-4fc0-426e-ae41-66629b504947.pdf'.
+2023-10-07 23:10:23.643 +02:00 [INF] Reading from: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/6ec9b564-4fc0-426e-ae41-66629b504947.pdf
+2023-10-07 23:10:23.721 +02:00 [ERR] Error message: C:\Users\andreas.jensen\source\repos\TilsynVuggestueBlazer\VuggestueTilsyn\PDFExtractionServiceWorker/FilesDownloaded/6ec9b564-4fc0-426e-ae41-66629b504947.pdf not found as file or resource.
+Inner Exception: 

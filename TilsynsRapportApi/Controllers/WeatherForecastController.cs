@@ -1,3 +1,4 @@
+using DataAccess.Interface;
 using Microsoft.AspNetCore.Mvc;
 using TilsynsRapportApi.Database;
 
@@ -12,7 +13,10 @@ namespace TilsynsRapportApi.Controllers
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
     };
 
-        private readonly ILogger<WeatherForecastController> _logger;
+        private readonly ILogger<WeatherForecastController> _logger; 
+        
+
+
 
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
@@ -20,12 +24,8 @@ namespace TilsynsRapportApi.Controllers
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+        public async Task<IEnumerable<WeatherForecast>> Get()
         {
-            using (var context = new BaseContext())
-            {
-                var test = context.InstitutionFrontPageModel.ToList();
-            }
 
                 _logger.LogInformation("Fetching weatherforecast");
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
