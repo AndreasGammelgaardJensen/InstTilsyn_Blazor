@@ -8,6 +8,7 @@ using RabbitMQ.Client;
 using Serilog;
 using System.Text;
 using System.Text.Json;
+using VuggestueTilsynScraper.Database;
 using VuggestueTilsynScraperLib.Scraping;
 
 namespace VuggestueTilsynScraper
@@ -57,6 +58,9 @@ namespace VuggestueTilsynScraper
 
                 using (var scope = _services.CreateScope())
                 {
+
+                    var context = _services.GetRequiredService<DataContext>();
+                    context.Database.EnsureCreated();
 
                     var scopedProcessingService =
                 scope.ServiceProvider

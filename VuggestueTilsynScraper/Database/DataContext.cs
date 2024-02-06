@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ModelsLib.DatabaseModels;
+using System.Reflection.Emit;
 
 namespace VuggestueTilsynScraper.Database
 {
@@ -32,9 +33,17 @@ namespace VuggestueTilsynScraper.Database
             modelBuilder.Entity<PladserDatabasemodel>()
                .HasKey(a => a.Id);
 
+            modelBuilder.Entity<InstitutionReportCriterieaDatabasemodel>()
+                .HasKey(a => a.Id);
+
+            modelBuilder.Entity<CategoriClass>()
+                .HasKey(a => a.Id);
+
+
         }
-        
+
         public DbSet<InstitutionFrontPageModelDatabasemodel> InstitutionFrontPageModel => Set<InstitutionFrontPageModelDatabasemodel>();
+        public DbSet<InstitutionReportCriterieaDatabasemodel> InstitutionReportCriterieaDatabasemodel => Set<InstitutionReportCriterieaDatabasemodel>();
+
     }
 }
-

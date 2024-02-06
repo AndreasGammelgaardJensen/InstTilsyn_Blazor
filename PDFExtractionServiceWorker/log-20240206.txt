@@ -1,0 +1,722 @@
+2024-02-06 15:03:02.483 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:03:03.082 +01:00 [ERR] An error occurred: Could not find a part of the path 'C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker\FilesDownloaded\a132af41-39d8-425a-9ef9-44843a3a3bcf.pdf'.
+2024-02-06 15:03:03.280 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/a132af41-39d8-425a-9ef9-44843a3a3bcf.pdf
+2024-02-06 15:03:03.361 +01:00 [ERR] Error message: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/a132af41-39d8-425a-9ef9-44843a3a3bcf.pdf not found as file or resource.
+Inner Exception: 
+2024-02-06 15:05:19.923 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:20.327 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:20.358 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/a132af41-39d8-425a-9ef9-44843a3a3bcf.pdf
+2024-02-06 15:05:20.870 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:20.876 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:20.907 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:20.913 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:20.939 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:20.942 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:20.955 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:20.960 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:20.976 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:20.981 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:21.001 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:21.003 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:21.337 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:21.627 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:21.633 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/f5b8f21d-6476-4afe-9e27-632e084b8527.pdf
+2024-02-06 15:05:21.759 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:21.765 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:21.789 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:21.792 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:21.808 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:21.812 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:21.828 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:21.829 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:21.845 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:21.847 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:21.857 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:21.860 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:21.935 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:22.152 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:22.155 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/e13374fe-8b87-491a-b533-691f0131e590.pdf
+2024-02-06 15:05:22.262 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:22.264 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:22.278 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:22.280 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:22.294 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:22.297 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:22.313 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:22.316 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:22.327 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:22.329 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:22.341 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:22.344 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:22.395 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:22.622 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:22.624 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/12dd6343-b718-43e6-85d3-a426f8b5df0a.pdf
+2024-02-06 15:05:22.774 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:22.777 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:22.819 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:22.836 +01:00 [INF] ændre indsatsen
+2024-02-06 15:05:22.884 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:22.885 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:22.915 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:22.916 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:22.944 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:22.945 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:22.965 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:22.967 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:23.018 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:23.232 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:23.235 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/5ebd64b2-22e6-4710-b219-3a55d68c14f0.pdf
+2024-02-06 15:05:23.359 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:23.361 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:23.376 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:23.379 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:23.393 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:23.397 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:23.416 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:23.420 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:23.425 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:23.427 +01:00 [INF] er kommet
+2024-02-06 15:05:23.441 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:23.445 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:23.467 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:23.471 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:23.540 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:23.805 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:23.806 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/e55dc846-d9d0-45ba-b439-6f539b25b830.pdf
+2024-02-06 15:05:23.919 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:23.920 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:23.941 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:23.944 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:23.961 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:23.963 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:23.972 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:23.976 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:23.987 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:23.989 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:23.999 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:24.000 +01:00 [INF] i ndsatsen
+2024-02-06 15:05:24.061 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:24.332 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:24.337 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/c5a122dd-1159-473c-ad86-5aa7cc1ac078.pdf
+2024-02-06 15:05:24.511 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:24.513 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:24.551 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:24.553 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:24.587 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:24.588 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:24.611 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:24.613 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:24.630 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:24.632 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:24.650 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:24.652 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:24.653 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:24.655 +01:00 [INF] til at
+2024-02-06 15:05:24.722 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:25.016 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:25.021 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/58bcc6bc-2b36-42b6-8270-72f643962712.pdf
+2024-02-06 15:05:25.165 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:25.167 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:25.199 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:25.205 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:25.249 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:25.255 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:25.283 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:25.288 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:25.314 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:25.318 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:25.334 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:25.339 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:25.425 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:25.790 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:25.793 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/10ff6dc9-cf30-486c-9289-48da23fbe46d.pdf
+2024-02-06 15:05:25.937 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:25.941 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:25.992 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:25.993 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:26.032 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:26.034 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:26.052 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:26.058 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:26.077 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:26.080 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:26.100 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:26.105 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:26.165 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:26.434 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:26.438 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/b00118b3-b0b2-40aa-8a3c-e1e934ebf92f.pdf
+2024-02-06 15:05:26.512 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:26.515 +01:00 [INF] ændre indsatsen
+2024-02-06 15:05:26.550 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:26.554 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:26.573 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:26.576 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:26.594 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:26.595 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:26.604 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:26.605 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:26.610 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:26.612 +01:00 [INF] ændre indsatsen
+2024-02-06 15:05:26.656 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:26.922 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:26.926 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/5c7864e7-eece-4307-bc2c-a9c4dc13c2ff.pdf
+2024-02-06 15:05:26.988 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:26.989 +01:00 [INF] ændre indsatsen
+2024-02-06 15:05:27.012 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:27.015 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:27.039 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:27.041 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:27.054 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:27.057 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:27.068 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:27.070 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:27.080 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:27.083 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:27.120 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:27.415 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:27.416 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/6ae9ba83-2c84-48c1-806f-d08420d136ee.pdf
+2024-02-06 15:05:27.469 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:27.471 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:27.478 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:27.480 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:27.509 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:27.512 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:27.519 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:27.523 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:27.537 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:27.541 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:27.555 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:27.557 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:27.590 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:27.895 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:27.897 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/265467a7-f64e-43be-8b41-ecb09975f549.pdf
+2024-02-06 15:05:27.963 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:27.964 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:27.975 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:27.976 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:27.988 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:27.990 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:28.003 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:28.005 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:28.011 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:28.012 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:28.021 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:28.022 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:28.054 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:28.353 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:28.354 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/289c9bad-c609-45b8-b6c6-ccd995f9b2d6.pdf
+2024-02-06 15:05:28.402 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:28.405 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:28.421 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:28.423 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:28.429 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:28.433 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:28.441 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:28.443 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:28.450 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:28.454 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:28.464 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:28.465 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:28.468 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:28.471 +01:00 [INF] data er
+2024-02-06 15:05:28.836 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:29.125 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:29.128 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/a6f67d8b-6b0b-4583-a1b1-d17aee312ac7.pdf
+2024-02-06 15:05:29.209 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:29.211 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:29.223 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:29.227 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:29.234 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:29.238 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:29.251 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:29.253 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:29.261 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:29.265 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:29.275 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:29.277 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:29.312 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:29.601 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:29.604 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/1a212648-3795-4052-b601-b0318ee167a8.pdf
+2024-02-06 15:05:29.669 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:29.673 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:29.684 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:29.687 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:29.699 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:29.703 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:29.718 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:29.720 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:29.733 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:29.736 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:29.753 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:29.757 +01:00 [INF] ændre indsatsen
+2024-02-06 15:05:29.794 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:30.007 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:30.009 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/e35ce7d9-daf5-44c4-b20c-1e33c8d989cc.pdf
+2024-02-06 15:05:30.081 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:30.281 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:30.283 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/6c80018a-4628-45e9-aaec-f9228008891f.pdf
+2024-02-06 15:05:30.359 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:30.360 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:30.369 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:30.372 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:30.388 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:30.391 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:30.406 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:30.407 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:30.412 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:30.413 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:30.422 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:30.425 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:30.462 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:30.717 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:30.721 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/0f64a134-05dc-4436-b599-944687878428.pdf
+2024-02-06 15:05:30.788 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:30.794 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:30.808 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:30.813 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:30.827 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:30.832 +01:00 [INF] ændre indsatsen
+2024-02-06 15:05:30.842 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:30.846 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:30.853 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:30.855 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:30.863 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:30.867 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:30.905 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:31.094 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:31.099 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/f25608fe-3486-4a25-913f-c0cfdce9272a.pdf
+2024-02-06 15:05:31.149 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:31.154 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:31.160 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:31.161 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:31.168 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:31.172 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:31.180 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:31.182 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:31.189 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:31.193 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:31.199 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:31.201 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:31.205 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:31.206 +01:00 [INF] en god
+2024-02-06 15:05:31.242 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:31.532 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:31.534 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/3f95ef05-ec23-4275-9a7c-4bac3ea82498.pdf
+2024-02-06 15:05:31.584 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:31.587 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:31.594 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:31.597 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:31.608 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:31.609 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:31.612 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:31.613 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:31.619 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:31.621 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:31.625 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:31.626 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:31.658 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:31.974 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:31.981 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/bfa13ec4-1383-4569-8f94-94133af8cefa.pdf
+2024-02-06 15:05:32.037 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:32.041 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:32.057 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:32.060 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:32.077 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:32.080 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:32.095 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:32.097 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:32.106 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:32.109 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:32.116 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:32.118 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:32.155 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:32.418 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:32.423 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/5ea142a4-890d-477f-a914-a8d215fc675b.pdf
+2024-02-06 15:05:32.485 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:32.487 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:32.494 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:32.497 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:32.510 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:32.511 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:32.521 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:32.523 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:32.531 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:32.533 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:32.543 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:32.545 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:32.585 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:32.777 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:32.783 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/335106aa-9c52-4151-b269-dd556310944a.pdf
+2024-02-06 15:05:32.847 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:33.106 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:33.110 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/b279f357-79eb-4806-9273-4bda200b54dd.pdf
+2024-02-06 15:05:33.160 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:33.162 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:33.168 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:33.170 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:33.180 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:33.183 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:33.189 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:33.191 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:33.198 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:33.200 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:33.207 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:33.208 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:33.247 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:33.519 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:33.524 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/aa866ca5-668e-497c-a018-653e5f3200de.pdf
+2024-02-06 15:05:33.605 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:33.607 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:33.620 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:33.622 +01:00 [INF] ændre indsatsen
+2024-02-06 15:05:33.637 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:33.638 +01:00 [INF] ændre indsatsen
+2024-02-06 15:05:33.646 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:33.648 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:33.653 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:33.654 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:33.661 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:33.663 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:33.694 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:33.948 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:33.953 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/af4c2936-fc35-45b5-8d91-35a8ec2c366d.pdf
+2024-02-06 15:05:34.013 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:34.016 +01:00 [INF] ændre indsatsen
+2024-02-06 15:05:34.038 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:34.040 +01:00 [INF] ændre indsatsen
+2024-02-06 15:05:34.049 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:34.051 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:34.062 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:34.063 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:34.072 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:34.074 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:34.087 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:34.088 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:34.805 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:35.009 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:35.013 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/becfd88b-3d3c-4235-a000-a0f2628978b3.pdf
+2024-02-06 15:05:35.075 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:35.363 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:35.367 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/af4d30b6-7eef-468d-b877-28475f82c1d3.pdf
+2024-02-06 15:05:35.424 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:35.427 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:35.435 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:35.438 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:35.444 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:35.445 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:35.450 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:35.452 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:35.455 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:35.456 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:35.461 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:35.463 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:35.492 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:35.729 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:35.732 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/71ac12d6-a2c5-40f7-bb5c-82861eba3eae.pdf
+2024-02-06 15:05:35.779 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:35.783 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:35.793 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:35.796 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:35.807 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:35.809 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:35.817 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:35.821 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:35.829 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:35.833 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:35.841 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:35.843 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:35.879 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:36.189 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:36.193 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/ff31b3c4-ba43-442f-b052-33689a16812c.pdf
+2024-02-06 15:05:36.247 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:36.250 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:36.256 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:36.257 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:36.262 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:36.263 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:36.270 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:36.274 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:36.282 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:36.283 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:36.293 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:36.298 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:36.339 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:36.626 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:36.629 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/0676bda8-3aeb-4b6f-85df-8db2c5cc4650.pdf
+2024-02-06 15:05:36.681 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:36.685 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:36.699 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:36.700 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:36.718 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:36.720 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:36.726 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:36.728 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:36.732 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:36.735 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:36.741 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:36.742 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:36.779 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:37.010 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:37.011 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/2470f444-29cc-4a8c-94a8-efd4df442a4d.pdf
+2024-02-06 15:05:37.066 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:37.068 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:37.073 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:37.075 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:37.082 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:37.083 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:37.093 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:37.094 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:37.098 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:37.099 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:37.107 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:37.108 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:37.138 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:37.409 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:37.413 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/d3936167-2270-4a41-8639-5f73a17a1453.pdf
+2024-02-06 15:05:37.459 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:37.464 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:37.476 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:37.482 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:37.495 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:37.500 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:37.510 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:37.514 +01:00 [INF] ændre indsatsen
+2024-02-06 15:05:37.523 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:37.527 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:37.535 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:37.538 +01:00 [INF] ændre indsatsen
+2024-02-06 15:05:37.578 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:37.804 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:37.810 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/0f99bfd6-8f1e-49a6-b58d-b8174d5b859b.pdf
+2024-02-06 15:05:37.879 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:37.883 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:37.899 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:37.903 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:37.935 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:37.938 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:37.950 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:37.952 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:37.963 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:37.964 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:37.975 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:37.977 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:38.012 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:38.260 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:38.261 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/b5cd33dd-2dd1-4bf0-9de8-d7387514e1f9.pdf
+2024-02-06 15:05:38.340 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:38.342 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:38.352 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:38.356 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:38.369 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:38.371 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:38.381 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:38.382 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:38.392 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:38.393 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:38.397 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:38.398 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:38.437 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:38.647 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:38.650 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/ac30a114-a934-45d7-aaaa-c858a8d61dc9.pdf
+2024-02-06 15:05:38.710 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:38.955 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:38.957 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/ea741884-be92-4206-93e9-fb55766afc9a.pdf
+2024-02-06 15:05:39.032 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:39.034 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:39.048 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:39.050 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:39.060 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:39.061 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:39.069 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:39.071 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:39.080 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:39.081 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:39.087 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:39.089 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:39.183 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:39.388 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:39.394 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/e31572f0-0a16-4eda-abc8-b5b81f1b6ade.pdf
+2024-02-06 15:05:39.456 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:39.815 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:39.820 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/bc714348-2e8e-40c8-aa13-deb8145260da.pdf
+2024-02-06 15:05:39.888 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:39.893 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:39.903 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:39.908 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:39.918 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:39.921 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:39.931 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:39.936 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:39.945 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:39.948 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:39.957 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:39.963 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:40.000 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:40.247 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:40.252 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/85c869d5-6a8d-4748-92ba-b52eb81853e8.pdf
+2024-02-06 15:05:40.296 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:40.297 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:40.303 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:40.304 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:40.309 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:40.310 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:40.313 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:40.316 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:40.322 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:40.325 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:40.327 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:40.328 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:40.361 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:40.634 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:40.638 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/878dcb21-43f1-482d-8d2c-dd92e7c503a8.pdf
+2024-02-06 15:05:40.676 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:40.680 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:40.686 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:40.691 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:40.700 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:40.705 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:40.712 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:40.715 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:40.725 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:40.729 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:40.732 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:40.734 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:40.762 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:41.004 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:41.008 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/7e4f99dd-7c2e-4e5e-bcb4-223bc9b9e9ea.pdf
+2024-02-06 15:05:41.069 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:41.073 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:41.088 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:41.093 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:41.111 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:41.120 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:41.126 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:41.130 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:41.140 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:41.144 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:41.152 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:41.154 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:41.198 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:41.457 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:41.462 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/20975468-1e2b-4377-8e6d-2d2d61ce643f.pdf
+2024-02-06 15:05:41.514 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:41.517 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:41.532 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:41.536 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:41.544 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:41.547 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:41.556 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:41.561 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:41.567 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:41.570 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:41.578 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:41.582 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:41.617 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:41.847 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:41.852 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/2cecd9af-babe-47a7-8bb1-d632fe59699a.pdf
+2024-02-06 15:05:41.910 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:41.916 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:41.926 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:41.930 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:41.939 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:41.944 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:41.952 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:41.956 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:41.965 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:41.970 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:41.979 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:41.981 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:42.021 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:42.277 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:42.282 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/b13c0ffc-ed84-4272-9987-3d18a9d72226.pdf
+2024-02-06 15:05:42.338 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:42.339 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:42.347 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:42.352 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:42.363 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:42.368 +01:00 [INF] justere indsatsen
+2024-02-06 15:05:42.374 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:42.376 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:42.383 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:42.384 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:42.387 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:42.389 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 15:05:44.855 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 15:05:45.085 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 15:05:45.089 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/34389837-6e37-4516-b901-4ff9f22139cc.pdf
+2024-02-06 15:05:45.133 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 15:05:45.135 +01:00 [INF] institutionen skal
+2024-02-06 15:05:45.140 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 15:05:45.142 +01:00 [INF] skal 
+2024-02-06 15:05:45.144 +01:00 [INF] Sprog og bevægelse
+2024-02-06 15:05:45.146 +01:00 [INF] skal 
+2024-02-06 15:05:45.149 +01:00 [INF] Forældresamarbejde
+2024-02-06 15:05:45.150 +01:00 [INF] institutionen skal
+2024-02-06 15:05:45.152 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 15:05:45.155 +01:00 [INF] institutionen skal
+2024-02-06 15:05:45.158 +01:00 [INF] Evalueringskultur
+2024-02-06 15:05:45.159 +01:00 [INF] institutionen skal
+2024-02-06 22:43:53.496 +01:00 [ERR] Error message: Invalid object name 'InstitutionReportCriterieaDatabasemodel'.
+Inner Exception: 
+2024-02-06 22:45:12.242 +01:00 [ERR] Error message: Invalid object name 'InstitutionReportCriterieaDatabasemodel'.
+Inner Exception: 
+2024-02-06 22:52:15.770 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 22:52:16.133 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 22:52:16.277 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/7cee6876-fdab-4b51-86b6-7a831a554e48.pdf
+2024-02-06 22:52:16.723 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 22:52:16.725 +01:00 [INF] justere indsatsen
+2024-02-06 22:52:16.749 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 22:52:16.751 +01:00 [INF] justere indsatsen
+2024-02-06 22:52:16.767 +01:00 [INF] Sprog og bevægelse
+2024-02-06 22:52:16.768 +01:00 [INF] justere indsatsen
+2024-02-06 22:52:16.777 +01:00 [INF] Forældresamarbejde
+2024-02-06 22:52:16.778 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 22:52:16.792 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 22:52:16.793 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 22:52:16.804 +01:00 [INF] Evalueringskultur
+2024-02-06 22:52:16.805 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 22:52:17.096 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 22:52:17.334 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 22:52:17.341 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/11c0a155-7413-4a31-bf79-235a68f89e4a.pdf
+2024-02-06 22:52:17.437 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 22:52:17.439 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 22:52:17.453 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 22:52:17.455 +01:00 [INF] justere indsatsen
+2024-02-06 22:52:17.469 +01:00 [INF] Sprog og bevægelse
+2024-02-06 22:52:17.469 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 22:52:17.479 +01:00 [INF] Forældresamarbejde
+2024-02-06 22:52:17.482 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 22:52:17.496 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 22:52:17.498 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 22:52:17.515 +01:00 [INF] Evalueringskultur
+2024-02-06 22:52:17.521 +01:00 [INF] justere indsatsen
+2024-02-06 22:52:17.584 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 22:52:17.748 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 22:52:17.751 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/ed75ae54-8e28-4cbe-8078-973f2fc8f4a5.pdf
+2024-02-06 22:52:17.924 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 22:52:17.925 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 22:52:17.949 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 22:52:17.950 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 22:52:17.970 +01:00 [INF] Sprog og bevægelse
+2024-02-06 22:52:17.972 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 22:52:17.996 +01:00 [INF] Forældresamarbejde
+2024-02-06 22:52:17.998 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 22:52:18.017 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 22:52:18.018 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 22:52:18.036 +01:00 [INF] Evalueringskultur
+2024-02-06 22:52:18.037 +01:00 [INF] justere indsatsen
+2024-02-06 22:52:18.111 +01:00 [INF] File path: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded
+2024-02-06 22:52:18.331 +01:00 [INF] PDF file downloaded successfully!
+2024-02-06 22:52:18.333 +01:00 [INF] Reading from: C:\Practice\InstTilsyn_Blazor\PDFExtractionServiceWorker/FilesDownloaded/25256af7-f48a-4f7b-806f-0761550a53be.pdf
+2024-02-06 22:52:18.502 +01:00 [INF] Samspil og relationer mellem børn
+2024-02-06 22:52:18.503 +01:00 [INF] justere indsatsen
+2024-02-06 22:52:18.545 +01:00 [INF] Børnefællesskaber og leg
+2024-02-06 22:52:18.546 +01:00 [INF] ændre indsatsen
+2024-02-06 22:52:18.595 +01:00 [INF] Sprog og bevægelse
+2024-02-06 22:52:18.600 +01:00 [INF] justere indsatsen
+2024-02-06 22:52:18.638 +01:00 [INF] Forældresamarbejde
+2024-02-06 22:52:18.640 +01:00 [INF] vedligeholde indsatsen
+2024-02-06 22:52:18.668 +01:00 [INF] Sammenhæng i overgange
+2024-02-06 22:52:18.669 +01:00 [INF] justere indsatsen
+2024-02-06 22:52:18.701 +01:00 [INF] Evalueringskultur
+2024-02-06 22:52:18.702 +01:00 [INF] justere indsatsen
