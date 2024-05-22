@@ -5,15 +5,14 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using VuggestueTilsynScraper.Database;
-
+using DataAccess.Database;
 #nullable disable
 
 namespace VuggestueTilsynScraper.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230723211111_ReportsAndCoordinates_Update2")]
-    partial class ReportsAndCoordinates_Update2
+    [Migration("20230722194311_ReportsAndCoordinates_Update")]
+    partial class ReportsAndCoordinates_Update
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -140,9 +139,6 @@ namespace VuggestueTilsynScraper.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("BoernehavePladser")
-                        .HasColumnType("int");
-
-                    b.Property<int>("DagplejePladser")
                         .HasColumnType("int");
 
                     b.Property<int>("VuggestuePladser")

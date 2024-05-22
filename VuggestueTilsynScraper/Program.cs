@@ -2,19 +2,15 @@
 using VuggestueTilsynScraperLib.Scraping;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.DependencyInjection;
-using VuggestueTilsynScraper.Database;
-using VuggestueTilsynScraper.Repositories;
-using RabbitMQ.Client;
-using System.Text;
-using System.Text.Json;
 using DataAccess.Interfaces;
 using ModelsLib.DatabaseModels;
-using ModelsLib.Models.RabbitMQ;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Serilog;
 using Serilog.Events;
 using VuggestueTilsynScraper;
+using DataAccess.Repositories;
+using DataAccess.Database;
 
 using IHost host = CreateHostBuilder(args).Build();
 

@@ -2,7 +2,7 @@
 using ModelsLib.DatabaseModels;
 using System.Reflection.Emit;
 
-namespace VuggestueTilsynScraper.Database
+namespace DataAccess.Database
 {
     public class DataContext : DbContext
     {

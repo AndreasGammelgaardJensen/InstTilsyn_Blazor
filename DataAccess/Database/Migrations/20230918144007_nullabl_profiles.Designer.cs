@@ -5,15 +5,14 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using VuggestueTilsynScraper.Database;
-
+using DataAccess.Database;
 #nullable disable
 
 namespace VuggestueTilsynScraper.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230906221913_createdAtAndLastCreatedBy")]
-    partial class createdAtAndLastCreatedBy
+    [Migration("20230918144007_nullabl_profiles")]
+    partial class nullabl_profiles
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -65,10 +64,10 @@ namespace VuggestueTilsynScraper.Migrations
                     b.Property<DateTime>("LastChangedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<decimal>("lat")
+                    b.Property<decimal?>("lat")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<decimal>("lng")
+                    b.Property<decimal?>("lng")
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");

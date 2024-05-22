@@ -5,15 +5,14 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using VuggestueTilsynScraper.Database;
-
+using DataAccess.Database;
 #nullable disable
 
 namespace VuggestueTilsynScraper.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230823071122_dateTimeToReport")]
-    partial class dateTimeToReport
+    [Migration("20230906221913_createdAtAndLastCreatedBy")]
+    partial class createdAtAndLastCreatedBy
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,7 +24,7 @@ namespace VuggestueTilsynScraper.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("VuggestueTilsynScraper.Models.AddressDatabasemodel", b =>
+            modelBuilder.Entity("ModelsLib.DatabaseModels.AddressDatabasemodel", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -34,6 +33,12 @@ namespace VuggestueTilsynScraper.Migrations
                     b.Property<string>("City")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("LastChangedAt")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Vej")
                         .IsRequired()
@@ -47,11 +52,17 @@ namespace VuggestueTilsynScraper.Migrations
                     b.ToTable("AddressDatabasemodel");
                 });
 
-            modelBuilder.Entity("VuggestueTilsynScraper.Models.InstKoordinatesDatabasemodel", b =>
+            modelBuilder.Entity("ModelsLib.DatabaseModels.InstKoordinatesDatabasemodel", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("LastChangedAt")
+                        .HasColumnType("datetime2");
 
                     b.Property<decimal>("lat")
                         .HasColumnType("decimal(18,2)");
@@ -64,14 +75,20 @@ namespace VuggestueTilsynScraper.Migrations
                     b.ToTable("InstKoordinatesDatabasemodel");
                 });
 
-            modelBuilder.Entity("VuggestueTilsynScraper.Models.InstitutionFrontPageModelDatabasemodel", b =>
+            modelBuilder.Entity("ModelsLib.DatabaseModels.InstitutionFrontPageModelDatabasemodel", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
                     b.Property<Guid>("KoordinatesId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("LastChangedAt")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -105,14 +122,20 @@ namespace VuggestueTilsynScraper.Migrations
                     b.ToTable("InstitutionFrontPageModel");
                 });
 
-            modelBuilder.Entity("VuggestueTilsynScraper.Models.InstitutionTilsynsRapportDatabasemodel", b =>
+            modelBuilder.Entity("ModelsLib.DatabaseModels.InstitutionTilsynsRapportDatabasemodel", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
                     b.Property<Guid?>("InstitutionFrontPageModelDatabasemodelId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("LastChangedAt")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -129,6 +152,10 @@ namespace VuggestueTilsynScraper.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("hash")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("InstitutionFrontPageModelDatabasemodelId");
@@ -136,7 +163,7 @@ namespace VuggestueTilsynScraper.Migrations
                     b.ToTable("InstitutionTilsynsRapportDatabasemodel");
                 });
 
-            modelBuilder.Entity("VuggestueTilsynScraper.Models.PladserDatabasemodel", b =>
+            modelBuilder.Entity("ModelsLib.DatabaseModels.PladserDatabasemodel", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -145,8 +172,14 @@ namespace VuggestueTilsynScraper.Migrations
                     b.Property<int>("BoernehavePladser")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("DagplejePladser")
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("LastChangedAt")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("VuggestuePladser")
                         .HasColumnType("int");
@@ -156,21 +189,21 @@ namespace VuggestueTilsynScraper.Migrations
                     b.ToTable("PladserDatabasemodel");
                 });
 
-            modelBuilder.Entity("VuggestueTilsynScraper.Models.InstitutionFrontPageModelDatabasemodel", b =>
+            modelBuilder.Entity("ModelsLib.DatabaseModels.InstitutionFrontPageModelDatabasemodel", b =>
                 {
-                    b.HasOne("VuggestueTilsynScraper.Models.InstKoordinatesDatabasemodel", "Koordinates")
+                    b.HasOne("ModelsLib.DatabaseModels.InstKoordinatesDatabasemodel", "Koordinates")
                         .WithMany()
                         .HasForeignKey("KoordinatesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("VuggestueTilsynScraper.Models.AddressDatabasemodel", "address")
+                    b.HasOne("ModelsLib.DatabaseModels.AddressDatabasemodel", "address")
                         .WithMany()
                         .HasForeignKey("addressId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("VuggestueTilsynScraper.Models.PladserDatabasemodel", "pladser")
+                    b.HasOne("ModelsLib.DatabaseModels.PladserDatabasemodel", "pladser")
                         .WithMany()
                         .HasForeignKey("pladserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -183,14 +216,14 @@ namespace VuggestueTilsynScraper.Migrations
                     b.Navigation("pladser");
                 });
 
-            modelBuilder.Entity("VuggestueTilsynScraper.Models.InstitutionTilsynsRapportDatabasemodel", b =>
+            modelBuilder.Entity("ModelsLib.DatabaseModels.InstitutionTilsynsRapportDatabasemodel", b =>
                 {
-                    b.HasOne("VuggestueTilsynScraper.Models.InstitutionFrontPageModelDatabasemodel", null)
+                    b.HasOne("ModelsLib.DatabaseModels.InstitutionFrontPageModelDatabasemodel", null)
                         .WithMany("InstitutionTilsynsRapports")
                         .HasForeignKey("InstitutionFrontPageModelDatabasemodelId");
                 });
 
-            modelBuilder.Entity("VuggestueTilsynScraper.Models.InstitutionFrontPageModelDatabasemodel", b =>
+            modelBuilder.Entity("ModelsLib.DatabaseModels.InstitutionFrontPageModelDatabasemodel", b =>
                 {
                     b.Navigation("InstitutionTilsynsRapports");
                 });

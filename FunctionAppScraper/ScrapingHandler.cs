@@ -3,7 +3,6 @@
 using DataAccess.Database;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using ModelsLib.Models.RabbitMQ;
 using RabbitMQ.Client;
 using Serilog;
@@ -11,46 +10,44 @@ using System.Text;
 using System.Text.Json;
 using VuggestueTilsynScraperLib.Scraping;
 
-namespace VuggestueTilsynScraper
+namespace FunctionAppScraper
 {
-    public class Worker : BackgroundService
+    public class ScrapingHandler
     {
+
         private readonly ILogger _logger;
-        private readonly IConfiguration _config;
         private readonly IServiceProvider _services;
 
-        public Worker(ILogger logger, IConfiguration configuration, IServiceProvider services)
+        public ScrapingHandler(ILogger logger, IServiceProvider services)
         {
             _logger = logger;
-            _config = configuration;
             _services = services;
         }
-
-        public override Task StopAsync(CancellationToken cancellationToken)
+        public void Execute(CancellationToken stoppingToken)
         {
-            throw new NotImplementedException();
-        }
 
-        protected async override Task ExecuteAsync(CancellationToken stoppingToken)
-        {
-            _logger.Information(_config.GetValue<string>("RabbitMQPDF:host"));
-            _logger.Information(_config.GetValue<string>("RabbitMQPDF:exchangeName"));
-            _logger.Information(_config.GetValue<string>("RabbitMQPDF:routingKey"));
-            _logger.Information(_config.GetValue<string>("RabbitMQPDF:queueName"));
+            string exchangeName = Environment.GetEnvironmentVariable("RabbitMQPDFexchangeName");
+            string routingKey = Environment.GetEnvironmentVariable("RabbitMQPDFroutingKey");
+            string queueName = Environment.GetEnvironmentVariable("RabbitMQPDFqueueName");
+            string hostUrl = Environment.GetEnvironmentVariable("RabbitMQPDFhost");
+
+
+            _logger.Information(hostUrl);
+            _logger.Information(exchangeName);
+            _logger.Information(routingKey);
+            _logger.Information(queueName);
 
             try
             {
                 ConnectionFactory factory = new();
-                factory.Uri = new Uri(_config.GetValue<string>("RabbitMQPDF:host"));
+                factory.Uri = new Uri(hostUrl);
                 factory.ClientProvidedName = "Rabbit sender Report App";
 
                 IConnection cnn = factory.CreateConnection();
 
                 IModel channel = cnn.CreateModel();
 
-                string exchangeName = _config.GetValue<string>("RabbitMQPDF:exchangeName");
-                string routingKey = _config.GetValue<string>("RabbitMQPDF:routingKey");
-                string queueName = _config.GetValue<string>("RabbitMQPDF:queueName");
+                
 
                 channel.ExchangeDeclare(exchangeName, ExchangeType.Direct);
                 channel.QueueDeclare(queueName, false, false, false, null);
@@ -86,7 +83,7 @@ namespace VuggestueTilsynScraper
                                 channel.BasicPublish(exchangeName, routingKey, null, messagebody);
                                 Log.Information("Message sent to rbmq");
                             });
-                        },true);
+                        }, true);
 
                         Thread.Sleep(86400);
                     } while (!stoppingToken.IsCancellationRequested);
@@ -98,4 +95,5 @@ namespace VuggestueTilsynScraper
             }
         }
     }
+    
 }

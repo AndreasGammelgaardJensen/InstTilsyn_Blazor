@@ -1,13 +1,13 @@
-﻿using DataAccess.Interfaces;
+﻿using DataAccess.Database;
+using DataAccess.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using ModelsLib.DatabaseModels;
 using ModelsLib.Models;
-using VuggestueTilsynScraper.Database;
 using Serilog;
 
 
 
-namespace VuggestueTilsynScraper.Repositories
+namespace DataAccess.Repositories
 {
     public class InstitutionRepository : IInstitutionRepository
     {

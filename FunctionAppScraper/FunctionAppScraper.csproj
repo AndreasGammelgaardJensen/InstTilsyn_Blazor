@@ -18,6 +18,11 @@
     <PackageReference Include="Microsoft.Azure.Functions.Worker.ApplicationInsights" Version="1.1.0" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj" />
+    <ProjectReference Include="..\VuggestueTilsynScraperLib\VuggestueTilsynScraperLib.csproj" />
+    <ProjectReference Include="..\VuggestueTilsynScraper\VuggestueTilsynScraper.csproj" />
+  </ItemGroup>
+  <ItemGroup>
     <None Update="host.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
