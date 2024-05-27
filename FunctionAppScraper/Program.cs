@@ -11,6 +11,7 @@ using Serilog;
 using VuggestueTilsynScraper;
 using VuggestueTilsynScraperLib.Scraping;
 using FunctionAppScraper;
+using CoreInfrastructure.MessageBroker;
 
 Log.Logger = new LoggerConfiguration()
             .MinimumLevel.Debug()
@@ -31,9 +32,39 @@ var host = new HostBuilder()
         services.AddDbContext<DataContext>(options =>
         {
             options.EnableSensitiveDataLogging(false);
-            options.UseSqlServer(Environment.GetEnvironmentVariable("SQLDockerConnectionString"));
+
+            if(Environment.GetEnvironmentVariable("DevelopmentMode") =="true")
+            {
+                options.UseSqlServer(Environment.GetEnvironmentVariable("SQLDockerConnectionString"));
+
+            }
+            else
+            {
+                options.UseSqlServer(Environment.GetEnvironmentVariable("SQLConnectionString"));
+            }
+
 
         });
+
+        if(Environment.GetEnvironmentVariable("MessageService") == "Azure")
+        {
+            services.AddTransient<IPublisher<string>, StorageQueueProvider>();
+
+        }
+        else
+        {
+            services.AddScoped<RabbitMQSettings>(x => new RabbitMQSettings
+            {
+                ExchangeName = Environment.GetEnvironmentVariable("RabbitMQPDFexchangeName"),
+                RoutingKey = Environment.GetEnvironmentVariable("RabbitMQPDFroutingKey"),
+                QueueName = Environment.GetEnvironmentVariable("RabbitMQPDFqueueName"),
+                HostUrl = Environment.GetEnvironmentVariable("RabbitMQPDFhost")
+            });
+            services.AddTransient<IPublisher<string>, RabbitMQPublisher>();
+
+        }
+
+
         services.AddTransient<ScrapingHandler>();
         services.AddScoped<IInstitutionRepository, InstitutionRepository>();
         services.AddScoped<ReactScrapingHandler>();

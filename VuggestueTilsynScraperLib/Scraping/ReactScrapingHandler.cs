@@ -4,9 +4,7 @@ using System.Collections.ObjectModel;
 using ModelsLib.DatabaseModels;
 using DataAccess.Interfaces;
 using ModelsLib.Models;
-using OpenQA.Selenium.Remote;
 using Serilog;
-using Serilog.Core;
 
 namespace VuggestueTilsynScraperLib.Scraping
 {

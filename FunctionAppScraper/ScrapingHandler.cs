@@ -1,5 +1,6 @@
 ﻿
 
+using CoreInfrastructure.MessageBroker;
 using DataAccess.Database;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,42 +18,20 @@ namespace FunctionAppScraper
 
         private readonly ILogger _logger;
         private readonly IServiceProvider _services;
+        private readonly IPublisher<string> _messagePublisher;
 
-        public ScrapingHandler(ILogger logger, IServiceProvider services)
+        public ScrapingHandler(ILogger logger, IServiceProvider services, IPublisher<string> messagePublisher)
         {
             _logger = logger;
             _services = services;
+            _messagePublisher = messagePublisher;
         }
         public void Execute(CancellationToken stoppingToken)
         {
 
-            string exchangeName = Environment.GetEnvironmentVariable("RabbitMQPDFexchangeName");
-            string routingKey = Environment.GetEnvironmentVariable("RabbitMQPDFroutingKey");
-            string queueName = Environment.GetEnvironmentVariable("RabbitMQPDFqueueName");
-            string hostUrl = Environment.GetEnvironmentVariable("RabbitMQPDFhost");
-
-
-            _logger.Information(hostUrl);
-            _logger.Information(exchangeName);
-            _logger.Information(routingKey);
-            _logger.Information(queueName);
-
             try
             {
-                ConnectionFactory factory = new();
-                factory.Uri = new Uri(hostUrl);
-                factory.ClientProvidedName = "Rabbit sender Report App";
-
-                IConnection cnn = factory.CreateConnection();
-
-                IModel channel = cnn.CreateModel();
-
                 
-
-                channel.ExchangeDeclare(exchangeName, ExchangeType.Direct);
-                channel.QueueDeclare(queueName, false, false, false, null);
-                channel.QueueBind(queueName, exchangeName, routingKey, null);
-
                 using (var scope = _services.CreateScope())
                 {
 
@@ -78,10 +57,7 @@ namespace FunctionAppScraper
                                 };
 
                                 string messageString = JsonSerializer.Serialize(rmQ);
-
-                                byte[] messagebody = Encoding.UTF8.GetBytes(messageString);
-                                channel.BasicPublish(exchangeName, routingKey, null, messagebody);
-                                Log.Information("Message sent to rbmq");
+                                _messagePublisher.PublishMessage(messageString);
                             });
                         }, true);
 
