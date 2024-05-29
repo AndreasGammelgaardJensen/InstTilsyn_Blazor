@@ -8,10 +8,11 @@ using Microsoft.Extensions.Hosting;
 using ModelsLib.DatabaseModels;
 using Serilog.Events;
 using Serilog;
-using VuggestueTilsynScraper;
 using VuggestueTilsynScraperLib.Scraping;
 using FunctionAppScraper;
 using CoreInfrastructure.MessageBroker;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 
 Log.Logger = new LoggerConfiguration()
             .MinimumLevel.Debug()
@@ -25,6 +26,10 @@ Log.Logger = new LoggerConfiguration()
 
 var host = new HostBuilder()
     .ConfigureFunctionsWebApplication()
+    .ConfigureAppConfiguration((hostBuilderContext, configurationBuilder) => {
+        configurationBuilder.AddEnvironmentVariables();
+        })
+
     .ConfigureServices(services =>
     {
         services.AddApplicationInsightsTelemetryWorkerService();
@@ -32,27 +37,34 @@ var host = new HostBuilder()
         services.AddDbContext<DataContext>(options =>
         {
             options.EnableSensitiveDataLogging(false);
-
-            if(Environment.GetEnvironmentVariable("DevelopmentMode") =="true")
-            {
-                options.UseSqlServer(Environment.GetEnvironmentVariable("SQLDockerConnectionString"));
-
-            }
-            else
-            {
-                options.UseSqlServer(Environment.GetEnvironmentVariable("SQLConnectionString"));
-            }
+            options.UseSqlServer("Server=tcp:bgserverinst.database.windows.net,1433;Initial Catalog=inst-db-report;Persist Security Info=False;User ID=andreasbgjensen;Password=Firma2018;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
+);
 
 
+            //if (Environment.GetEnvironmentVariable("DevelopmentMode") =="true")
+            //{
+            //    options.UseSqlServer(Environment.GetEnvironmentVariable("SQLDockerConnectionString"));
+
+            //}
+            //else
+            //{
+            //}
         });
 
         if(Environment.GetEnvironmentVariable("MessageService") == "Azure")
         {
-            services.AddTransient<IPublisher<string>, StorageQueueProvider>();
+            services.AddScoped<StorageProviderSettings>(x => new StorageProviderSettings
+            {
+                ConnectionString = Environment.GetEnvironmentVariable("AzureWebJobsStorage"),
+                QueueName  = Environment.GetEnvironmentVariable("QueueName")
+            });
+
+            services.AddTransient<IPublisher, StorageQueueProvider>();
 
         }
         else
         {
+
             services.AddScoped<RabbitMQSettings>(x => new RabbitMQSettings
             {
                 ExchangeName = Environment.GetEnvironmentVariable("RabbitMQPDFexchangeName"),
@@ -60,15 +72,17 @@ var host = new HostBuilder()
                 QueueName = Environment.GetEnvironmentVariable("RabbitMQPDFqueueName"),
                 HostUrl = Environment.GetEnvironmentVariable("RabbitMQPDFhost")
             });
-            services.AddTransient<IPublisher<string>, RabbitMQPublisher>();
+            services.AddTransient<IPublisher, RabbitMQPublisher>();
 
         }
 
 
-        services.AddTransient<ScrapingHandler>();
+        services.AddSingleton(Log.Logger);
+        services.AddLogging();
+        services.AddScoped<ScrapingHandler>();
         services.AddScoped<IInstitutionRepository, InstitutionRepository>();
         services.AddScoped<ReactScrapingHandler>();
-        services.AddSingleton(Log.Logger);
+        
 
         SetupReadContext(services);
     })

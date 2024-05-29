@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CoreInfrastructure.MessageBroker
 {
-    public class RabbitMQPublisher : IPublisher<string>
+    public class RabbitMQPublisher : IPublisher
     {
         private readonly RabbitMQSettings _rabbitMQsettigns;
         private readonly ILogger _logger;

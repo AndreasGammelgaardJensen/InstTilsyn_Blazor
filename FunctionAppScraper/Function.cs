@@ -1,7 +1,6 @@
 using System;
 using Microsoft.Azure.Functions.Worker;
 using Serilog;
-using VuggestueTilsynScraper;
 
 namespace FunctionAppScraper
 {
@@ -17,7 +16,7 @@ namespace FunctionAppScraper
         }
 
         [Function("Function")]
-        public void Run([TimerTrigger("00:00:10")] TimerInfo myTimer)
+        public void Run([TimerTrigger("0 */1 * * * *")] TimerInfo myTimer)
         {
             _logger.Information($"C# Timer trigger function executed at: {DateTime.Now}");
             _logger.Information($"Next timer schedule at: {Environment.GetEnvironmentVariable("SQLConnectionString")}");

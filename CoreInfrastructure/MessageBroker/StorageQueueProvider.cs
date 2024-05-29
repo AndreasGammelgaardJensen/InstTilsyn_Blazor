@@ -1,28 +1,24 @@
 ﻿using Azure.Storage.Queues;
 using Serilog;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace CoreInfrastructure.MessageBroker
 {
-    public class StorageQueueProvider : IPublisher<string>
+    public class StorageQueueProvider : IPublisher
     {
-        private readonly string _connectionString;
+        private readonly StorageProviderSettings _connectionString;
         private QueueClient _queue;
         private readonly ILogger _logger;
 
-        public StorageQueueProvider(ILogger logger)
+        public StorageQueueProvider(ILogger logger, StorageProviderSettings connectionString)
         {
-            var connectionString = Environment.GetEnvironmentVariable("AzureWebJobsStorage");
-            _connectionString = connectionString;
-            _queue = new QueueClient(_connectionString, "testqueue");
-            _queue.Create();
             _logger = logger;
             _logger.Information("AzureQueue Connected ");
+            _connectionString = connectionString;
+            _queue = new QueueClient(_connectionString.ConnectionString, _connectionString.QueueName);
+            _queue.Create();
+
+
         }
 
         public void PublishMessage(string message)

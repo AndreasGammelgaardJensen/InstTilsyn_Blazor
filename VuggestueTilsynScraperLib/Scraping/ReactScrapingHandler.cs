@@ -1,10 +1,13 @@
-﻿using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using WebDriverManager;
+using WebDriverManager.DriverConfigs.Impl;
 using System.Collections.ObjectModel;
 using ModelsLib.DatabaseModels;
 using DataAccess.Interfaces;
 using ModelsLib.Models;
 using Serilog;
+using OpenQA.Selenium.Edge;
 
 namespace VuggestueTilsynScraperLib.Scraping
 {
@@ -146,9 +149,14 @@ namespace VuggestueTilsynScraperLib.Scraping
             options.AddArgument("--disable-gpu");
             options.AddArguments("--disable-dev-shm-usage");
             options.AddArguments("--no-sandbox");
+            options.AddArgument("--window-size=1920,1080");
+            options.AddArgument("--whitelisted-ips=''");
+            options.AddArgument("--ignore-certificate-errors");
+            options.AddArgument("--remote-debugging-port=9222");
 
 
 
+            new DriverManager().SetUpDriver(new ChromeConfig());
             IWebDriver d = runHeadless ? new ChromeDriver(options) : new ChromeDriver();
 
             d.Navigate().GoToUrl(baseUrl);

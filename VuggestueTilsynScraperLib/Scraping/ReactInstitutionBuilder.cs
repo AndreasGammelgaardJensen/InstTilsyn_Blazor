@@ -1,11 +1,12 @@
 ﻿using Microsoft.VisualBasic;
 using ModelsLib.Models;
-using OpenQA.Selenium;
+using WebDriverManager;
 using Serilog;
 using System.Collections.ObjectModel;
 using System.Transactions;
 using VuggestueTilsynScraperLib.Interfaces;
 using VuggestueTilsynScraperLib.Security;
+using OpenQA.Selenium;
 
 namespace VuggestueTilsynScraperLib.Scraping
 {

@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunctionAppScraper", "Funct
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EfMigrationsApplication", "EfMigrationsApplication\EfMigrationsApplication.csproj", "{D147B7ED-036D-48AA-ADF6-DFEBAF06A281}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreInfrastructure", "CoreInfrastructure\CoreInfrastructure.csproj", "{3BB300B4-9BAF-4773-ADEE-D1965A2BEB20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreInfrastructure", "CoreInfrastructure\CoreInfrastructure.csproj", "{3BB300B4-9BAF-4773-ADEE-D1965A2BEB20}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

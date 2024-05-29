@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace CoreInfrastructure.MessageBroker
 {
-    public interface IPublisher
+    public class StorageProviderSettings
     {
-        public void PublishMessage(string message);
+        public string ConnectionString { get; set; }
+        public string QueueName { get; set; }
     }
 }

@@ -5,9 +5,7 @@ using DataAccess.Database;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ModelsLib.Models.RabbitMQ;
-using RabbitMQ.Client;
 using Serilog;
-using System.Text;
 using System.Text.Json;
 using VuggestueTilsynScraperLib.Scraping;
 
@@ -18,9 +16,9 @@ namespace FunctionAppScraper
 
         private readonly ILogger _logger;
         private readonly IServiceProvider _services;
-        private readonly IPublisher<string> _messagePublisher;
+        private readonly IPublisher _messagePublisher;
 
-        public ScrapingHandler(ILogger logger, IServiceProvider services, IPublisher<string> messagePublisher)
+        public ScrapingHandler(ILogger logger, IServiceProvider services, IPublisher messagePublisher)
         {
             _logger = logger;
             _services = services;
@@ -39,30 +37,26 @@ namespace FunctionAppScraper
                     context.Database.EnsureCreated();
 
                     var scopedProcessingService =
-                scope.ServiceProvider
-                    .GetRequiredService<ReactScrapingHandler>();
-                    do
+                    scope.ServiceProvider
+                        .GetRequiredService<ReactScrapingHandler>();
+                   
+                    scopedProcessingService.Handle((instId, list) =>
                     {
-                        scopedProcessingService.Handle((instId, list) =>
+
+                        list.ForEach(x =>
                         {
-
-                            list.ForEach(x =>
+                            var rmQ = new TilsynsRapportToExtraxtModel
                             {
-                                var rmQ = new TilsynsRapportToExtraxtModel
-                                {
-                                    id = x.Id,
-                                    downloadUrl = x.fileUrl,
-                                    institutionId = instId,
-                                    documentExtention = x.documentType
-                                };
+                                id = x.Id,
+                                downloadUrl = x.fileUrl,
+                                institutionId = instId,
+                                documentExtention = x.documentType
+                            };
 
-                                string messageString = JsonSerializer.Serialize(rmQ);
-                                _messagePublisher.PublishMessage(messageString);
-                            });
-                        }, true);
-
-                        Thread.Sleep(86400);
-                    } while (!stoppingToken.IsCancellationRequested);
+                            string messageString = JsonSerializer.Serialize(rmQ);
+                            _messagePublisher.PublishMessage(messageString);
+                        });
+                    }, true);
                 }
             }
             catch (Exception ex)
