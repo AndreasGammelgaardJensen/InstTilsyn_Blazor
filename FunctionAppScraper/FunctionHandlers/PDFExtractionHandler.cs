@@ -1,23 +1,28 @@
-﻿using DataAccess.Database;
+﻿using CoreInfrastructure.MessageBroker;
+using DataAccess.Database;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using ModelsLib.DatabaseModels;
 using ModelsLib.Models.RabbitMQ;
 using PDFExtractionLib.Handlers;
-using Serilog;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Text.Json;
+using System.Threading.Tasks;
 
-namespace PDFExtractionServiceWorker.Handlers
+namespace FunctionAppScraper.FunctionHandlers
 {
-    public class PDFExtractionHandler : IPDFExtractionHandler
+    public class PDFExtractionHandler : IEventHandler
     {
         private readonly Serilog.ILogger _logger;
         private readonly IConfiguration _configuration;
-        private readonly DataContext _context;
 
-        public PDFExtractionHandler(Serilog.ILogger logger, IConfiguration configuration, DataContext context)
+        public PDFExtractionHandler(Serilog.ILogger logger, IConfiguration configuration)
         {
             _logger = logger;
             _configuration = configuration;
-            _context = context;
         }
 
         public Task<bool> HandelEvent(string message)
@@ -35,10 +40,13 @@ namespace PDFExtractionServiceWorker.Handlers
         {
             try
             {
-                //TODO: Add database access to DataAccess layer
-              
-                    // Perform database operations using this context
 
+                var contextOptions = new DbContextOptionsBuilder<DataContext>()
+                    .UseSqlServer(Environment.GetEnvironmentVariable("SQLConnectionString"))
+                    .Options;
+
+                using var _context = new DataContext(contextOptions);
+  
                 IDownloadFile downLoadFile = new DownloadFileHandler(new HttpClient(), _logger);
                 IPDFExtraction pdfExtractor = new PDFExtractionPDFText(_logger);
 
@@ -77,8 +85,8 @@ namespace PDFExtractionServiceWorker.Handlers
 
                 _context.SaveChanges();
 
-                    return true;
-                
+                return true;
+
             }
             catch (Exception ex)
             {
@@ -88,7 +96,5 @@ namespace PDFExtractionServiceWorker.Handlers
             }
         }
     }
-
-
-
 }
+

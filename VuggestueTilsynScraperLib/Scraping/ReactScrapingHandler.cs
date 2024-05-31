@@ -149,10 +149,9 @@ namespace VuggestueTilsynScraperLib.Scraping
             options.AddArgument("--disable-gpu");
             options.AddArguments("--disable-dev-shm-usage");
             options.AddArguments("--no-sandbox");
-            options.AddArgument("--window-size=1920,1080");
             options.AddArgument("--whitelisted-ips=''");
-            options.AddArgument("--ignore-certificate-errors");
-            options.AddArgument("--remote-debugging-port=9222");
+            //options.AddArgument("--ignore-certificate-errors");
+            //options.AddArgument("--remote-debugging-port=9222");
 
 
 

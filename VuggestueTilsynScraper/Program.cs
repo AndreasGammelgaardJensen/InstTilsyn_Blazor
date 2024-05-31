@@ -43,7 +43,7 @@ static IHostBuilder CreateHostBuilder(string[] args)
         .ConfigureHostConfiguration(builder => { builder.AddConfiguration(configuration); })
         .ConfigureServices((_, services) =>
         {
-            services.AddDbContext<DataContext>(options =>
+            services.AddDbContextFactory<DataContext>(options =>
             {
                 options.EnableSensitiveDataLogging(false);
                 options.UseSqlServer(configuration.GetConnectionString("SQLConnectionString"));
@@ -62,7 +62,6 @@ static IHostBuilder CreateHostBuilder(string[] args)
                 });
 
                 services.AddScoped<IPublisher, StorageQueueProvider>();
-
             }
             else
             {
@@ -96,6 +95,8 @@ static void SetupReadContext(IServiceCollection services)
     SetupQueryableDatabaseModel<InstKoordinatesDatabasemodel>(services);
     SetupQueryableDatabaseModel<PladserDatabasemodel>(services);
     SetupQueryableDatabaseModel<AddressDatabasemodel>(services);
+    SetupQueryableDatabaseModel<InstitutionReportCriterieaDatabasemodel>(services);
+    SetupQueryableDatabaseModel<CategoriClass>(services);
 }
 
 

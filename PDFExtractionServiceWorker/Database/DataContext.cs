@@ -7,7 +7,7 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PDFExtractionServiceWorker.Database
+namespace Database
 {
     public class DataContext : DbContext
     {

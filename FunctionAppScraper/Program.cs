@@ -13,6 +13,7 @@ using FunctionAppScraper;
 using CoreInfrastructure.MessageBroker;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
+using FunctionAppScraper.FunctionHandlers;
 
 Log.Logger = new LoggerConfiguration()
             .MinimumLevel.Debug()
@@ -34,49 +35,15 @@ var host = new HostBuilder()
     {
         services.AddApplicationInsightsTelemetryWorkerService();
         services.ConfigureFunctionsApplicationInsights();
-        services.AddDbContext<DataContext>(options =>
-        {
-            options.EnableSensitiveDataLogging(false);
-            options.UseSqlServer("Server=tcp:bgserverinst.database.windows.net,1433;Initial Catalog=inst-db-report;Persist Security Info=False;User ID=andreasbgjensen;Password=Firma2018;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
-);
+//        services.AddDbContext<DataContext>(options =>
+//        {
+//            options.EnableSensitiveDataLogging(false);
+//            options.UseSqlServer("Server=tcp:bgserverinst.database.windows.net,1433;Initial Catalog=inst-db-report;Persist Security Info=False;User ID=andreasbgjensen;Password=Firma2018;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
+//);
+//        });
 
-
-            //if (Environment.GetEnvironmentVariable("DevelopmentMode") =="true")
-            //{
-            //    options.UseSqlServer(Environment.GetEnvironmentVariable("SQLDockerConnectionString"));
-
-            //}
-            //else
-            //{
-            //}
-        });
-
-        if(Environment.GetEnvironmentVariable("MessageService") == "Azure")
-        {
-            services.AddScoped<StorageProviderSettings>(x => new StorageProviderSettings
-            {
-                ConnectionString = Environment.GetEnvironmentVariable("AzureWebJobsStorage"),
-                QueueName  = Environment.GetEnvironmentVariable("QueueName")
-            });
-
-            services.AddTransient<IPublisher, StorageQueueProvider>();
-
-        }
-        else
-        {
-
-            services.AddScoped<RabbitMQSettings>(x => new RabbitMQSettings
-            {
-                ExchangeName = Environment.GetEnvironmentVariable("RabbitMQPDFexchangeName"),
-                RoutingKey = Environment.GetEnvironmentVariable("RabbitMQPDFroutingKey"),
-                QueueName = Environment.GetEnvironmentVariable("RabbitMQPDFqueueName"),
-                HostUrl = Environment.GetEnvironmentVariable("RabbitMQPDFhost")
-            });
-            services.AddTransient<IPublisher, RabbitMQPublisher>();
-
-        }
-
-
+       
+        services.AddScoped<IEventHandler, PDFExtractionHandler>();
         services.AddSingleton(Log.Logger);
         services.AddLogging();
         services.AddScoped<ScrapingHandler>();
@@ -98,6 +65,8 @@ static void SetupReadContext(IServiceCollection services)
     SetupQueryableDatabaseModel<InstKoordinatesDatabasemodel>(services);
     SetupQueryableDatabaseModel<PladserDatabasemodel>(services);
     SetupQueryableDatabaseModel<AddressDatabasemodel>(services);
+    SetupQueryableDatabaseModel<InstitutionReportCriterieaDatabasemodel>(services);
+    SetupQueryableDatabaseModel<CategoriClass>(services);
 }
 
 static void SetupQueryableDatabaseModel<TDatabaseModel>(IServiceCollection services) where TDatabaseModel : class

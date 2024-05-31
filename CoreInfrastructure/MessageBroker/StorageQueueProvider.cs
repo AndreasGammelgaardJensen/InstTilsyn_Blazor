@@ -15,7 +15,10 @@ namespace CoreInfrastructure.MessageBroker
             _logger = logger;
             _logger.Information("AzureQueue Connected ");
             _connectionString = connectionString;
-            _queue = new QueueClient(_connectionString.ConnectionString, _connectionString.QueueName);
+            _queue = new QueueClient(_connectionString.ConnectionString, _connectionString.QueueName, new QueueClientOptions
+            {
+                MessageEncoding = QueueMessageEncoding.Base64 // or QueueMessageEncoding.None
+            });
             _queue.Create();
 
 

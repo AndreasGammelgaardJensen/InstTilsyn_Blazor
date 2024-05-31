@@ -7,6 +7,7 @@ using System.Transactions;
 using VuggestueTilsynScraperLib.Interfaces;
 using VuggestueTilsynScraperLib.Security;
 using OpenQA.Selenium;
+using AngleSharp.Dom;
 
 namespace VuggestueTilsynScraperLib.Scraping
 {
@@ -85,9 +86,11 @@ namespace VuggestueTilsynScraperLib.Scraping
 
                 try
                 {
-                    //Select Profile
-                    IWebElement element = _webDriver.FindElement(By.XPath("//dd[contains(., 'Profil')]"));
-                    profile = element.Text.Split("\r")[1].Replace("\n","");
+
+                    IWebElement element2 = _webDriver.FindElement(By.XPath("//dd[contains(., 'Profil')]"));
+                    profile = element2.Text.Replace("Profil", "").Trim();
+                    //IWebElement element = _webDriver.FindElement(By.XPath("//dd[contains(., 'Profil')]"));
+                    //profile = element.Text.Split("\r")[1].Replace("\n","");
                 }
                 catch (Exception e)
                 {
