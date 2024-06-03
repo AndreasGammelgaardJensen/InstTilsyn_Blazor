@@ -1,19 +1,23 @@
+using CoreInfrastructure.MessageBroker;
+using CoreInfrastructure.Services.BlobServices;
 using DataAccess.Database;
 using DataAccess.Interfaces;
 using DataAccess.Repositories;
+using FunctionAppScraper;
+using FunctionAppScraper.FunctionHandlers;
 using Microsoft.Azure.Functions.Worker;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Azure;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ModelsLib.DatabaseModels;
-using Serilog.Events;
 using Serilog;
+using Serilog.Events;
 using VuggestueTilsynScraperLib.Scraping;
-using FunctionAppScraper;
-using CoreInfrastructure.MessageBroker;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Options;
-using FunctionAppScraper.FunctionHandlers;
+
+var filepath = string.IsNullOrEmpty(System.Environment.GetEnvironmentVariable("WEBSITE_CONTENTSHARE")) ?
+                        "log.txt" :
+                        @"D:\home\LogFiles\Application\log.txt";
 
 Log.Logger = new LoggerConfiguration()
             .MinimumLevel.Debug()
@@ -21,8 +25,8 @@ Log.Logger = new LoggerConfiguration()
             .MinimumLevel.Override("Microsoft.EntityFrameworkCore.Database.Command", Serilog.Events.LogEventLevel.Fatal)
 
             .Enrich.FromLogContext()
-            .WriteTo.Console()
-            .WriteTo.File("log-.txt", rollingInterval: RollingInterval.Day, restrictedToMinimumLevel: LogEventLevel.Information)
+            .WriteTo.Console(LogEventLevel.Debug)
+            .WriteTo.File(filepath, rollingInterval: RollingInterval.Day, restrictedToMinimumLevel: LogEventLevel.Debug)
             .CreateLogger();
 
 var host = new HostBuilder()
@@ -35,21 +39,19 @@ var host = new HostBuilder()
     {
         services.AddApplicationInsightsTelemetryWorkerService();
         services.ConfigureFunctionsApplicationInsights();
-//        services.AddDbContext<DataContext>(options =>
-//        {
-//            options.EnableSensitiveDataLogging(false);
-//            options.UseSqlServer("Server=tcp:bgserverinst.database.windows.net,1433;Initial Catalog=inst-db-report;Persist Security Info=False;User ID=andreasbgjensen;Password=Firma2018;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
-//);
-//        });
 
        
         services.AddScoped<IEventHandler, PDFExtractionHandler>();
         services.AddSingleton(Log.Logger);
-        services.AddLogging();
         services.AddScoped<ScrapingHandler>();
         services.AddScoped<IInstitutionRepository, InstitutionRepository>();
         services.AddScoped<ReactScrapingHandler>();
-        
+        services.AddSingleton<IBlobService, BlobService>();
+
+        services.AddAzureClients(clientBuilder =>
+        {
+            clientBuilder.AddBlobServiceClient(Environment.GetEnvironmentVariable("AzureWebJobsStorage"), preferMsi: true);
+        });
 
         SetupReadContext(services);
     })
