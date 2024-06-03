@@ -13,8 +13,7 @@ namespace DataAccess.Database
         {
             //optionsBuilder.UseSqlServer(@"Server=localhost.,1433;Database=InstitutionTestDb;Trusted_Connection=True;");
             //optionsBuilder.UseSqlServer(@"Data Source=InstitutionDB,1433;Initial Catalog=InstitutionDB;User ID=SA;Password=And12345;TrustServerCertificate=True;");
-            //optionsBuilder.UseSqlServer(@"Data Source=localhost,1433;Initial Catalog=InstitutionDB;User ID=SA;Password=And12345;TrustServerCertificate=True;");
-
+            optionsBuilder.UseSqlServer(@"Data Source=localhost,1433;Initial Catalog=InstitutionDB;User ID=SA;Password=And12345;TrustServerCertificate=True;");
         }
 
         public IQueryable<TDatabaseModel> Get<TDatabaseModel>() where TDatabaseModel : class

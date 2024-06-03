@@ -1,6 +1,5 @@
 using DataAccess.Interface;
 using Microsoft.AspNetCore.Mvc;
-using TilsynsRapportApi.Database;
 
 namespace TilsynsRapportApi.Controllers
 {

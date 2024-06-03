@@ -1,4 +1,5 @@
-﻿using DataAccess.Interface;
+﻿using DataAccess.Database;
+using DataAccess.Interface;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
@@ -6,21 +7,18 @@ using ModelsLib.Models;
 using ModelsLib.Models.TabelModels;
 using System.Collections.Generic;
 using System.Diagnostics;
-using TilsynsRapportApi.Database;
 
 namespace TilsynsRapportApi.Repositories
 {
     public class InstitutionTabelReporisory : IInstitutionTableRepository
     {
-        private readonly ReportDBContext _reportDBContext;
-        private readonly BaseContext _institutionDBContext;
+        private readonly DataContext _reportDBContext;
         private readonly ILogger _logger;
         private readonly IMemoryCache _memoryCache;
 
 
-        public InstitutionTabelReporisory(BaseContext institutionDBContext, ReportDBContext reportDBContext, IMemoryCache memoryCache)
+        public InstitutionTabelReporisory(DataContext reportDBContext, IMemoryCache memoryCache)
         {
-            _institutionDBContext = institutionDBContext;
             _reportDBContext = reportDBContext;
             _memoryCache = memoryCache;
         }
@@ -39,19 +37,18 @@ namespace TilsynsRapportApi.Repositories
             {
                 stopWatch.Start();
 
-                var testCri = _reportDBContext.InstitutionReportCriterieaDatabasemodel.Include(rr => rr.Categories).ToListAsync();
-                var testInst = _institutionDBContext.InstitutionFrontPageModel
+                var testCri = await _reportDBContext.InstitutionReportCriterieaDatabasemodel.Include(rr => rr.Categories).ToListAsync();
+                var testInst = await _reportDBContext.InstitutionFrontPageModel
                     .Include(insfp => insfp.pladser)
                     .Include(insfp => insfp.InstitutionTilsynsRapports)
                     .Include(insfp => insfp.Koordinates)
                     .Include(insfp => insfp.address)
                     .ToListAsync();
 
-                await Task.WhenAll(testCri, testInst);
 
                 stopWatch.Stop();
 
-                testInst.Result.ForEach(inst =>
+                testInst.ForEach(inst =>
                 {
                     counter++;
                     var instPageModel = new InstitutionFrontPageModel();
@@ -107,7 +104,7 @@ namespace TilsynsRapportApi.Repositories
                     instTabelModel.CriteriaModel = new List<CriteriaModel>();
 
                     //Create Criterie
-                    var criteriea = testCri.Result.SingleOrDefault(cr => cr.ReportId == inst.InstitutionTilsynsRapports?.OrderByDescending(x => x.CreatedAt).FirstOrDefault()?.Id)?.Categories;
+                    var criteriea = testCri.SingleOrDefault(cr => cr.ReportId == inst.InstitutionTilsynsRapports?.OrderByDescending(x => x.CreatedAt).FirstOrDefault()?.Id)?.Categories;
 
                     if (criteriea != null && criteriea.Any())
                     {

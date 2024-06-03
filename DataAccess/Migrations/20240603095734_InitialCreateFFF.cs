@@ -2,10 +2,10 @@
 
 #nullable disable
 
-namespace VuggestueTilsynScraper.Migrations
+namespace DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class nullabl_profiles : Migration
+    public partial class InitialCreateFFF : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

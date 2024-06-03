@@ -1,6 +1,5 @@
-using DataAccess.Interface;
+using DataAccess.Database;
 using Microsoft.EntityFrameworkCore;
-using TilsynsRapportApi.Database;
 using TilsynsRapportApi.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,9 +10,14 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddTransient<IInstitutionTableRepository, InstitutionTabelReporisory>();
-builder.Services.AddDbContext<BaseContext>();
-builder.Services.AddDbContext<ReportDBContext>();
+
+builder.Services.AddDbContextFactory<DataContext>(options =>
+{
+    options.EnableSensitiveDataLogging(false);
+    options.UseSqlServer("Server=tcp:bgserverinst.database.windows.net,1433;Initial Catalog=inst-db-report;Persist Security Info=False;User ID=andreasbgjensen;Password=Firma2018;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;", options => options.EnableRetryOnFailure());
+
+});
+builder.Services.AddTransient<DataAccess.Interface.IInstitutionTableRepository, InstitutionTabelReporisory>();
 builder.Services.AddMemoryCache();
 builder.Services.AddCors(options =>
 {
