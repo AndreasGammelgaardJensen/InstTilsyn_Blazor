@@ -50,7 +50,7 @@ var host = new HostBuilder()
 
         services.AddAzureClients(clientBuilder =>
         {
-            clientBuilder.AddBlobServiceClient(Environment.GetEnvironmentVariable("AzureWebJobsStorage"), preferMsi: true);
+            clientBuilder.AddBlobServiceClient(Environment.GetEnvironmentVariable("AzureWebJobsStorage"));
         });
 
         SetupReadContext(services);
