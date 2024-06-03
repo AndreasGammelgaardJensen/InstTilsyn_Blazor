@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
@@ -18,6 +18,12 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelsLib", "ModelsLib\ModelsLib.csproj", "{79362095-9218-4B89-8D21-7E99F1BFAAA3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{6F8FE5FF-6C4A-44F6-AF5C-EAED8AF8672F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunctionAppScraper", "FunctionAppScraper\FunctionAppScraper.csproj", "{FDC98414-E6C5-44D3-A70E-428A910DC58F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EfMigrationsApplication", "EfMigrationsApplication\EfMigrationsApplication.csproj", "{D147B7ED-036D-48AA-ADF6-DFEBAF06A281}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreInfrastructure", "CoreInfrastructure\CoreInfrastructure.csproj", "{3BB300B4-9BAF-4773-ADEE-D1965A2BEB20}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebSiteHybrid", "WebSiteHybrid\WebSiteHybrid.csproj", "{03298666-CE6D-450D-A23E-1497337D00A5}"
 EndProject
@@ -81,6 +87,18 @@ Global
 		{229C75D6-9502-472A-A4BD-DED117DCB533}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{229C75D6-9502-472A-A4BD-DED117DCB533}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{229C75D6-9502-472A-A4BD-DED117DCB533}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDC98414-E6C5-44D3-A70E-428A910DC58F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDC98414-E6C5-44D3-A70E-428A910DC58F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDC98414-E6C5-44D3-A70E-428A910DC58F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDC98414-E6C5-44D3-A70E-428A910DC58F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D147B7ED-036D-48AA-ADF6-DFEBAF06A281}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D147B7ED-036D-48AA-ADF6-DFEBAF06A281}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D147B7ED-036D-48AA-ADF6-DFEBAF06A281}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D147B7ED-036D-48AA-ADF6-DFEBAF06A281}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BB300B4-9BAF-4773-ADEE-D1965A2BEB20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BB300B4-9BAF-4773-ADEE-D1965A2BEB20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BB300B4-9BAF-4773-ADEE-D1965A2BEB20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BB300B4-9BAF-4773-ADEE-D1965A2BEB20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

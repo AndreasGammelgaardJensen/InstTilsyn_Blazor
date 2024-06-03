@@ -1,5 +1,7 @@
 ﻿
 using Serilog;
+using System.Net.Http;
+
 
 namespace PDFExtractionLib.Handlers
 {
@@ -10,18 +12,18 @@ namespace PDFExtractionLib.Handlers
 
         public DownloadFileHandler(HttpClient httpClient, ILogger logger)
         {
-            HttpClient = httpClient;
+            _httpClient = httpClient;
             _logger = logger;
         }
 
-        private HttpClient HttpClient { get; set; }
+        private HttpClient _httpClient { get; set; }
 
         public async Task<string> DownloadFile(string filepath, string filename, string downloadUrl)
         {
                       
                 try
                 {
-                    HttpResponseMessage response = await HttpClient.GetAsync(downloadUrl);
+                    HttpResponseMessage response = await _httpClient.GetAsync(downloadUrl);
 
                     if (response.IsSuccessStatusCode)
                     {
@@ -39,16 +41,17 @@ namespace PDFExtractionLib.Handlers
                     {
                         _logger.Warning($"Failed to download PDF. Status code: {response.StatusCode} : filename: {filename}");
                     }
-                    return "Hello";
-                }
+                    return response.Content.Headers.ContentType.ToString();
+                
+            }
                 catch (Exception ex)
                 {
                     _logger.Error($"An error occurred: {ex.Message}");
-                }finally { HttpClient.Dispose(); }
-                return "Hello";
+                    return null;
+                }finally { _httpClient.Dispose(); }
+                
 
-
-            
         }
+
     }
 }

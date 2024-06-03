@@ -1,0 +1,52 @@
+FROM mcr.microsoft.com/dotnet/runtime:8.0 AS base
+WORKDIR /app
+
+# Build image with the SDK
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+ARG BUILD_CONFIGURATION=Release
+WORKDIR /src
+
+# Copy the project files and restore dependencies
+COPY ["VuggestueTilsynScraper/VuggestueTilsynScraper.csproj", "VuggestueTilsynScraper/"]
+COPY ["CoreInfrastructure/CoreInfrastructure.csproj", "CoreInfrastructure/"]
+COPY ["DataAccess/DataAccess.csproj", "DataAccess/"]
+COPY ["ModelsLib/ModelsLib.csproj", "ModelsLib/"]
+COPY ["VuggestueTilsynScraperLib/VuggestueTilsynScraperLib.csproj", "VuggestueTilsynScraperLib/"]
+
+RUN dotnet restore "VuggestueTilsynScraper/VuggestueTilsynScraper.csproj"
+
+# Copy the rest of the source code and build the application
+COPY . .
+WORKDIR "/src/VuggestueTilsynScraper"
+RUN dotnet build "VuggestueTilsynScraper.csproj" -c $BUILD_CONFIGURATION -o /app/build
+
+# Publish the application
+FROM build AS publish
+RUN dotnet publish "VuggestueTilsynScraper.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+
+# Final stage with the runtime image
+FROM base AS final
+WORKDIR /app
+
+# Install necessary libraries for msedgedriver
+RUN apt-get update && \
+    apt-get install -y \
+    libglib2.0-0 \
+    libnss3 \
+    libgconf-2-4 \
+    libfontconfig1 \
+    libxss1 \
+    libxtst6 \
+    libgtk-3-0
+
+# Copy the published output
+COPY --from=publish /app/publish .
+
+# Ensure selenium-manager has execute permissions
+RUN chmod +x /app/selenium-manager/linux/selenium-manager
+
+# Optionally switch to a non-root user
+# USER app
+
+# Set the entrypoint
+ENTRYPOINT ["dotnet", "VuggestueTilsynScraper.dll"]

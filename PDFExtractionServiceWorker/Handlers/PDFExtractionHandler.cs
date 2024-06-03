@@ -1,108 +1,94 @@
-﻿using Microsoft.EntityFrameworkCore;
+using DataAccess.Database;
 using ModelsLib.DatabaseModels;
 using ModelsLib.Models.RabbitMQ;
 using PDFExtractionLib.Handlers;
-using PDFExtractionServiceWorker.Database;
 using Serilog;
-using static System.Net.Mime.MediaTypeNames;
+using System.Text.Json;
 
 namespace PDFExtractionServiceWorker.Handlers
 {
     public class PDFExtractionHandler : IPDFExtractionHandler
     {
         private readonly Serilog.ILogger _logger;
-        private readonly DataContext _dataContext;
         private readonly IConfiguration _configuration;
+        private readonly DataContext _context;
 
-        public PDFExtractionHandler(Serilog.ILogger logger, IConfiguration configuration)
+        public PDFExtractionHandler(Serilog.ILogger logger, IConfiguration configuration, DataContext context)
         {
             _logger = logger;
             _configuration = configuration;
+            _context = context;
+        }
 
+        public Task<bool> HandelEvent(string message)
+        {
+            var pdfExtractionModel = JsonSerializer.Deserialize<TilsynsRapportToExtraxtModel>(message);
+            return pdfExtractionModel is not null ? HandelPdfExtraction(pdfExtractionModel) : Task.FromResult(false);
         }
 
         public async Task<bool> HandelPdf(TilsynsRapportToExtraxtModel pdfExtractionModel)
         {
+            return await HandelPdfExtraction(pdfExtractionModel);
+        }
+
+        private async Task<bool> HandelPdfExtraction(TilsynsRapportToExtraxtModel pdfExtractionModel)
+        {
             try
             {
                 //TODO: Add database access to DataAccess layer
-                using (var context = new DataContext(_configuration))
-                {
+              
                     // Perform database operations using this context
 
-                    IDownloadFile downLoadFile = new DownloadFileHandler(new HttpClient(), _logger);
-                    IPDFExtraction pdfExtractor = new PDFExtractionPDFText(_logger);
-                    var filePath = Directory.GetCurrentDirectory() + _configuration.GetValue<string>("DownloadPath:folderPath");
-                    var filename = pdfExtractionModel.id.ToString() + "." + pdfExtractionModel.documentExtention;
+                IDownloadFile downLoadFile = new DownloadFileHandler(new HttpClient(), _logger);
+                IPDFExtraction pdfExtractor = new PDFExtractionPDFText(_logger);
 
+                if (_context.InstitutionReportCriterieaDatabasemodel.Any(x => x.ReportId == pdfExtractionModel.id)) return true;
 
-                    var reportDatabaseModel = await context.InstitutionReportCriterieaDatabasemodel.Include(x=>x.Categories).SingleOrDefaultAsync(x => x.ReportId == pdfExtractionModel.id);
+                var filePath = Directory.GetCurrentDirectory() + _configuration.GetValue<string>("DownloadPath:folderPath");
+                _logger.Information("File path: {filepath}", filePath);
+                var filename = pdfExtractionModel.id.ToString() + "." + pdfExtractionModel.documentExtention;
+                await downLoadFile.DownloadFile(filePath, filename, pdfExtractionModel.downloadUrl);
+                var test = pdfExtractor.Extract_Categories(filePath + "/" + filename);
 
-                    if (reportDatabaseModel is not null && reportDatabaseModel.Categories.Any()) 
+                var instRepCategories = new InstitutionReportCriterieaDatabasemodel
+                {
+                    Id = Guid.NewGuid(),
+                    CreatedAt = DateTime.Now,
+                    LastChangedAt = DateTime.Now,
+                    InstitutionId = pdfExtractionModel.institutionId,
+                    ReportId = pdfExtractionModel.id,
+                    Categories = new List<CategoriClass>(),
+                    fileUrl = pdfExtractionModel.downloadUrl,
+                };
+
+                foreach (var instRepCategory in test)
+                {
+                    instRepCategories.Categories.Add(new CategoriClass
                     {
-                        _logger.Information("Filereport and categoryies exist");
-                        return true;
-                    } else if (reportDatabaseModel is null)
-                    {
-                        _logger.Information("Add report");
-                        _logger.Information("File path: {filepath}", filePath);
-                        await downLoadFile.DownloadFile(filePath, filename, pdfExtractionModel.downloadUrl);
-                        var test = pdfExtractor.Extract_Categories(filePath + "/" + filename);
+                        Id = Guid.NewGuid(),
+                        CreatedAt = DateTime.Now,
+                        LastChangedAt = DateTime.Now,
+                        CategoriText = instRepCategory.Key,
+                        Indsats = instRepCategory.Value
+                    });
+                }
 
-                        var instRepCategories = new InstitutionReportCriterieaDatabasemodel
-                        {
-                            Id = Guid.NewGuid(),
-                            CreatedAt = DateTime.Now,
-                            LastChangedAt = DateTime.Now,
-                            InstitutionId = pdfExtractionModel.institutionId,
-                            ReportId = pdfExtractionModel.id,
-                            Categories = new List<CategoriClass>(),
-                            fileUrl = pdfExtractionModel.downloadUrl,
-                        };
+                _context.InstitutionReportCriterieaDatabasemodel.Add(instRepCategories);
 
-                        foreach (var instRepCategory in test)
-                        {
-                            instRepCategories.Categories.Add(new CategoriClass
-                            {
-                                Id = Guid.NewGuid(),
-                                CreatedAt = DateTime.Now,
-                                LastChangedAt = DateTime.Now,
-                                CategoriText = instRepCategory.Key,
-                                Indsats = instRepCategory.Value
-                            });
-                        }
-
-                        context.InstitutionReportCriterieaDatabasemodel.Add(instRepCategories);
-                    } else
-                    {
-                        _logger.Information("Updating Categories");
-
-                        var categories = pdfExtractor.Extract_Categories(filePath + "/" + filename);
-                        _logger.Information("Category count: {categories}", categories.Count());
-                        foreach (var instRepCategory in categories)
-                        {
-                            reportDatabaseModel.Categories.Add(new CategoriClass
-                            {
-                                Id = Guid.NewGuid(),
-                                CreatedAt = DateTime.Now,
-                                LastChangedAt = DateTime.Now,
-                                CategoriText = instRepCategory.Key,
-                                Indsats = instRepCategory.Value
-                            });
-                        }
-                    }
-
-                    context.SaveChanges();
+                _context.SaveChanges();
 
                     return true;
-                }
+                
             }
             catch (Exception ex)
             {
-                _logger.Error($"Error message: {ex.Message}\nInner Exception: {ex.InnerException}" );
+                _logger.Error($"Error message: {ex.Message}\nInner Exception: {ex.InnerException}");
                 return false;
 
             }
         }
     }
+
+
+
 }

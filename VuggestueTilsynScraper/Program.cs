@@ -2,19 +2,16 @@
 using VuggestueTilsynScraperLib.Scraping;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.DependencyInjection;
-using VuggestueTilsynScraper.Database;
-using VuggestueTilsynScraper.Repositories;
-using RabbitMQ.Client;
-using System.Text;
-using System.Text.Json;
 using DataAccess.Interfaces;
 using ModelsLib.DatabaseModels;
-using ModelsLib.Models.RabbitMQ;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Serilog;
 using Serilog.Events;
 using VuggestueTilsynScraper;
+using DataAccess.Repositories;
+using DataAccess.Database;
+using CoreInfrastructure.MessageBroker;
 
 using IHost host = CreateHostBuilder(args).Build();
 
@@ -34,23 +31,54 @@ static IHostBuilder CreateHostBuilder(string[] args)
 
     var builder = new ConfigurationBuilder()
     .SetBasePath(Directory.GetCurrentDirectory())
-    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+    .AddEnvironmentVariables();
     
 
     IConfigurationRoot configuration = builder.Build();
 
-    Log.Information(configuration.GetConnectionString("SQLServer"));
+    Log.Information(configuration.GetConnectionString("SQLConnectionString"));
 
     return Host.CreateDefaultBuilder(args)
         .ConfigureHostConfiguration(builder => { builder.AddConfiguration(configuration); })
         .ConfigureServices((_, services) =>
         {
-            services.AddDbContext<DataContext>(options =>
+            services.AddDbContextFactory<DataContext>(options =>
             {
                 options.EnableSensitiveDataLogging(false);
-                options.UseSqlServer(configuration.GetConnectionString("SQLServer"));
+                options.UseSqlServer(configuration.GetConnectionString("SQLConnectionString"));
 
             });
+
+
+            string messageProvider = configuration.GetValue<string>("MessageService");
+            if (messageProvider == "Azure")
+            {
+                services.AddScoped<StorageProviderSettings>(x => new StorageProviderSettings
+                {
+                    ConnectionString = configuration.GetValue<string>("AzureWebJobsStorage"),
+                    QueueName= configuration.GetValue<string>("QueueName")
+,
+                });
+
+                services.AddScoped<IPublisher, StorageQueueProvider>();
+            }
+            else
+            {
+                string exchangeName = configuration.GetValue<string>("RabbitMQPDF:exchangeName");
+                string routingKey = configuration.GetValue<string>("RabbitMQPDF:routingKey");
+                string queueName = configuration.GetValue<string>("RabbitMQPDF:queueName");
+                string hostUrl = configuration.GetValue<string>("RabbitMQPDF:host");
+                services.AddScoped<RabbitMQSettings>(x => new RabbitMQSettings
+                {
+                    ExchangeName = exchangeName,
+                    RoutingKey = routingKey,
+                    QueueName = queueName,
+                    HostUrl = hostUrl
+                });
+                services.AddScoped<IPublisher, RabbitMQPublisher>();
+            }
+
             services.AddHostedService<Worker>();
             services.AddScoped<IInstitutionRepository, InstitutionRepository>();
             services.AddScoped<ReactScrapingHandler>();
@@ -67,6 +95,8 @@ static void SetupReadContext(IServiceCollection services)
     SetupQueryableDatabaseModel<InstKoordinatesDatabasemodel>(services);
     SetupQueryableDatabaseModel<PladserDatabasemodel>(services);
     SetupQueryableDatabaseModel<AddressDatabasemodel>(services);
+    SetupQueryableDatabaseModel<InstitutionReportCriterieaDatabasemodel>(services);
+    SetupQueryableDatabaseModel<CategoriClass>(services);
 }
 
 
@@ -74,75 +104,6 @@ static void SetupQueryableDatabaseModel<TDatabaseModel>(IServiceCollection servi
 {
     services.AddScoped(x => x.GetService<DataContext>().Get<TDatabaseModel>());
 }
-
-
-//using (var scope = host.Services.CreateScope())
-//{
-//    var services = scope.ServiceProvider;
-
-//    try
-//    {
-//var context = services.GetRequiredService<DataContext>();
-//context.Database.EnsureCreated();
-//var config = services.GetRequiredService<IConfiguration>();
-
-
-//try
-//{
-//Log.Debug<DataContext>("WTF", context);
-//Log.Information("Bla");
-//Log.Error("WTF");
-//Log.Information(config.GetValue<string>("RabbitMQPDF:host"));
-//ConnectionFactory factory = new();
-//factory.Uri = new Uri(config.GetValue<string>("RabbitMQPDF:host"));
-////factory.Uri = new Uri("amqp://guest:guest@some-rabbit_tilsyn");
-//factory.ClientProvidedName = "Rabbit sender Report App";
-
-//IConnection cnn = factory.CreateConnection();
-
-//IModel channel = cnn.CreateModel();
-
-//string exchangeName = config.GetValue<string>("RabbitMQPDF:exchangeName"); ;
-//string routingKey = config.GetValue<string>("RabbitMQPDF:routingKey");
-//string queueName = config.GetValue<string>("RabbitMQPDF:queueName"); ;
-
-//channel.ExchangeDeclare(exchangeName, ExchangeType.Direct);
-//channel.QueueDeclare(queueName, false, false, false, null);
-//channel.QueueBind(queueName, exchangeName, routingKey, null);
-
-
-//services.GetRequiredService<ReactScrapingHandler>().Handle((instId, list) => {
-
-//    list.ForEach(x => {
-
-//        var rmQ = new TilsynsRapportToExtraxtModel
-//        {
-//            id = x.Id,
-//            downloadUrl = x.fileUrl,
-//            institutionId = instId,
-//        };
-
-//        string messageString = JsonSerializer.Serialize(rmQ);
-
-//        byte[] messagebody = Encoding.UTF8.GetBytes(messageString);
-//        channel.BasicPublish(exchangeName, routingKey, null, messagebody);
-//        Console.WriteLine("Message sent to rbmq");
-
-//    });
-
-
-//}, true);
-//}
-//catch (Exception e)
-//{
-//    Console.WriteLine(e);
-//}
-//    }
-//    catch (Exception ex)
-//    {
-//        Console.WriteLine(ex);
-//    }
-//}
 
 host.RunAsync();
 

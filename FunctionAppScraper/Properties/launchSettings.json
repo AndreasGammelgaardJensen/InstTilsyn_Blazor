@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "FunctionAppScraper": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7202"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "httpPort": 30962,
+      "useSSL": false
+    }
+  }
+}

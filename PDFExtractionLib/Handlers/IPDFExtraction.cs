@@ -9,6 +9,6 @@ namespace PDFExtractionLib.Handlers
     public interface IPDFExtraction
     {
         public Dictionary<string, string> Extract_Categories(string filePath);
-        public void Test();
+        public Dictionary<string, string> Extract_Categories_From_Stream(Stream fileStream);
     }
 }
