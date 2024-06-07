@@ -100,9 +100,7 @@ namespace TilsynsRapportApi.Repositories
                         };
                         var reportIds = inst.InstitutionTilsynsRapports.Select(x=>x.Id).ToList();
 
-
-						var tt = testCri.Where(x => reportIds.Contains(x.ReportId)).ToList();
-                        
+						var tt = testCri.Where(x => reportIds.Contains(x.ReportId)).ToList();                    
                         
                         repports = inst.InstitutionTilsynsRapports.OrderByDescending(x => x.CreatedAt).Select(x=> new ReportTabelModel
                         {

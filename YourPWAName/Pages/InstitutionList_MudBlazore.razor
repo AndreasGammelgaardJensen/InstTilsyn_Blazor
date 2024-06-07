@@ -19,11 +19,11 @@
 	else
 	{
 		<div class="d-none d-md-flex">
-			<MudTable Items="@searchInstitutions" Hover="true" MultiSelection="true" Dense="true" FixedHeader="true" Height="100vh">
+			<MudTable Items="@searchInstitutions" Hover="true" MultiSelection="true" Dense="true" FixedHeader="true" Height="100vh" Class="parent-card">
 				<ToolBarContent>
-					<MudText Typo="Typo.h6">Periodic Elements</MudText>
+					<MudText Typo="Typo.h6">Institutions</MudText>
 					<MudSpacer />
-					<MudTextField T="string" ValueChanged="@(s=>OnSearch(s))" Placeholder="Search" Adornment="Adornment.Start"
+					<MudTextField T="string" ValueChanged="@(s=>OnSearch(s))" Placeholder="Search more than one - use '//' between names " Adornment="Adornment.Start"
 								  AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
 				</ToolBarContent>
 
@@ -36,10 +36,10 @@
 				</HeaderContent>
 				<RowTemplate>
 					<MudTh></MudTh>
-					<MudTd><MudButton Class="no-border-button" Variant="Variant.Outlined" OnClick="@(() => ShowBtnPress(context.InstitutionFrontPageModel.Id))">@((context.ShowAdditionalInfo == true) ? "v" : ">")</MudButton></MudTd>
+					<MudTd><MudButton Class="border-none" Variant="Variant.Outlined" OnClick="@(() => ShowBtnPress(context.InstitutionFrontPageModel.Id))">@((context.ShowAdditionalInfo == true) ? "v" : ">")</MudButton></MudTd>
 					<MudTd DataLabel="Name">@context.InstitutionFrontPageModel.Name</MudTd>
 					<MudTd DataLabel="Type">@context.InstitutionFrontPageModel.TypeEnum</MudTd>
-					<MudTd DataLabel="Pladser">@(ToOrientation(context.InstitutionFrontPageModel))</MudTd>
+					<MudTd DataLabel="Pladser">@(DefinePladser(context.InstitutionFrontPageModel))</MudTd>
 				</RowTemplate>
 				<LoadingContent>
 					<MudText>Loading...</MudText>
@@ -49,16 +49,16 @@
 					{
 					<MudTr>
 					<td colspan="8">
-					<MudCard Elevation="0">
+								<MudCard Elevation="0" Class="child">
 					<MudCardHeader>
 					<CardHeaderContent>
 					<MudText Typo="Typo.body1"><strong>Indsatser </strong></MudText>
 					</CardHeaderContent>
 					</MudCardHeader>
-					<MudCardContent Class="pa-0">
-					<MudTable Items="@context.ReportTabelModel" Context="Rapport" Hover="true" Breakpoint="Breakpoint.Xs" Elevation="0">
-				
-					<HeaderContent>
+									<MudCardContent Class="pa-0 child">
+						<MudTable Items="@context.ReportTabelModel" Context="Rapport" Hover="true" Elevation="0" Class="child">
+
+							<HeaderContent>
 												<MudTh>Rapport</MudTh>
 					@foreach (var indsats in context.ReportTabelModel.FirstOrDefault().Criteria)
 					{
@@ -83,12 +83,77 @@
 			</ChildRowContent>
 			</MudTable>
 		</div>
+
+		<div class="d-flex d-md-none">
+			<MudTable Items="@searchInstitutions" Hover="true" Dense="true" FixedHeader="false" Height="100vh" Elevation="2" Class="parent-card">
+				<ToolBarContent>
+					<MudText Typo="Typo.h6">Institutions</MudText>
+					<MudSpacer />
+					<MudTextField T="string" ValueChanged="@(s=>OnSearch(s))" Placeholder="Search more than one - use '//' between names " Adornment="Adornment.Start"
+								  AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+				</ToolBarContent>
+
+				<HeaderContent>
+					<MudTh><MudTableSortLabel SortBy="new Func<InstitutionTableModel, object>(x=>x.InstitutionFrontPageModel.Name)">Name</MudTableSortLabel></MudTh>
+					<MudTh><MudTableSortLabel SortBy="new Func<InstitutionFrontPageModel, object>(x=>x.TypeEnum)">Pladser</MudTableSortLabel></MudTh>
+				</HeaderContent>
+				<RowTemplate>
+					<MudTd DataLabel="Name">@context.InstitutionFrontPageModel.Name</MudTd>
+					<MudTd DataLabel="Pladser">@(DefinePladser(context.InstitutionFrontPageModel))</MudTd>
+					<MudTd><MudButton Class="border-none" Variant="Variant.Outlined" OnClick="@(() => ShowBtnPress(context.InstitutionFrontPageModel.Id))">@((context.ShowAdditionalInfo == true) ? "v" : ">")</MudButton></MudTd>
+
+				</RowTemplate>
+				<ChildRowContent>
+					@if (context.ShowAdditionalInfo)
+					{
+						<MudTr>
+							<td colspan="8">
+								<MudCard Elevation="0" Class="child">
+									<MudCardContent Class="pa-0">
+										<MudTable Items="@context.ReportTabelModel" Context="Rapport" Hover="true" Elevation="0" Class="child">
+										<RowTemplate>
+
+											<MudTd DataLabel="Rapport">
+												<div class=" mud-table-cell d-flex justify-center align-content-center" style="height:100%">
+													<MudIcon @onclick="() => OnFileClicked(Rapport.FileUrl)" Icon="@Icons.Material.Filled.FileOpen" Title="Favorite" />
+												</div>
+											</MudTd>
+											
+											@foreach (var tt in @Rapport.Criteria)
+											{
+												<MudTd Class="d-flex tester" DataLabel="@tt.CategoriText">@tt.Indsats</MudTd>
+											}
+										</RowTemplate>
+									</MudTable>
+								</MudCardContent>
+							</MudCard>
+						</td>
+					</MudTr>
+					}
+				</ChildRowContent>
+			</MudTable>
+		</div>
 	}
 
 
 
 
 </div>
+
+<style>
+	.parent-card {
+		background-color: @Colors.Blue.Default;
+
+		.child {
+			background-color: @Colors.Blue.Lighten4;
+			font-size:10px;
+		}
+
+	.child * {
+		font-size: inherit; /* Inherit the font size from the container */
+	}
+	}
+</style>
 
 @code {
 	protected override async Task OnInitializedAsync()
@@ -120,7 +185,7 @@
 		tmpPerson.ShowAdditionalInfo = !tmpPerson.ShowAdditionalInfo;
 	}
 
-	public string ToOrientation(InstitutionFrontPageModel direction)
+	public string DefinePladser(InstitutionFrontPageModel direction)
 	{
 
 		if (direction == null || direction.TypeEnum == null || direction.pladser == null)
@@ -141,11 +206,15 @@
 	private async void OnSearch(string text)
 	{
 		searchString = text;
+
+		var searchStrings = searchString.Split("//").ToList();
+
 		searchInstitutions = institutions.Where(element =>
 		{
 			if (string.IsNullOrWhiteSpace(searchString))
 				return true;
-			if (element.InstitutionFrontPageModel.Name.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+			
+			if (searchStrings.Any(s => element.InstitutionFrontPageModel.Name.Contains(s, StringComparison.OrdinalIgnoreCase)))
 				return true;
 			return false;
 		}).ToArray();
