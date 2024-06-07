@@ -1,0 +1,104 @@
+﻿@page "/institutionsServer"
+
+
+
+@using System.Net.Http.Json
+
+
+@using ModelsLib.Models
+@using ModelsLib.Models.TabelModels
+@using static MudBlazor.CategoryTypes
+@inject HttpClient Http
+@inject HttpClient httpClient
+
+<h1>@totalItems</h1>
+
+<MudTable ServerData="@(new Func<TableState, Task<TableData<InstitutionTableModel>>>(ServerReload))"
+          Dense="true" Hover="true" @ref="table" MultiSelection="true" FixedHeader="true" Height="1000px">
+    <ToolBarContent>
+        <MudText Typo="Typo.h6">Periodic Elements</MudText>
+        <MudSpacer />
+        <MudTextField T="string" ValueChanged="@(s=>OnSearch(s))" Placeholder="Search" Adornment="Adornment.Start"
+                      AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+    </ToolBarContent>
+    <HeaderContent>
+        <MudTh></MudTh>
+        <MudTh></MudTh>
+        <MudTh><MudTableSortLabel SortBy="new Func<InstitutionTableModel, object>(x=>x.InstitutionFrontPageModel.Name)">Name</MudTableSortLabel></MudTh>
+        <MudTh><MudTableSortLabel SortBy="new Func<InstitutionTableModel, object>(x=>(int)x.InstitutionFrontPageModel.TypeEnum)">Type</MudTableSortLabel></MudTh>
+        <MudTh><MudTableSortLabel SortBy="new Func<InstitutionTableModel, object>(x=>x)">Pladser</MudTableSortLabel></MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTh></MudTh>
+        <MudTd><MudButton Class="no-border-button" Variant="Variant.Outlined" OnClick="@(() => ShowBtnPress(context.InstitutionFrontPageModel.Id))">@((context.ShowAdditionalInfo == true) ? "v" : ">")</MudButton></MudTd>
+        <MudTd DataLabel="Name">@context.InstitutionFrontPageModel.Name</MudTd>
+        <MudTd DataLabel="Type">@context.InstitutionFrontPageModel.TypeEnum</MudTd>
+        <MudTd DataLabel="Pladser">@(ToOrientation(context.InstitutionFrontPageModel))</MudTd>
+    </RowTemplate>
+    <NoRecordsContent>
+        <MudText>No matching records found</MudText>
+    </NoRecordsContent>
+    <LoadingContent>
+        <MudText>Loading...</MudText>
+    </LoadingContent>
+</MudTable>
+
+@code {
+    private IEnumerable<InstitutionTableModel> pagedData;
+    private MudTable<InstitutionTableModel> table;
+
+    private int totalItems;
+    private string searchString = null;
+
+    /// <summary>
+    /// Here we simulate getting the paged, filtered and ordered data from the server
+    /// </summary>
+    private async Task<TableData<InstitutionTableModel>> ServerReload(TableState state)
+    {
+        IEnumerable<InstitutionTableModel> data = await httpClient.GetFromJsonAsync<List<InstitutionTableModel>>("https://localhost:7051/api/Institution");
+        await Task.Delay(300);
+        data = data.Where(element =>
+        {
+            if (string.IsNullOrWhiteSpace(searchString))
+                return true;
+            if (element.InstitutionFrontPageModel.Name.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+                return true;
+            return false;
+        }).ToArray();
+        totalItems = data.Count();
+        pagedData = data;
+        return new TableData<InstitutionTableModel>() { TotalItems = totalItems, Items = pagedData };
+
+    }
+
+    private void OnSearch(string text)
+    {
+        searchString = text;
+        table.ReloadServerData();
+    }
+
+
+    private void ShowBtnPress(Guid nr)
+    {
+        InstitutionTableModel tmpPerson = pagedData.FirstOrDefault(f => f.InstitutionFrontPageModel.Id == nr);
+        tmpPerson.ShowAdditionalInfo = !tmpPerson.ShowAdditionalInfo;
+    }
+
+    public string ToOrientation(InstitutionFrontPageModel direction)
+    {
+
+        if (direction == null || direction.TypeEnum == null || direction.pladser == null)
+        {
+            return "";
+        }
+
+        return direction.TypeEnum switch
+        {
+            InstitutionTypeEnum.Vuggestue => direction.pladser.VuggestuePladser.ToString(),
+            InstitutionTypeEnum.Boernehave => direction.pladser.BoernehavePladser.ToString(),
+            InstitutionTypeEnum.Dagpleje => direction.pladser.DagplejePladser.ToString(),
+            InstitutionTypeEnum.Integreret => $"Børnehave {direction.pladser.BoernehavePladser}, Vuggestue {direction.pladser.VuggestuePladser}",
+            _ => throw new ArgumentOutOfRangeException(nameof(direction), $"Not expected direction value: {direction}"),
+        };
+    }
+}

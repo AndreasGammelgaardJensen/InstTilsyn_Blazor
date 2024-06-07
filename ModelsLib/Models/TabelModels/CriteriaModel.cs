@@ -10,5 +10,6 @@ namespace ModelsLib.Models.TabelModels
     {
         public string CategoriText { get; set; }
         public string Indsats { get; set; }
+
     }
 }

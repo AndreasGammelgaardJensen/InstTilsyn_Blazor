@@ -1,0 +1,125 @@
+﻿@using ModelsLib.Models
+@using ModelsLib.Models.TabelModels
+
+<div class="card" style="@GetBackground()">
+    <div class="name">
+        <div class="pladser">
+            <h4>@model.InstitutionFrontPageModel.Name</h4>
+            <p><strong>Pladser</strong></p>
+            <p>Børnehave: @model.InstitutionFrontPageModel.pladser.BoernehavePladser</p>
+            <p>Vuggestue: @model.InstitutionFrontPageModel.pladser.VuggestuePladser</p>
+            <p>Dagpleje: @model.InstitutionFrontPageModel.pladser.DagplejePladser </p>
+        </div>
+        <div class="rapport">
+            <p style="margin-right: 5px">Tilsynsrapport:</p>
+            <a href="@model.InstitutionFrontPageModel.InstitutionTilsynsRapports.First().fileUrl">@model.InstitutionFrontPageModel.InstitutionTilsynsRapports.First().fileUrl </a>
+        </div>
+        
+        
+        
+    </div>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    @foreach (var cr in @model.CriteriaModel)
+                    {
+
+                        <th class="align-text-top m">
+                            <div>
+                                <b>@cr.CategoriText</b>
+                            </div>
+
+                        </th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    @foreach (var cr in @model.CriteriaModel)
+                    {
+
+                        <td class="align-text-top m">
+                            <div>
+                                <b>@cr.Indsats</b>
+                            </div>
+
+                        </td>
+                    }
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+@* <div class="card m-2">
+    <div class="card-body">
+        <div class="card-content">
+            
+            <div class="bob">
+                <div class="inst-info">
+                    <h5 style="width:100%">@model.InstitutionFrontPageModel.Name</h5>
+                </div>
+            
+                <table>
+                    <thead class="align-items-start">
+                        <tr>
+                        @foreach (var cr in @model.CriteriaModel)
+                        {
+
+                                <th class="align-text-top m">
+                                <div>
+                                        <b>@cr.CategoriText</b>
+                                </div>
+                            
+                            </th>
+                        }
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+       
+       @*  <div>
+            <h6 class="card-text"><b>ID</b>  : <small>@ID</small></h6>
+            <h6 class="card-text"><b>Joined</b>: <small>@Joined</small> </h6>
+            <h6 class="card-text"><b>Email</b>: <small>@Email</small></h6>
+        </div> *@
+
+@*     </div>
+</div> *@
+
+@code {
+
+    [Parameter]
+    public InstitutionTableModel model { get; set; }
+
+
+    private string GetBackground()
+    {
+        var enumTypeClass = "";
+        switch (model.InstitutionFrontPageModel.TypeEnum)
+        {
+            case InstitutionTypeEnum.Integreret:
+                enumTypeClass = "blue";
+                break;
+            case InstitutionTypeEnum.Dagpleje:
+                enumTypeClass = "purple";
+                break;
+
+            case InstitutionTypeEnum.Boernehave:
+                enumTypeClass = "yellow";
+                break;
+            default:
+                enumTypeClass = "green";
+                // Handle the default case (if none of the specified cases match)
+                break;
+        }
+        return "background-color: " + enumTypeClass;
+    }
+
+
+
+}

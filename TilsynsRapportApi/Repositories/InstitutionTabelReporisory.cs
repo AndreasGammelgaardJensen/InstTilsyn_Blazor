@@ -48,7 +48,7 @@ namespace TilsynsRapportApi.Repositories
 
                 stopWatch.Stop();
 
-                testInst.ForEach(inst =>
+                testInst.ForEach(async inst =>
                 {
                     counter++;
                     var instPageModel = new InstitutionFrontPageModel();
@@ -89,6 +89,8 @@ namespace TilsynsRapportApi.Repositories
                         };
                     }
 
+                    var repports = new List<ReportTabelModel>();
+
                     if (inst.InstitutionTilsynsRapports.Any())
                     {
                         var rap = inst.InstitutionTilsynsRapports.OrderByDescending(x => x.CreatedAt).FirstOrDefault();
@@ -96,7 +98,20 @@ namespace TilsynsRapportApi.Repositories
                         {
                             new InstitutionTilsynsRapport { fileUrl = rap.fileUrl }
                         };
-                    }
+                        var reportIds = inst.InstitutionTilsynsRapports.Select(x=>x.Id).ToList();
+
+
+						var tt = testCri.Where(x => reportIds.Contains(x.ReportId)).ToList();
+                        
+                        
+                        repports = inst.InstitutionTilsynsRapports.OrderByDescending(x => x.CreatedAt).Select(x=> new ReportTabelModel
+                        {
+                            ReportId = x.Id,
+                            FileUrl = x.fileUrl,
+                            Criteria = tt.FirstOrDefault(t => t.ReportId == x.Id)?.Categories?.Select(cr => new CriteriaModel { CategoriText = cr.CategoriText, Indsats = cr.Indsats }).ToList()
+                        }).ToList();
+
+					}
 
 
                     var instTabelModel = new InstitutionTableModel();
@@ -120,7 +135,10 @@ namespace TilsynsRapportApi.Repositories
                         });
                     }
 
-                    institutionTalebLis.Add(instTabelModel);
+                    instTabelModel.ShowAdditionalInfo = false;
+                    instTabelModel.ReportTabelModel = repports;
+
+					institutionTalebLis.Add(instTabelModel);
                 });
 
                 _memoryCache.Set<List<InstitutionTableModel>>("INSTITUTION_TABEL_MODELS", institutionTalebLis, TimeSpan.FromMinutes(1));
