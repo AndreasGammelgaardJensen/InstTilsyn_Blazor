@@ -36,7 +36,7 @@
 				</HeaderContent>
 				<RowTemplate>
 					<MudTh></MudTh>
-					<MudTd><MudButton Class="border-none" Variant="Variant.Outlined" OnClick="@(() => ShowBtnPress(context.InstitutionFrontPageModel.Id))">@((context.ShowAdditionalInfo == true) ? "v" : ">")</MudButton></MudTd>
+					<MudTd><MudButton Class="border-none tabelbutton" Size="Size.Small" Variant="Variant.Filled" Color="Color.Primary" OnClick="@(() => ShowBtnPress(context.InstitutionFrontPageModel.Id))">@((context.ShowAdditionalInfo == true) ? "luk detaljer" : "vis detaljer")</MudButton></MudTd>
 					<MudTd DataLabel="Name">@context.InstitutionFrontPageModel.Name</MudTd>
 					<MudTd DataLabel="Type">@context.InstitutionFrontPageModel.TypeEnum</MudTd>
 					<MudTd DataLabel="Pladser">@(DefinePladser(context.InstitutionFrontPageModel))</MudTd>
@@ -55,26 +55,34 @@
 					<MudText Typo="Typo.body1"><strong>Indsatser </strong></MudText>
 					</CardHeaderContent>
 					</MudCardHeader>
-									<MudCardContent Class="pa-0 child">
-						<MudTable Items="@context.ReportTabelModel" Context="Rapport" Hover="true" Elevation="0" Class="child">
+						<MudCardContent Class="pa-0 child">
+							<MudTable Items="@context.ReportTabelModel" Context="Rapport" Hover="true" Elevation="0" Class="child">
+								<HeaderContent>
+									<MudTh>Åben Rapport</MudTh>
 
-							<HeaderContent>
-												<MudTh>Rapport</MudTh>
-					@foreach (var indsats in context.ReportTabelModel.FirstOrDefault().Criteria)
-					{
-						<MudTh>@indsats.CategoriText</MudTh>
-					}
-					</HeaderContent>
-										<RowTemplate>
-											<div class=" mud-table-cell d-flex justify-center align-content-center" style="height:100%">
-												<MudIcon @onclick="() => OnFileClicked(Rapport.FileUrl)" Icon="@Icons.Material.Filled.FileOpen" Title="Favorite" />
-											</div>
-					@foreach (var tt in @Rapport.Criteria)
-					{
-						<MudTd>@tt.Indsats</MudTd>
-					}
-					</RowTemplate>
-					</MudTable>
+							@if (context.ReportTabelModel.FirstOrDefault().Criteria is not null)
+							{
+								@foreach (var indsats in context.ReportTabelModel.FirstOrDefault().Criteria)
+								{
+									<MudTh>@indsats.CategoriText</MudTh>
+								}
+							}				
+						</HeaderContent>
+						<RowTemplate>
+							<div class=" mud-table-cell d-flex justify-center align-content-center" style="height:100%">
+								<MudIconButton Icon="@Icons.Material.Filled.FileOpen" Variant="Variant.Filled" Color="Color.Primary" Size="Size.Medium" OnClick="@(() => OnFileClicked(Rapport.FileUrl))" />
+							</div>
+
+											
+						@if (@Rapport.Criteria is not null)
+						{
+							@foreach (var tt in @Rapport.Criteria)
+							{
+								<MudTd>@tt.Indsats</MudTd>
+							}
+						}
+						</RowTemplate>
+						</MudTable>
 					</MudCardContent>
 					</MudCard>
 					</td>
@@ -100,7 +108,7 @@
 				<RowTemplate>
 					<MudTd DataLabel="Name">@context.InstitutionFrontPageModel.Name</MudTd>
 					<MudTd DataLabel="Pladser">@(DefinePladser(context.InstitutionFrontPageModel))</MudTd>
-					<MudTd><MudButton Class="border-none" Variant="Variant.Outlined" OnClick="@(() => ShowBtnPress(context.InstitutionFrontPageModel.Id))">@((context.ShowAdditionalInfo == true) ? "v" : ">")</MudButton></MudTd>
+					<MudTd><MudButton Class="border-none" Size="Size.Small" Variant="Variant.Filled" Color="Color.Primary" OnClick="@(() => ShowBtnPress(context.InstitutionFrontPageModel.Id))">@((context.ShowAdditionalInfo == true) ? "luk detaljer" : "vis detaljer")</MudButton></MudTd>
 
 				</RowTemplate>
 				<ChildRowContent>
@@ -113,16 +121,19 @@
 										<MudTable Items="@context.ReportTabelModel" Context="Rapport" Hover="true" Elevation="0" Class="child">
 										<RowTemplate>
 
-											<MudTd DataLabel="Rapport">
+												<MudTd DataLabel="Åben Rapport">
 												<div class=" mud-table-cell d-flex justify-center align-content-center" style="height:100%">
-													<MudIcon @onclick="() => OnFileClicked(Rapport.FileUrl)" Icon="@Icons.Material.Filled.FileOpen" Title="Favorite" />
-												</div>
+														<MudIconButton Icon="@Icons.Material.Filled.FileOpen" Variant="Variant.Filled" Color="Color.Primary" Size="Size.Medium" OnClick="@(() => OnFileClicked(Rapport.FileUrl))" />
+													</div>
 											</MudTd>
-											
-											@foreach (var tt in @Rapport.Criteria)
+												@if (@Rapport.Criteria is not null)
 											{
-												<MudTd Class="d-flex tester" DataLabel="@tt.CategoriText">@tt.Indsats</MudTd>
+												@foreach (var tt in @Rapport.Criteria)
+												{
+													<MudTd Class="d-flex tester" DataLabel="@tt.CategoriText">@tt.Indsats</MudTd>
+												}
 											}
+											
 										</RowTemplate>
 									</MudTable>
 								</MudCardContent>
@@ -142,7 +153,7 @@
 
 <style>
 	.parent-card {
-		background-color: @Colors.Blue.Default;
+		background-color: white;
 
 		.child {
 			background-color: @Colors.Blue.Lighten4;
@@ -152,6 +163,10 @@
 	.child * {
 		font-size: inherit; /* Inherit the font size from the container */
 	}
+	}
+
+	.tabelbutton {
+		font-size: 10px;
 	}
 </style>
 
