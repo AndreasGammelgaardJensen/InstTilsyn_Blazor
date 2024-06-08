@@ -61,7 +61,10 @@ namespace VuggestueTilsynScraper
                             _messagePublisher.PublishMessage(messageString);
                         });
                     }, true);
-                }
+
+                    _logger.Information("KK SCRAPER Finished Scraping");
+
+				}
             }
             catch (Exception ex)
             {
