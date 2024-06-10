@@ -1,7 +1,7 @@
 {
-  "name": "BlazorAppPWA",
-  "short_name": "BlazorAppPWA",
-  "start_url": "/counter",
+  "name": "InstitutionsSammenligneren",
+  "short_name": "InstitutionAppen",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#03173d",

@@ -40,7 +40,7 @@ namespace PDFExtractionLib.Handlers
 
                     try
                     {
-                        if (line.Contains(Tags.Tags.Section_Vurdering) || line.Contains(Tags.Tags.Section_Vurdering_v2))
+                        if (line.Contains(Tags.Tags.Section_Vurdering) || line.Contains(Tags.Tags.Section_Vurdering_v2) || line.Contains(Tags.Tags.Section_Vurdering_v3) || line.Contains(Tags.Tags.Section_Vurdering_v4))
                         {
                             var lineArray = line.Trim().Split(' ');
                             var indsats = string.Join(" ", lineArray[lineArray.Length - 2], lineArray[lineArray.Length - 1]);
@@ -105,7 +105,7 @@ namespace PDFExtractionLib.Handlers
 
                     try
                     {
-                        if (line.Contains(Tags.Tags.Section_Vurdering) || line.Contains(Tags.Tags.Section_Vurdering_v2))
+                        if (line.Contains(Tags.Tags.Section_Vurdering) || line.Contains(Tags.Tags.Section_Vurdering_v2) || line.Contains(Tags.Tags.Section_Vurdering_v3) || line.Contains(Tags.Tags.Section_Vurdering_v4))
                         {
                             var lineArray = line.Trim().Split(' ');
                             var indsats = string.Join(" ", lineArray[lineArray.Length - 2], lineArray[lineArray.Length - 1]);

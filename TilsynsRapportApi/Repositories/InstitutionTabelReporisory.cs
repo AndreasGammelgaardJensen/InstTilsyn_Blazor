@@ -25,13 +25,13 @@ namespace TilsynsRapportApi.Repositories
 
         public async Task<IEnumerable<InstitutionTableModel>> GetInstitutionTableModels()
         {
-            //List<InstitutionTableModel> institutionTalebLis = _memoryCache.Get<List<InstitutionTableModel>>("INSTITUTION_TABEL_MODELS");
+            List<InstitutionTableModel> institutionTalebLis = _memoryCache.Get<List<InstitutionTableModel>>("INSTITUTION_TABEL_MODELS");
 
-            //if (institutionTalebLis is not null)
-            //    return institutionTalebLis;
+            if (institutionTalebLis is not null)
+                return institutionTalebLis;
 
-            List<InstitutionTableModel>  institutionTalebLis = new();
-                Stopwatch stopWatch = new Stopwatch();
+            institutionTalebLis = new();
+				Stopwatch stopWatch = new Stopwatch();
             int counter = 0;
             try
             {
@@ -139,7 +139,7 @@ namespace TilsynsRapportApi.Repositories
 					institutionTalebLis.Add(instTabelModel);
                 });
 
-                _memoryCache.Set<List<InstitutionTableModel>>("INSTITUTION_TABEL_MODELS", institutionTalebLis, TimeSpan.FromMinutes(1));
+                _memoryCache.Set<List<InstitutionTableModel>>("INSTITUTION_TABEL_MODELS", institutionTalebLis, TimeSpan.FromMinutes(10));
 
                 return institutionTalebLis;
             }catch(Exception e)

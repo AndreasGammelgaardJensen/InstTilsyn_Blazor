@@ -27,12 +27,16 @@ namespace PDFExtractionLib.Tags
 
         public static readonly string Section_Vurdering = "Det vurderes på baggrund af observationer og faglig dialog, at institutionen skal";
         public static readonly string Section_Vurdering_v2 = "Det vurderes på baggrund af den faglige dialog, at institutionen skal";
+		public static readonly string Section_Vurdering_v3 = "Det vurderes på baggrund a f observationer og faglig dialog, at institutionen skal";
+		public static readonly string Section_Vurdering_v4 = "Det vurderes på baggrund af den faglige dialog, at institu tionen skal";
 
-        public static readonly string Section_Indsats = "Indsats";
+		public static readonly string Section_Indsats = "Indsats";
+
+		
 
 
 
-        public static readonly List<string> indsatsList = new List<string> {
+		public static readonly List<string> indsatsList = new List<string> {
             "justere indsatsen",
             "vedligeholde indsatsen",
             "tilpas indsats",

@@ -36,7 +36,7 @@
 				</HeaderContent>
 				<RowTemplate>
 					<MudTh></MudTh>
-					<MudTd><MudButton Class="border-none tabelbutton" Size="Size.Small" Variant="Variant.Filled" Color="Color.Primary" OnClick="@(() => ShowBtnPress(context.InstitutionFrontPageModel.Id))">@((context.ShowAdditionalInfo == true) ? "luk detaljer" : "vis detaljer")</MudButton></MudTd>
+					<MudTd><MudButton Class="border-none tabelbutton" Size="Size.Small" Variant="Variant.Filled" Disabled="@(!context.ReportTabelModel.Any())" Color="Color.Primary" OnClick="@(() => ShowBtnPress(context.InstitutionFrontPageModel.Id))">@((context.ShowAdditionalInfo == true) ? "luk detaljer" : "vis detaljer")</MudButton></MudTd>
 					<MudTd DataLabel="Name">@context.InstitutionFrontPageModel.Name</MudTd>
 					<MudTd DataLabel="Type">@context.InstitutionFrontPageModel.TypeEnum</MudTd>
 					<MudTd DataLabel="Pladser">@(DefinePladser(context.InstitutionFrontPageModel))</MudTd>
@@ -101,14 +101,15 @@
 								  AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
 				</ToolBarContent>
 
-				<HeaderContent>
+				@* <HeaderContent>
 					<MudTh><MudTableSortLabel SortBy="new Func<InstitutionTableModel, object>(x=>x.InstitutionFrontPageModel.Name)">Name</MudTableSortLabel></MudTh>
 					<MudTh><MudTableSortLabel SortBy="new Func<InstitutionFrontPageModel, object>(x=>x.TypeEnum)">Pladser</MudTableSortLabel></MudTh>
-				</HeaderContent>
+				</HeaderContent> *@
 				<RowTemplate>
 					<MudTd DataLabel="Name">@context.InstitutionFrontPageModel.Name</MudTd>
 					<MudTd DataLabel="Pladser">@(DefinePladser(context.InstitutionFrontPageModel))</MudTd>
-					<MudTd><MudButton Class="border-none" Size="Size.Small" Variant="Variant.Filled" Color="Color.Primary" OnClick="@(() => ShowBtnPress(context.InstitutionFrontPageModel.Id))">@((context.ShowAdditionalInfo == true) ? "luk detaljer" : "vis detaljer")</MudButton></MudTd>
+					<MudTd DataLabel="Type">@context.InstitutionFrontPageModel.TypeEnum</MudTd>
+					<MudTd><MudButton Class="border-none" Disabled="@(!context.ReportTabelModel.Any())" Size="Size.Small" Variant="Variant.Filled" Color="Color.Primary" OnClick="@(() => ShowBtnPress(context.InstitutionFrontPageModel.Id))">@((context.ShowAdditionalInfo == true) ? "luk detaljer" : "vis detaljer")</MudButton></MudTd>
 
 				</RowTemplate>
 				<ChildRowContent>
@@ -176,7 +177,8 @@
 		try
 		{
 			var client = new HttpClient();
-			var ts = await client.GetFromJsonAsync<List<InstitutionTableModel>>("https://localhost:7051/api/Institution");
+			var ts = await client.GetFromJsonAsync<List<InstitutionTableModel>>("https://tilsynsrapportapi20240608132021.azurewebsites.net/api/Institution");
+			// var ts = await client.GetFromJsonAsync<List<InstitutionTableModel>>("https://localhost:7051/api/Institution");
 
 			institutions = ts.OrderByDescending(x => x.InstitutionFrontPageModel.TypeEnum).ToArray();
 			searchInstitutions = institutions;

@@ -53,64 +53,71 @@ namespace VuggestueTilsynScraperLib.Scraping
 
             foreach (var firstElement in liElements2)
             {
-
-                Console
-                    .WriteLine(firstElement.Text);
-                try { 
+                _logger.Information($"Counter {counter}");
+				try
+				{
                 //Handle No such element exceprion
-                try { firstElement.Click(); } catch { Console.WriteLine("Error"); continue; }
+                    try { firstElement.Click(); } catch { _logger.Information("Missing element, skipping to next element"); continue; }
 
-                    var institution = director.GetInstitutionFrontPageModel();
-                    //Console.WriteLine(institution.ToString());
-                    //Console.WriteLine();
+                        var institution = director.GetInstitutionFrontPageModel();
 
-                    //Validate institution
-                    if (!Validation.Validation.ValidateInstitutionModel(institution)) {
+                        //Validate institution
+                        if (!Validation.Validation.ValidateInstitutionModel(institution)) {
+                            GoBackToPreveusListPage(d);
+                        };
+
+                        Guid institutionId;
+                        //TODO: Validate by hash of an institution. It should only update in adress name and pladser have updated.
+                        if (_institutionDatabaseModels.Any(x => x.Name == institution.Name))
+                        {
+                            institutionId = _institutionRepository.UpdateInstitution(institution);
+                        }
+                        else
+                        {
+                            institutionId = _institutionRepository.AddInstitution(institution);
+                        }
+
+                        var institutionDBmodel = _institutionRepository.GetInstitutionById(institutionId);
+
+                        if (institutionDBmodel.InstitutionTilsynsRapports.Any())
+                            //TODO: Ensure that report gets the correct report ID. We have to do better Id generation
+                            //Get a query with all the reports
+                            test(institutionDBmodel.Id, institutionDBmodel.InstitutionTilsynsRapports);
+
+
                         GoBackToPreveusListPage(d);
-                    };
-
-                    Guid institutionId;
-                    //TODO: Validate by hash of an institution. It should only update in adress name and pladser have updated.
-                    if (_institutionDatabaseModels.Any(x => x.Name == institution.Name))
-                    {
-                        institutionId = _institutionRepository.UpdateInstitution(institution);
-                    }
-                    else
-                    {
-                        institutionId = _institutionRepository.AddInstitution(institution);
-                    }
-
-                    var institutionDBmodel = _institutionRepository.GetInstitutionById(institutionId);
-
-                    if (institutionDBmodel.InstitutionTilsynsRapports.Any())
-                        //TODO: Ensure that report gets the correct report ID. We have to do better Id generation
-                        //Get a query with all the reports
-                        test(institutionDBmodel.Id, institutionDBmodel.InstitutionTilsynsRapports);
-
-
-                    GoBackToPreveusListPage(d);
-                    counter++;
-                    countingMap.SetCounting(institution.Name);
-                    _logger.Information($"{counter}/{liElements2.Count()} is scraped");
+                        counter++;
+                        countingMap.SetCounting(institution.Name);
+                        _logger.Information($"{counter}/{liElements2.Count()} is scraped");
                     
-                }
-
-                //TODO: Make proper error handling so that we will store relevant errors to the db
-                catch (Exception e) 
-                {
-                    //TODO: Do some logging and store it to db
-                    _logger.Error(string.Format("{0} could not be scraped: Error: {1}", firstElement.Text, e.Message));
-                    _logger.Error("Inner exception: {innerException}",e.InnerException);
-                    try
-                    {
-                        GoBackToPreveusListPage(d);
-
                     }
-                    catch (OpenQA.Selenium.NoSuchElementException selNo)
+
+                    //TODO: Make proper error handling so that we will store relevant errors to the db
+                    catch (Exception e) 
                     {
-                        continue;
-                    }
-                }
+                        try
+                        {
+						    _logger.Error(string.Format("{0} could not be scraped: Error: {1}", firstElement.Text, e.Message));
+
+					    }
+					    catch (WebDriverException)
+                        {
+						    _logger.Error(string.Format("Could not be scraped: Error: {0}", e.Message));
+					    }
+					   
+                        try
+                        {
+                            GoBackToPreveusListPage(d);
+
+                        }
+                        catch (OpenQA.Selenium.NoSuchElementException selNo)
+                        {
+                            continue;
+                        }
+
+					//TODO: Do some logging and store it to db
+					_logger.Error("Inner exception: {innerException}", e.InnerException);
+				}
             }
             Console.WriteLine(string.Format("{0} elements retrived",counter));
             d.Quit();
@@ -129,7 +136,7 @@ namespace VuggestueTilsynScraperLib.Scraping
             //TODO: Ensure that the google map is zoomed out, because when navigating back the map will be zoomed to area where the current institution was located
             Thread.Sleep(1000);
             IWebElement googleZoomOut = d.FindElement(By.CssSelector("button.ol-zoom-out"));
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 5; i++)
             {
                 googleZoomOut.Click();
                 Thread.Sleep(500);
@@ -147,7 +154,7 @@ namespace VuggestueTilsynScraperLib.Scraping
             ChromeOptions options = new ChromeOptions();
             options.AddArgument("--headless"); // Add the headless argument to run Chrome in headless mode.
             options.AddArgument("--disable-gpu");
-            options.AddArguments("--disable-dev-shm-usage");
+            //options.AddArguments("--disable-dev-shm-usage");
             options.AddArguments("--no-sandbox");
             options.AddArgument("--whitelisted-ips=''");
             //options.AddArgument("--ignore-certificate-errors");

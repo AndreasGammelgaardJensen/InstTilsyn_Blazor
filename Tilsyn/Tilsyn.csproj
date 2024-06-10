@@ -10,4 +10,8 @@
     <PackageReference Include="Serilog.Extensions.Hosting" Version="7.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\VuggestueTilsynScraper\VuggestueTilsynScraper.csproj" />
+  </ItemGroup>
+
 </Project>

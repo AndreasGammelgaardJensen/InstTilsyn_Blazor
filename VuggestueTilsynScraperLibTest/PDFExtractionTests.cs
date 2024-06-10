@@ -16,7 +16,7 @@ namespace VuggestueTilsynScraperLibTest
         {
             PDFExtractionPDFText extractor = new PDFExtractionPDFText(null);
 
-            extractor.Extract_Categories("C:/Users/andreas.jensen/source/repos/TilsynVuggestueBlazer/VuggestueTilsyn/VuggestueTilsynScraperLibTest/Resources/Pdf/boernehavenhaabet2015.pdf");
+            extractor.Extract_Categories("C:/Practice/InstTilsyn_Blazor/PDFExtractionLib/TestFiles/2266.pdf");
 
         }
     }
