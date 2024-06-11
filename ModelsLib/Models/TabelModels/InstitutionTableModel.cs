@@ -12,5 +12,6 @@ namespace ModelsLib.Models.TabelModels
         public InstitutionFrontPageModel InstitutionFrontPageModel { get; set; }
         public List<CriteriaModel> CriteriaModel { get; set; }
         public List<ReportTabelModel> ReportTabelModel { get; set; }
+        public double? Distance { get; set; }
 	}
 }

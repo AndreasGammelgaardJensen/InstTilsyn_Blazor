@@ -1,20 +1,27 @@
 ﻿@page "/institutions"
 
 
+@using GeolocationLib
+@using Gravam.Blazor.DeviceInterop.Geolocation
 @using ModelsLib.Models
 @using ModelsLib.Models.TabelModels
 @inject HttpClient Http
+@inject IGeolocationService GeolocationService
 @inject IJSRuntime JS
 <PageTitle>Institutions</PageTitle>
 
 <div style="padding: 20px">
 
-	@if(institutions == null)
+	@if(institutions == null && ErrorMessage == null)
 	{
 		<MudContainer Class="d-flex justify-content-center">
 			<MudProgressCircular Color="Color.Primary" Style="height:70px;width:70px;" Indeterminate="true" />
 
-	</MudContainer>
+		</MudContainer>
+	}
+	else if (ErrorMessage != null)
+	{
+		<MudText Typo="Typo.h6">@ErrorMessage</MudText>
 	}
 	else
 	{
@@ -31,13 +38,15 @@
 					<MudTh></MudTh>
 					<MudTh></MudTh>
 				<MudTh><MudTableSortLabel SortBy="new Func<InstitutionTableModel, object>(x=>x.InstitutionFrontPageModel.Name)">Name</MudTableSortLabel></MudTh>
-					<MudTh><MudTableSortLabel SortBy="new Func<InstitutionFrontPageModel, object>(x=>x.TypeEnum)">Type</MudTableSortLabel></MudTh>
-					<MudTh><MudTableSortLabel SortBy="new Func<InstitutionFrontPageModel, object>(x=>x.TypeEnum)">Pladser</MudTableSortLabel></MudTh>
+					<MudTh><MudTableSortLabel SortBy="new Func<InstitutionTableModel, object>(x=>x.Distance)">Afstand</MudTableSortLabel></MudTh>
+					<MudTh><MudTableSortLabel SortBy="new Func<InstitutionTableModel, object>(x=>(int)x.InstitutionFrontPageModel.TypeEnum)">Type</MudTableSortLabel></MudTh>
+					<MudTh><MudTableSortLabel SortBy="new Func<InstitutionTableModel, object>(x=>x.InstitutionFrontPageModel.pladser.DagplejePladser)">Pladser</MudTableSortLabel></MudTh>
 				</HeaderContent>
 				<RowTemplate>
 					<MudTh></MudTh>
 					<MudTd><MudButton Class="border-none tabelbutton" Size="Size.Small" Variant="Variant.Filled" Disabled="@(!context.ReportTabelModel.Any())" Color="Color.Primary" OnClick="@(() => ShowBtnPress(context.InstitutionFrontPageModel.Id))">@((context.ShowAdditionalInfo == true) ? "luk detaljer" : "vis detaljer")</MudButton></MudTd>
 					<MudTd DataLabel="Name">@context.InstitutionFrontPageModel.Name</MudTd>
+					<MudTh>@(context.Distance) km</MudTh>
 					<MudTd DataLabel="Type">@context.InstitutionFrontPageModel.TypeEnum</MudTd>
 					<MudTd DataLabel="Pladser">@(DefinePladser(context.InstitutionFrontPageModel))</MudTd>
 				</RowTemplate>
@@ -101,14 +110,12 @@
 								  AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
 				</ToolBarContent>
 
-				@* <HeaderContent>
-					<MudTh><MudTableSortLabel SortBy="new Func<InstitutionTableModel, object>(x=>x.InstitutionFrontPageModel.Name)">Name</MudTableSortLabel></MudTh>
-					<MudTh><MudTableSortLabel SortBy="new Func<InstitutionFrontPageModel, object>(x=>x.TypeEnum)">Pladser</MudTableSortLabel></MudTh>
-				</HeaderContent> *@
+			
 				<RowTemplate>
 					<MudTd DataLabel="Name">@context.InstitutionFrontPageModel.Name</MudTd>
 					<MudTd DataLabel="Pladser">@(DefinePladser(context.InstitutionFrontPageModel))</MudTd>
 					<MudTd DataLabel="Type">@context.InstitutionFrontPageModel.TypeEnum</MudTd>
+					<MudTd DataLabel="Afstand">@(context.Distance) km</MudTd>
 					<MudTd><MudButton Class="border-none" Disabled="@(!context.ReportTabelModel.Any())" Size="Size.Small" Variant="Variant.Filled" Color="Color.Primary" OnClick="@(() => ShowBtnPress(context.InstitutionFrontPageModel.Id))">@((context.ShowAdditionalInfo == true) ? "luk detaljer" : "vis detaljer")</MudButton></MudTd>
 
 				</RowTemplate>
@@ -174,23 +181,32 @@
 @code {
 	protected override async Task OnInitializedAsync()
 	{
+		currentPositionResult = await GeolocationService.GetCurrentPosition();
 		try
 		{
 			var client = new HttpClient();
-			var ts = await client.GetFromJsonAsync<List<InstitutionTableModel>>("https://tilsynsrapportapi20240608132021.azurewebsites.net/api/Institution");
-			// var ts = await client.GetFromJsonAsync<List<InstitutionTableModel>>("https://localhost:7051/api/Institution");
+			// var ts = await client.GetFromJsonAsync<List<InstitutionTableModel>>("https://tilsynsrapportapi20240608132021.azurewebsites.net/api/Institution");
+			var ts = await client.GetFromJsonAsync<List<InstitutionTableModel>>("https://localhost:7051/api/Institution");
 
 			institutions = ts.OrderByDescending(x => x.InstitutionFrontPageModel.TypeEnum).ToArray();
+
+			foreach (var inst in institutions)
+			{
+				inst.Distance = GeoCalculationHelper.CalculateDistance(inst.InstitutionFrontPageModel.Koordinates.lat ?? 0.0, inst.InstitutionFrontPageModel.Koordinates.lng ?? 0.0, currentPositionResult.Position.Coords.Latitude, currentPositionResult.Position.Coords.Longitude);
+			}
+
 			searchInstitutions = institutions;
 
 		}
 		catch (Exception ex)
 		{
+			ErrorMessage = ex.Message;
 			Console.WriteLine(ex);
 		}
 	}
-
-
+	 
+	private static string ErrorMessage { get; set; } = null;
+	private static Gravam.Blazor.DeviceInterop.Geolocation.GeolocationResult currentPositionResult { get; set; }
 	private static IEnumerable<InstitutionTableModel> institutions { get; set; }
 	private static IEnumerable<InstitutionTableModel> searchInstitutions { get; set; }
 	private string searchString = null;
@@ -243,5 +259,4 @@
 
 		return true;
 	}
-
 }
