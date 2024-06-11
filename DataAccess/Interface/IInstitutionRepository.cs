@@ -13,8 +13,9 @@ namespace DataAccess.Interfaces
         public Guid AddInstitution(InstitutionFrontPageModel institution);
         public Guid UpdateInstitution(InstitutionFrontPageModel institution);
         public InstitutionFrontPageModel GetInstitutionById(Guid institutionId);
+		public List<InstitutionFrontPageModel> GetInstitutions();
 
-        public void Test();
+		public void Test();
 
     }
 }

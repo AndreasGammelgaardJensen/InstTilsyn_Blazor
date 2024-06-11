@@ -10,8 +10,8 @@ namespace ModelsLib.Models
     {
         public Guid Id { get; set; }
 
-        public decimal? lat { get; set; }
+        public double? lat { get; set; }
 
-        public decimal? lng { get; set; }
+        public double? lng { get; set; }
     }
 }

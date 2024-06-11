@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GeolocationLib\GeolocationLib.csproj" />
     <ProjectReference Include="..\ModelsLib\ModelsLib.csproj" />
   </ItemGroup>
 

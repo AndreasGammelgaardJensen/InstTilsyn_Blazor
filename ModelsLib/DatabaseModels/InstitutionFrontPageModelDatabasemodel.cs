@@ -15,7 +15,7 @@ namespace ModelsLib.DatabaseModels
         public string? homePage { get; set; }
         public string? profile { get;set; }
         public List<InstitutionTilsynsRapportDatabasemodel> InstitutionTilsynsRapports { get; set; }
-        public InstKoordinatesDatabasemodel ? Koordinates { get; set; }
+        public InstKoordinatesDatabasemodel? Koordinates { get; set; }
     }
 
 }

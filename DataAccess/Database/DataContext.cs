@@ -11,12 +11,15 @@ namespace DataAccess.Database
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseSqlServer(@"Server=localhost.,1433;Database=InstitutionTestDb;Trusted_Connection=True;");
-            //optionsBuilder.UseSqlServer(@"Data Source=InstitutionDB,1433;Initial Catalog=InstitutionDB;User ID=SA;Password=And12345;TrustServerCertificate=True;");
-            //optionsBuilder.UseSqlServer(@"Data Source=localhost,1433;Initial Catalog=InstitutionDB;User ID=SA;Password=And12345;TrustServerCertificate=True;");
+            if (!optionsBuilder.IsConfigured)
+            {
+                //optionsBuilder.UseSqlServer(@"Server=localhost.,1433;Database=InstitutionTestDb;Trusted_Connection=True;");
+                //optionsBuilder.UseSqlServer(@"Data Source=InstitutionDB,1433;Initial Catalog=InstitutionDB;User ID=SA;Password=And12345;TrustServerCertificate=True;");
+                //optionsBuilder.UseSqlServer(@"Data Source=localhost,1433;Initial Catalog=InstitutionDB;User ID=SA;Password=And12345;TrustServerCertificate=True;");			}
+            }
         }
 
-        public IQueryable<TDatabaseModel> Get<TDatabaseModel>() where TDatabaseModel : class
+		public IQueryable<TDatabaseModel> Get<TDatabaseModel>() where TDatabaseModel : class
         {
             return base.Set<TDatabaseModel>().AsNoTracking().AsQueryable();
         }
@@ -37,12 +40,14 @@ namespace DataAccess.Database
 
             modelBuilder.Entity<CategoriClass>()
                 .HasKey(a => a.Id);
-
-
-        }
+		}
 
         public DbSet<InstitutionFrontPageModelDatabasemodel> InstitutionFrontPageModel => Set<InstitutionFrontPageModelDatabasemodel>();
         public DbSet<InstitutionReportCriterieaDatabasemodel> InstitutionReportCriterieaDatabasemodel => Set<InstitutionReportCriterieaDatabasemodel>();
+		public DbSet<AddressDatabasemodel> AddressDatabasemodel => Set<AddressDatabasemodel>();
+        public DbSet<InstKoordinatesDatabasemodel> InstKoordinatesDatabasemodel => Set<InstKoordinatesDatabasemodel>();
+
+
 
     }
 }

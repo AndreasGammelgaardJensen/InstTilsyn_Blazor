@@ -9,7 +9,7 @@ using Serilog;
 
 namespace DataAccess.Repositories
 {
-    public class InstitutionRepository : IInstitutionRepository
+	public class InstitutionRepository : IInstitutionRepository
     {
         private readonly DataContext _dbContext;
         private readonly ILogger _logger;
@@ -131,7 +131,56 @@ namespace DataAccess.Repositories
 
         }
 
-        public void Test()
+		public List<InstitutionFrontPageModel> GetInstitutions()
+		{
+			var institutionDbModel = _dbContext.InstitutionFrontPageModel.Include(x => x.pladser).Include(x => x.InstitutionTilsynsRapports).Include(x => x.Koordinates).Include(x => x.address).ToList();
+
+
+            var institutionProntPageModelList = new List<InstitutionFrontPageModel>();
+
+            institutionDbModel.ForEach(repDbModel => {
+                var institutionFPM = new InstitutionFrontPageModel();
+
+                institutionFPM.Id = repDbModel.Id;
+                institutionFPM.profile = repDbModel.profile;
+                institutionFPM.InstitutionTilsynsRapports = new List<InstitutionTilsynsRapport>();
+
+				repDbModel.InstitutionTilsynsRapports.ForEach(rapDbModel =>
+                {
+                    institutionFPM.InstitutionTilsynsRapports.Add(new InstitutionTilsynsRapport
+                    {
+                        Id = rapDbModel.Id,
+                        fileUrl = rapDbModel.fileUrl,
+                        hash = rapDbModel.hash,
+                        documentType = rapDbModel.documentType,
+                        copyDate = rapDbModel.copyDate,
+                        Name = rapDbModel.Name
+                    });
+                });
+
+                institutionFPM.address = new Address
+                {
+                    City = repDbModel.address.City,
+                    Number = repDbModel.address.Number,
+                    Id = repDbModel.address.Id,
+                    Zip_code = repDbModel.address.Zip_code,
+                    Vej = repDbModel.address.Vej,
+                };
+
+				institutionFPM.Koordinates = new InstKoordinates
+				{
+					lat = repDbModel.Koordinates.lat,
+					lng = repDbModel.Koordinates.lng,
+					Id = repDbModel.Koordinates.Id,
+				};
+
+                institutionProntPageModelList.Add(institutionFPM);
+			});
+
+			return institutionProntPageModelList;
+		}
+
+		public void Test()
         {
             throw new NotImplementedException();
         }
