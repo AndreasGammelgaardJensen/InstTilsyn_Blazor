@@ -46,7 +46,7 @@ static IHostBuilder CreateHostBuilder(string[] args)
             services.AddDbContextFactory<DataContext>(options =>
             {
                 options.EnableSensitiveDataLogging(false);
-                options.UseSqlServer(configuration.GetConnectionString("SQLConnectionString"));
+                options.UseSqlServer(configuration.GetConnectionString("SQLConnectionString"), options => options.EnableRetryOnFailure());
 
             });
 
