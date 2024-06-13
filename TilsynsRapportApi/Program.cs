@@ -14,7 +14,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContextFactory<DataContext>(options =>
 {
     options.EnableSensitiveDataLogging(false);
-    options.UseSqlServer("Data Source=localhost,1433;Initial Catalog=InstitutionDB;User ID=SA;Password=And12345;TrustServerCertificate=True;", options => options.EnableRetryOnFailure().CommandTimeout(60));
+    options.UseSqlServer("Server=tcp:bgserverinst.database.windows.net,1433;Initial Catalog=inst-db-report;Persist Security Info=False;User ID=andreasbgjensen;Password=Firma2018;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;", options => options.EnableRetryOnFailure().CommandTimeout(60));
 
 });
 builder.Services.AddTransient<DataAccess.Interface.IInstitutionTableRepository, InstitutionTabelReporisory>();

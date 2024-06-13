@@ -14,34 +14,47 @@ namespace GeolocationLib.Google
 		{
 			koordinateResult.ForEach(result =>
 			{
-				var streetName = result.AddressComponents.Where(x=>x.Types.Contains("route"));
-				var streetNumber = result.AddressComponents.Where(x => x.Types.Contains("street_number"));
 
-				switch (streetName.Count()) {
-					case 0:
-						{
-							break;
-						}	
-					case 1: {
-							var address = streetName.FirstOrDefault()?.LongName.ToLower();
+				try
+				{
 
-							var number = streetNumber.FirstOrDefault()?.LongName.ToLower();
+					var streetName = result.AddressComponents.Where(x => x.Types.Contains("route"));
+					var streetNumber = result.AddressComponents.Where(x => x.Types.Contains("street_number"));
 
-							var inst = institutionModels.SingleOrDefault(x => x.address.Vej.ToLower() == address || (x.address.Number.ToLower() == number && x.address.Vej.ToLower() == number));
-							if(inst is not null)
+					switch (streetName.Count())
+					{
+						case 0:
 							{
-								var latKoordinate = result.Geometry.Location.Lat;
-								var lngKoordinate = result.Geometry.Location.Lng;
-
-								inst.Koordinates.lat = latKoordinate;
-								inst.Koordinates.lng = lngKoordinate;
+								break;
 							}
-							
-							break; }
+						case 1:
+							{
+								var address = streetName.FirstOrDefault()?.LongName.ToLower();
 
-					default: { break; }
+								var number = streetNumber.FirstOrDefault()?.LongName.ToLower();
+
+								var inst = institutionModels.SingleOrDefault(x =>string.Equals(x.address.Number??"", number, StringComparison.OrdinalIgnoreCase)  && string.Equals(x.address.Vej ?? "", address, StringComparison.OrdinalIgnoreCase));
+								if (inst is not null)
+								{
+									var latKoordinate = result.Geometry.Location.Lat;
+									var lngKoordinate = result.Geometry.Location.Lng;
+
+									inst.Koordinates.lat = latKoordinate;
+									inst.Koordinates.lng = lngKoordinate;
+								}
+
+								break;
+							}
+
+						default: { break; }
+					}
+
+				}catch (Exception ex)
+				{
+
+					Console.WriteLine("Skipping ResultSet");
 				}
-			});
+				});
 			return institutionModels;
 		}
 	}

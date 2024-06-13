@@ -30,7 +30,7 @@ namespace PDFExtractionLib.Handlers
                         using (var contentStream = await response.Content.ReadAsStreamAsync())
 
 
-                        using (var fileStream = System.IO.File.Create(string.Join("", filepath, "/", filename)))
+                        using (var fileStream = System.IO.File.Create(filepath))
                         {
                             await contentStream.CopyToAsync(fileStream);
                         }

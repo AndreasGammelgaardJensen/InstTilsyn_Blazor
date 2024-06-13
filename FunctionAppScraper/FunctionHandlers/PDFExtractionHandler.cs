@@ -1,4 +1,5 @@
-﻿using CoreInfrastructure.MessageBroker;
+﻿using Azure;
+using CoreInfrastructure.MessageBroker;
 using CoreInfrastructure.Services.BlobServices;
 using DataAccess.Database;
 using Microsoft.EntityFrameworkCore;
@@ -38,7 +39,7 @@ namespace FunctionAppScraper.FunctionHandlers
             {
 
                 var contextOptions = new DbContextOptionsBuilder<DataContext>()
-                    .UseSqlServer(Environment.GetEnvironmentVariable("SQLConnectionString"))
+                    .UseSqlServer(Environment.GetEnvironmentVariable("SQLConnectionString"), options=>options.EnableRetryOnFailure())
                     .Options;
 
                 using var _context = new DataContext(contextOptions);
@@ -46,17 +47,22 @@ namespace FunctionAppScraper.FunctionHandlers
                 IDownloadFile downLoadFile = new DownloadFileHandler(new HttpClient(), _logger);
                 IPDFExtraction pdfExtractor = new PDFExtractionPDFText(_logger);
 
-                if (_context.InstitutionReportCriterieaDatabasemodel.Any(x => x.ReportId == pdfExtractionModel.id)) return true;
+                if (_context.InstitutionReportCriterieaDatabasemodel.Any(x => x.ReportId == pdfExtractionModel.id))
+                {
+					_logger.Information($"Report {pdfExtractionModel.id} already Exist");
+					return true;
 
-                var filePath = Directory.GetCurrentDirectory();
+				}
+
+				var filePath = Path.GetTempPath();
                 _logger.Debug("File path: {filepath}", filePath);
                 var filename = pdfExtractionModel.id.ToString() + "." + pdfExtractionModel.documentExtention;
                 var fullPath = string.Join("", filePath, "/", filename);
-                var file = await downLoadFile.DownloadFile(filePath, filename, pdfExtractionModel.downloadUrl);
+                var file = await downLoadFile.DownloadFile(fullPath, filename, pdfExtractionModel.downloadUrl);
 
                 if (file != null )
                 {
-                    await ExtractCathegoriesFromPDFAndPersistInDB(pdfExtractionModel, _context, pdfExtractor, fullPath);
+                    await ExtractCathegoriesFromPDFAndPersistInDB(pdfExtractionModel, _context, pdfExtractor, fullPath, _logger);
                     await UploadToBLobAndDeleteLocalFile(filename, fullPath, file);
 
                     return true;
@@ -72,8 +78,9 @@ namespace FunctionAppScraper.FunctionHandlers
             }
         }
 
-        private static async Task ExtractCathegoriesFromPDFAndPersistInDB(TilsynsRapportToExtraxtModel pdfExtractionModel, DataContext _context, IPDFExtraction pdfExtractor, string fullPath)
+        private static async Task ExtractCathegoriesFromPDFAndPersistInDB(TilsynsRapportToExtraxtModel pdfExtractionModel, DataContext _context, IPDFExtraction pdfExtractor, string fullPath, ILogger logger)
         {
+			logger.Information("Extracting File Nontent");
             Dictionary<string, string> test = null;
             using (FileStream fileStream = new FileStream(fullPath, FileMode.Open, FileAccess.Read))
             {
@@ -110,13 +117,24 @@ namespace FunctionAppScraper.FunctionHandlers
 
         private async Task UploadToBLobAndDeleteLocalFile(string filename, string fullPath, string content)
         {
-            using (FileStream fileStream = new FileStream(fullPath, FileMode.Open, FileAccess.Read))
+            try
             {
-                await _blobService.UploadBlob(filename, fileStream, Environment.GetEnvironmentVariable("FileStorageContainer"), content);
+                using (FileStream fileStream = new FileStream(fullPath, FileMode.Open, FileAccess.Read))
+                {
+                    await _blobService.UploadBlob(filename, fileStream, Environment.GetEnvironmentVariable("FileStorageContainer"), content);
+                }
             }
+			catch (RequestFailedException ex) {
+                throw;
+            }
+            finally
+            {
+				File.Delete(fullPath);
 
-            File.Delete(fullPath);
-        }
+			}
+			
+
+		}
     }
 }
 

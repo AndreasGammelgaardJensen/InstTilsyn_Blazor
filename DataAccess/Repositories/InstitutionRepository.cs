@@ -55,6 +55,7 @@ namespace DataAccess.Repositories
                     Vej = institution.address.Vej,
                     City = institution.address.City,
                     Zip_code = institution.address.Zip_code,
+                    Number = institution.address.Number,
                 };
             institutionDbModel.TypeEnum = institution.TypeEnum;
             institutionDbModel.CreatedAt = DateTime.Now;
@@ -81,7 +82,7 @@ namespace DataAccess.Repositories
 
                 });
             }
-            
+
             institutionDbModel.Koordinates = new InstKoordinatesDatabasemodel
             {
                 Id = Guid.NewGuid(),
@@ -89,6 +90,7 @@ namespace DataAccess.Repositories
                 LastChangedAt = DateTime.Now,
                 lat = institution.Koordinates.lat,
                 lng = institution.Koordinates.lng,
+                Try = 0
             };
 
             //_dbContext.InstKoordinatesDatabasemodels.Add(institutionDbModel.Koordinates);
@@ -172,6 +174,7 @@ namespace DataAccess.Repositories
 					lat = repDbModel.Koordinates.lat,
 					lng = repDbModel.Koordinates.lng,
 					Id = repDbModel.Koordinates.Id,
+                    Try = repDbModel.Koordinates.Try
 				};
 
                 institutionProntPageModelList.Add(institutionFPM);

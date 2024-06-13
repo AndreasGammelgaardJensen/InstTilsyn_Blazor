@@ -8,6 +8,7 @@ using Microsoft.Azure.Functions.Worker;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore;
 using ModelsLib.Models;
+using ModelsLib.ResponseModels;
 using Serilog;
 
 namespace GeocodingFunction
@@ -36,7 +37,7 @@ namespace GeocodingFunction
             _logger.Information($"C# Timer trigger function executed at: {DateTime.Now}");
 
 			var instDb = _institutionRepository.GetInstitutions();
-			var institutions = instDb.Where(x=>x.Koordinates.lat == null || x.Koordinates.lng == null).ToList();
+			var institutions = instDb.Where(x=>(x.Koordinates.lat == null || x.Koordinates.lng == null) && x.Koordinates.Try <= 3).ToList();
 
 			if (!institutions.Any())
 			{
@@ -48,16 +49,28 @@ namespace GeocodingFunction
 			var updateList = new List<InstitutionFrontPageModel>();
 
 
+			var handbreak = 0;
+
 			while (institutions.Any())
 			{
+				if (handbreak == 600)
+				{
+					_logger.Warning("STOPPING DUE TO HANDBREAK");
+					return;
+				}
+
 				var instForUpdate = institutions.Take(_batch_size).ToList();
 				var addresses = instForUpdate.Select(inst => inst.address).ToList();
 
 				var response = await _googleGeplocationService.GetKoordinatesFromAddressesAsync(addresses);
 
-				var updatedKoortInst = LocationMapper.MapKoordinatesToInstitutions(response.Results, instForUpdate);
+				var updatedKoortInst = LocationMapper.MapKoordinatesToInstitutions(response?.Results, instForUpdate);
+				
+				updatedKoortInst.ForEach(x => x.Koordinates.Try += 1);
 				updateList.AddRange(updatedKoortInst);
 				institutions = institutions.Skip(_batch_size).ToList();
+
+				handbreak += _batch_size;
 			}
 
 			_kordinateRepository.UpdateKoordinateRange(updateList.Select(inst => inst.Koordinates).ToList());

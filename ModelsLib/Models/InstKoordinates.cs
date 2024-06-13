@@ -13,5 +13,7 @@ namespace ModelsLib.Models
         public double? lat { get; set; }
 
         public double? lng { get; set; }
+
+        public int Try { get; set; }
     }
 }

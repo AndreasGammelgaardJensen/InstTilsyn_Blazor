@@ -185,8 +185,8 @@
 		try
 		{
 			var client = new HttpClient();
-			// var ts = await client.GetFromJsonAsync<List<InstitutionTableModel>>("https://tilsynsrapportapi20240608132021.azurewebsites.net/api/Institution");
-			var ts = await client.GetFromJsonAsync<List<InstitutionTableModel>>("https://localhost:7051/api/Institution");
+			var ts = await client.GetFromJsonAsync<List<InstitutionTableModel>>("https://tilsynsrapportapi20240608132021.azurewebsites.net/api/Institution");
+			// var ts = await client.GetFromJsonAsync<List<InstitutionTableModel>>("https://localhost:7051/api/Institution");
 
 			institutions = ts.OrderByDescending(x => x.InstitutionFrontPageModel.TypeEnum).ToArray();
 

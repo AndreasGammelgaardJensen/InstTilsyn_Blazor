@@ -160,9 +160,7 @@ namespace VuggestueTilsynScraperLib.Scraping
             //options.AddArgument("--ignore-certificate-errors");
             //options.AddArgument("--remote-debugging-port=9222");
 
-
-
-            new DriverManager().SetUpDriver(new ChromeConfig());
+			new DriverManager().SetUpDriver(new ChromeConfig());
             IWebDriver d = runHeadless ? new ChromeDriver(options) : new ChromeDriver();
 
             d.Navigate().GoToUrl(baseUrl);

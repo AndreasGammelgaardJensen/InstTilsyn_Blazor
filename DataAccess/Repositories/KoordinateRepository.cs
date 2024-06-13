@@ -29,6 +29,7 @@ namespace DataAccess.Repositories
 				x.lng = instKoordinatesmodel.lng;
 				x.lat = instKoordinatesmodel.lat;
 				x.LastChangedAt = DateTime.Now;
+				x.Try = instKoordinatesmodel.Try;
 			});
 
 			_dbContext.SaveChanges();
