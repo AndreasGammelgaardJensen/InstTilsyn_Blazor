@@ -43,7 +43,8 @@ namespace TilsynsRapportApi.Repositories
                     .Include(insfp => insfp.InstitutionTilsynsRapports)
                     .Include(insfp => insfp.Koordinates)
                     .Include(insfp => insfp.address)
-                    .ToListAsync();
+                    .Include(insfp => insfp.ContactDatabasemodel)
+					.ToListAsync();
 
 
                 stopWatch.Stop();
@@ -89,7 +90,18 @@ namespace TilsynsRapportApi.Repositories
                         };
                     }
 
-                    var repports = new List<ReportTabelModel>();
+					if (inst.ContactDatabasemodel != null)
+					{
+						instPageModel.Contact = new Contact
+						{
+							Id = inst.ContactDatabasemodel.Id,
+							HomePage = inst.ContactDatabasemodel.HomePage,
+							Email = inst.ContactDatabasemodel.Email,
+							Phone = inst.ContactDatabasemodel.Phone
+						};
+					}
+
+					var repports = new List<ReportTabelModel>();
 
                     if (inst.InstitutionTilsynsRapports.Any())
                     {

@@ -61,7 +61,14 @@
 								<MudCard Elevation="0" Class="child">
 					<MudCardHeader>
 					<CardHeaderContent>
-					<MudText Typo="Typo.body1"><strong>Indsatser </strong></MudText>
+						<div class="d-flex justify-content-between">
+							<MudText Typo="Typo.body1"><strong>@context.InstitutionFrontPageModel.Contact.Email </strong></MudText>
+							<MudText Typo="Typo.body1"><strong>@context.InstitutionFrontPageModel.Contact.Phone </strong></MudText>
+							<MudText Typo="Typo.body1"><strong><a target="_blank" href="https://@context.InstitutionFrontPageModel.Contact.HomePage">@context.InstitutionFrontPageModel.Contact.HomePage</a> </strong></MudText>
+						</div>
+						<MudText Typo="Typo.body1"><strong>Indsatser </strong></MudText>
+
+							
 					</CardHeaderContent>
 					</MudCardHeader>
 						<MudCardContent Class="pa-0 child">
@@ -125,6 +132,15 @@
 						<MudTr>
 							<td colspan="8">
 								<MudCard Elevation="0" Class="child">
+									<MudCardHeader>
+										<CardHeaderContent>
+												<MudText Typo="Typo.body1"><strong>@context.InstitutionFrontPageModel.Contact.Email </strong></MudText>
+												<MudText Typo="Typo.body1"><strong>@context.InstitutionFrontPageModel.Contact.Phone </strong></MudText>
+											<MudText Typo="Typo.body1"><strong><a target="_blank" href="https://@context.InstitutionFrontPageModel.Contact.HomePage">@context.InstitutionFrontPageModel.Contact.HomePage</a> </strong></MudText>
+												<MudText Typo="Typo.body1"><strong>Indsatser </strong></MudText>
+												<br />
+										</CardHeaderContent>
+									</MudCardHeader>
 									<MudCardContent Class="pa-0">
 										<MudTable Items="@context.ReportTabelModel" Context="Rapport" Hover="true" Elevation="0" Class="child">
 										<RowTemplate>
@@ -185,8 +201,8 @@
 		try
 		{
 			var client = new HttpClient();
-			var ts = await client.GetFromJsonAsync<List<InstitutionTableModel>>("https://tilsynsrapportapi20240608132021.azurewebsites.net/api/Institution");
-			// var ts = await client.GetFromJsonAsync<List<InstitutionTableModel>>("https://localhost:7051/api/Institution");
+			// var ts = await client.GetFromJsonAsync<List<InstitutionTableModel>>("https://tilsynsrapportapi20240608132021.azurewebsites.net/api/Institution");
+			var ts = await client.GetFromJsonAsync<List<InstitutionTableModel>>("https://localhost:7051/api/Institution");
 
 			institutions = ts.OrderByDescending(x => x.InstitutionFrontPageModel.TypeEnum).ToArray();
 
