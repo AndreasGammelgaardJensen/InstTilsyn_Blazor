@@ -13,7 +13,7 @@ namespace VuggestueTilsynScraperLib.Interfaces
         public Address BuildAdress();
         public Pladser BuildPladser();
         public InstitutionTilsynsRapport BuildInstitutionTilsynsRapport();
-
         public InstKoordinates BuildInstitutionCoordinates();
-    }
+        public Contact BuildInstitutionContact();
+	}
 }

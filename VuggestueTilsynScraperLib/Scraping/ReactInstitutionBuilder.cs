@@ -8,6 +8,7 @@ using VuggestueTilsynScraperLib.Interfaces;
 using VuggestueTilsynScraperLib.Security;
 using OpenQA.Selenium;
 using AngleSharp.Dom;
+using ModelsLib.DatabaseModels;
 
 namespace VuggestueTilsynScraperLib.Scraping
 {
@@ -30,7 +31,7 @@ namespace VuggestueTilsynScraperLib.Scraping
                 //Console.WriteLine(add.Text);
                 return Address.ConvertStringToAddress(add.Text);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 throw new Exception("Adress could not be scraped");
             }
@@ -48,12 +49,13 @@ namespace VuggestueTilsynScraperLib.Scraping
             {
                 try
                 {
-                //Select name
+                    //Select name
                     IWebElement contentPanel = _webDriver.FindElement(By.ClassName("c-content-cell-1"));
 
                     name = contentPanel.FindElement(By.TagName("h2")).Text;
 
-                }catch(Exception e)
+                }
+                catch (Exception e)
                 {
                     throw new Exception("Could not select Name");
                 }
@@ -66,8 +68,9 @@ namespace VuggestueTilsynScraperLib.Scraping
                     IWebElement infoContent = _webDriver.FindElements(By.CssSelector(".c-data-list")).First();
                     ReadOnlyCollection<IWebElement> info = infoContent.FindElements(By.CssSelector(".c-data-list > dd > a"));
                     homePage = info.Last().GetAttribute("href");
-                        //Console.WriteLine(homePage);
-                }catch (Exception e)
+                    //Console.WriteLine(homePage);
+                }
+                catch (Exception e)
                 {
                     _logger.Warning("Could not Select homePage");
                 }
@@ -108,9 +111,9 @@ namespace VuggestueTilsynScraperLib.Scraping
             }
             catch (Exception e)
             {
-                throw new Exception(string.Format("Base information could not be retreved: {0}",e.Message));
+                throw new Exception(string.Format("Base information could not be retreved: {0}", e.Message));
             }
-           
+
         }
 
         public Pladser BuildPladser()
@@ -184,7 +187,7 @@ namespace VuggestueTilsynScraperLib.Scraping
                 };
 
             }
-            catch(Exception e) 
+            catch (Exception e)
             {
                 _logger.Information("Contains no report");
                 return new InstitutionTilsynsRapport();
@@ -205,6 +208,64 @@ namespace VuggestueTilsynScraperLib.Scraping
             var urlList = url.Split(".");
 
             return urlList.Last();
+        }
+
+        public Contact BuildInstitutionContact()
+        {
+            try
+            {
+                IWebElement element = _webDriver.FindElement(By.XPath("//*[@id='widget-tabpanel-popup']/div/div/div[2]/div[1]/dl[1]"));
+
+                string tlf = null;
+				string email = null; 
+                string homePage = null;
+
+
+				try
+                {
+					email = element.FindElement(By.XPath("//*/div/div/div[2]/div[1]/dl[1]/dd[2]/a")).Text;
+
+				}catch (NoSuchElementException e) {
+					_logger.Warning("No email Found");
+				}
+
+				try
+				{
+					tlf = element.FindElement(By.XPath("//*/div/div/div[2]/div[1]/dl[1]/dd[1]/a")).Text;
+				}
+				catch (NoSuchElementException e)
+				{
+					_logger.Warning("No Phone Found");
+
+				}
+				
+                try
+				{
+					homePage = element.FindElement(By.XPath("//*/div/div/div[2]/div[1]/dl[1]/dd[3]/a")).Text;
+
+				}
+				catch (NoSuchElementException e)
+				{
+					_logger.Warning("No HomePage Found");
+
+				}
+
+				//Console.WriteLine(element.Text);
+
+				return new Contact
+                {
+                    Id = Guid.NewGuid(),
+                    Email = email, 
+                    HomePage = homePage,
+                    Phone = tlf,
+                };
+
+            }
+            catch (Exception e)
+            {
+                _logger.Information("No contact Found");
+                return new Contact();
+            }
         }
     }
 }

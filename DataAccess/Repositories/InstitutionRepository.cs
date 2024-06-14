@@ -93,12 +93,23 @@ namespace DataAccess.Repositories
                 Try = 0
             };
 
-            //_dbContext.InstKoordinatesDatabasemodels.Add(institutionDbModel.Koordinates);
-            //_dbContext.InstitutionTilsynsRapportDatabasemodels.AddRange(institutionDbModel.InstitutionTilsynsRapports);
-            //_dbContext.PladserDatabaseModel.Add(institutionDbModel.pladser);
-            //_dbContext.PladserDatabaseModel.Add(institutionDbModel.pladser);
-            //_dbContext.AddressDatabaseModel.Add(institutionDbModel.address);
-            _dbContext.InstitutionFrontPageModel.Add(institutionDbModel);
+
+            institutionDbModel.ContactDatabasemodel = new ContactDatabasemodel
+            {
+                Id = Guid.NewGuid(),
+                CreatedAt = DateTime.Now,
+                LastChangedAt = DateTime.Now,
+                Phone = institution.Contact.Phone,
+                Email = institution.Contact.Email,
+                HomePage = institution.Contact.HomePage,
+            };
+
+			//_dbContext.InstKoordinatesDatabasemodels.Add(institutionDbModel.Koordinates);
+			//_dbContext.InstitutionTilsynsRapportDatabasemodels.AddRange(institutionDbModel.InstitutionTilsynsRapports);
+			//_dbContext.PladserDatabaseModel.Add(institutionDbModel.pladser);
+			//_dbContext.PladserDatabaseModel.Add(institutionDbModel.pladser);
+			//_dbContext.AddressDatabaseModel.Add(institutionDbModel.address);
+			_dbContext.InstitutionFrontPageModel.Add(institutionDbModel);
 
             _dbContext.SaveChanges();
             _logger.Information("{institution} Added to database", institution.Name);
@@ -177,7 +188,15 @@ namespace DataAccess.Repositories
                     Try = repDbModel.Koordinates.Try
 				};
 
-                institutionProntPageModelList.Add(institutionFPM);
+
+				institutionFPM.Contact = new Contact
+				{
+					Phone = repDbModel.ContactDatabasemodel.Phone,
+					HomePage = repDbModel.ContactDatabasemodel.HomePage,
+					Email = repDbModel.ContactDatabasemodel.Email,
+				};
+
+				institutionProntPageModelList.Add(institutionFPM);
 			});
 
 			return institutionProntPageModelList;
@@ -191,32 +210,34 @@ namespace DataAccess.Repositories
         public Guid UpdateInstitution(InstitutionFrontPageModel institution)
         {
             _logger.Information("Updating {institution} in database", institution.Name);
-            var institutionDbModel = _dbContext.InstitutionFrontPageModel.Include(x=> x.pladser).Include(x=>x.InstitutionTilsynsRapports).Include(x=>x.Koordinates).Include(x=>x.address).SingleOrDefault(x => x.Name == institution.Name);
+            var institutionDbModel = _dbContext.InstitutionFrontPageModel.Include(x=> x.pladser).Include(x=>x.InstitutionTilsynsRapports).Include(x=>x.Koordinates).Include(x=>x.address).Include(x => x.ContactDatabasemodel).SingleOrDefault(x => x.Name == institution.Name);
             
             institutionDbModel.profile = institution.profile;
             institutionDbModel.homePage = institution.HomePage;
 
             //Update pladser
-            var pladser = institutionDbModel.pladser;
-            if (pladser.VuggestuePladser != institution.pladser.VuggestuePladser)
+            if(institution.pladser is not null)
             {
-                _logger.Information("Vuggestuepladser updatet from {old} to {new}", pladser.VuggestuePladser, institution.pladser.VuggestuePladser);
-            }else if(pladser.BoernehavePladser != institution.pladser.BoernehavePladser)
-            {
-                _logger.Information("BoernehavePladser updatet from {old} to {new}", pladser.BoernehavePladser, institution.pladser.BoernehavePladser);
-            }
-            else if (pladser.DagplejePladser != institution.pladser.DagplejePladser)
-            {
-                _logger.Information("DagplejePladser updatet from {old} to {new}", pladser.DagplejePladser, institution.pladser.DagplejePladser);
-            }
+				var pladser = institutionDbModel.pladser;
+				if (pladser.VuggestuePladser != institution.pladser.VuggestuePladser)
+				{
+					_logger.Information("Vuggestuepladser updatet from {old} to {new}", pladser.VuggestuePladser, institution.pladser.VuggestuePladser);
+				}
+				else if (pladser.BoernehavePladser != institution.pladser.BoernehavePladser)
+				{
+					_logger.Information("BoernehavePladser updatet from {old} to {new}", pladser.BoernehavePladser, institution.pladser.BoernehavePladser);
+				}
+				else if (pladser.DagplejePladser != institution.pladser.DagplejePladser)
+				{
+					_logger.Information("DagplejePladser updatet from {old} to {new}", pladser.DagplejePladser, institution.pladser.DagplejePladser);
+				}
 
-            pladser.LastChangedAt = DateTime.Now;
-            pladser.VuggestuePladser = institution.pladser.VuggestuePladser;
-            pladser.BoernehavePladser = institution.pladser.BoernehavePladser;
-            pladser.DagplejePladser = institution.pladser.DagplejePladser;
-
+				pladser.LastChangedAt = DateTime.Now;
+				pladser.VuggestuePladser = institution.pladser.VuggestuePladser;
+				pladser.BoernehavePladser = institution.pladser.BoernehavePladser;
+				pladser.DagplejePladser = institution.pladser.DagplejePladser;
+			}
             
-
             //Update Tilsynsrapporter
             var tilsynsrapporter = institutionDbModel.InstitutionTilsynsRapports;
             var dbResHash = tilsynsrapporter.Select(selector => selector.hash).ToList();
@@ -257,7 +278,30 @@ namespace DataAccess.Repositories
             koordinates.lat = institution.Koordinates.lat;
             koordinates.lng = institution.Koordinates.lng;
 
-            _dbContext.Update(institutionDbModel);
+
+			//Update Contact
+			var contact = institutionDbModel.ContactDatabasemodel;
+            if(contact == null)
+            {
+				contact = new ContactDatabasemodel{
+                    Id = Guid.NewGuid(),
+                    LastChangedAt = DateTime.Now,
+                    CreatedAt = DateTime.Now,
+					HomePage = institution.Contact.HomePage,
+				    Phone = institution.Contact.Phone,
+				    Email = institution.Contact.Email,
+			};
+				institutionDbModel.ContactDatabasemodel = contact;
+                _dbContext.ContactDatabasemodel.Add(contact);
+			}else
+            {
+				contact.HomePage = institution.Contact.HomePage;
+				contact.Phone = institution.Contact.Phone;
+				contact.Email = institution.Contact.Email;
+				contact.LastChangedAt = DateTime.Now;
+			}
+
+			_dbContext.Update(institutionDbModel);
             _dbContext.SaveChanges();
             _logger.Information("{institution} Updated in database", institution.Name);
 

@@ -4,6 +4,7 @@ using DataAccess.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20240613084929_ContactsTODb")]
+    partial class ContactsTODb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -85,26 +88,23 @@ namespace DataAccess.Migrations
 
             modelBuilder.Entity("ModelsLib.DatabaseModels.ContactDatabasemodel", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("HomePage")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("LastChangedAt")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("Phone")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("ID");
 
                     b.ToTable("ContactDatabasemodel");
                 });
@@ -141,7 +141,7 @@ namespace DataAccess.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("ContactDatabasemodelId")
+                    b.Property<Guid>("ContactDatabasemodelID")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedAt")
@@ -174,7 +174,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ContactDatabasemodelId");
+                    b.HasIndex("ContactDatabasemodelID");
 
                     b.HasIndex("KoordinatesId");
 
@@ -290,7 +290,9 @@ namespace DataAccess.Migrations
                 {
                     b.HasOne("ModelsLib.DatabaseModels.ContactDatabasemodel", "ContactDatabasemodel")
                         .WithMany()
-                        .HasForeignKey("ContactDatabasemodelId");
+                        .HasForeignKey("ContactDatabasemodelID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("ModelsLib.DatabaseModels.InstKoordinatesDatabasemodel", "Koordinates")
                         .WithMany()

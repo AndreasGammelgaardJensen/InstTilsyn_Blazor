@@ -24,6 +24,7 @@ namespace VuggestueTilsynScraperLib.Scraping
             var inds = _builder.BuildBaseInformation();
             var addRess = _builder.BuildAdress();
             var pladser = _builder.BuildPladser();
+            var contact = _builder.BuildInstitutionContact();
             var koordinates = _builder.BuildInstitutionCoordinates();
             var rapport = _builder.BuildInstitutionTilsynsRapport();
 
@@ -34,6 +35,7 @@ namespace VuggestueTilsynScraperLib.Scraping
             inds.InstitutionTilsynsRapports.Add(rapport);
             inds.address = addRess;
             inds.Koordinates = koordinates;
+            inds.Contact = contact;
 
             return inds;
         }

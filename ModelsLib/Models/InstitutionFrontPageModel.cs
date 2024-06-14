@@ -19,6 +19,7 @@ namespace ModelsLib.Models
         public string profile { get; set; }
         public List<InstitutionTilsynsRapport> InstitutionTilsynsRapports { get; set; } = new List<InstitutionTilsynsRapport>();
         public InstKoordinates Koordinates { get; set; }
+        public Contact Contact { get; set; }
 
 
         public static InstitutionTypeEnum InstitutionTypeTranstator(string translation)
