@@ -118,7 +118,7 @@ namespace TilsynsRapportApi.Repositories
                         {
                             ReportId = x.Id,
                             FileUrl = x.fileUrl,
-                            Criteria = tt.FirstOrDefault(t => t.ReportId == x.Id)?.Categories?.Select(cr => new CriteriaModel { CategoriText = cr.CategoriText, Indsats = cr.Indsats }).ToList()
+                            Criteria = tt.FirstOrDefault(t => t.ReportId == x.Id)?.Categories?.Select(cr => new CriteriaModel { CategoriText = cr.CategoriText, Indsats = cr.Indsats }).OrderBy(x=>x.CategoriText).ToList()
                         }).ToList();
 
 					}
@@ -151,7 +151,7 @@ namespace TilsynsRapportApi.Repositories
 					institutionTalebLis.Add(instTabelModel);
                 });
 
-                _memoryCache.Set<List<InstitutionTableModel>>("INSTITUTION_TABEL_MODELS", institutionTalebLis, TimeSpan.FromMinutes(10));
+                _memoryCache.Set<List<InstitutionTableModel>>("INSTITUTION_TABEL_MODELS", institutionTalebLis, TimeSpan.FromMinutes(400));
 
                 return institutionTalebLis;
             }catch(Exception e)

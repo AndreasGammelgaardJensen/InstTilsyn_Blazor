@@ -62,5 +62,10 @@ namespace ModelsLib.Models
             return string.Format("ID: {0}\nVej: {1}\nNumber: {2}\nCity: {3}\nZipCode: {4}", Id, Vej,Number,City,Zip_code);
         
         }
+
+        public string AddressToString()
+        {
+            return $"{Number} {Vej}, {City} {Zip_code}";
+        }
     }
 }

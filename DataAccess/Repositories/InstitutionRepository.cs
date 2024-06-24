@@ -146,7 +146,7 @@ namespace DataAccess.Repositories
 
 		public List<InstitutionFrontPageModel> GetInstitutions()
 		{
-			var institutionDbModel = _dbContext.InstitutionFrontPageModel.Include(x => x.pladser).Include(x => x.InstitutionTilsynsRapports).Include(x => x.Koordinates).Include(x => x.address).ToList();
+			var institutionDbModel = _dbContext.InstitutionFrontPageModel.Include(x => x.pladser).Include(x => x.InstitutionTilsynsRapports).Include(x => x.Koordinates).Include(x => x.ContactDatabasemodel).Include(x => x.address).ToList();
 
 
             var institutionProntPageModelList = new List<InstitutionFrontPageModel>();
@@ -188,13 +188,16 @@ namespace DataAccess.Repositories
                     Try = repDbModel.Koordinates.Try
 				};
 
-
-				institutionFPM.Contact = new Contact
-				{
-					Phone = repDbModel.ContactDatabasemodel.Phone,
-					HomePage = repDbModel.ContactDatabasemodel.HomePage,
-					Email = repDbModel.ContactDatabasemodel.Email,
-				};
+                if(repDbModel.ContactDatabasemodel is not null)
+                {
+					institutionFPM.Contact = new Contact
+					{
+						Phone = repDbModel.ContactDatabasemodel.Phone,
+						HomePage = repDbModel.ContactDatabasemodel.HomePage,
+						Email = repDbModel.ContactDatabasemodel.Email,
+					};
+				}
+				
 
 				institutionProntPageModelList.Add(institutionFPM);
 			});
@@ -270,13 +273,6 @@ namespace DataAccess.Repositories
             address.City = institution.address.City;
             address.Zip_code = institution.address.Zip_code;
             address.Number = institution.address.Number;
-
-
-            //Update coordianetes
-            var koordinates = institutionDbModel.Koordinates;
-            koordinates.LastChangedAt = DateTime.Now;
-            koordinates.lat = institution.Koordinates.lat;
-            koordinates.lng = institution.Koordinates.lng;
 
 
 			//Update Contact

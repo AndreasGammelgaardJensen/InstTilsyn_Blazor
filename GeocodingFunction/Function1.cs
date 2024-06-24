@@ -71,6 +71,8 @@ namespace GeocodingFunction
 				institutions = institutions.Skip(_batch_size).ToList();
 
 				handbreak += _batch_size;
+				_logger.Information($"retreived: {handbreak}");
+
 			}
 
 			_kordinateRepository.UpdateKoordinateRange(updateList.Select(inst => inst.Koordinates).ToList());

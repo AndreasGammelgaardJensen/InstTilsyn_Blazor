@@ -31,7 +31,7 @@ var host = new HostBuilder()
 		services.AddDbContextFactory<DataContext>(options =>
 		{
 			options.EnableSensitiveDataLogging(false);
-			options.UseSqlServer(Environment.GetEnvironmentVariable("ConnectionStrings:SQLDockerConnectionString"));
+			options.UseSqlServer(Environment.GetEnvironmentVariable("ConnectionStrings:SQLConnectionString"));
 
 		});
 		services.AddSingleton(Log.Logger);
