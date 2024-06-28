@@ -42,6 +42,14 @@ async function onFetch(event) {
         const request = shouldServeIndexHtml ? 'index.html' : event.request;
         const cache = await caches.open(cacheName);
         cachedResponse = await cache.match(request);
+
+        if (cachedResponse == undefined) {
+            const fetchedResponse = await fetch(event.request.url);
+
+            cache.put(event.request.url, fetchedResponse.clone());
+
+            return fetchedResponse;
+        }
     }
 
     return cachedResponse || fetch(event.request);
