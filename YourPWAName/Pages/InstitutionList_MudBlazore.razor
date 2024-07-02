@@ -1,10 +1,11 @@
 ﻿@page "/institutions"
 
-
 @using GeolocationLib
 @using Gravam.Blazor.DeviceInterop.Geolocation
 @using ModelsLib.Models
 @using ModelsLib.Models.TabelModels
+@using YourPWAName.Models
+@using YourPWAName.MyComponents
 @inject HttpClient Http
 @inject IGeolocationService GeolocationService
 @inject IJSRuntime JS
@@ -180,10 +181,34 @@
 		</div>
 	}
 
-
-
+	<Modal @ref="modal" Title="Modal title" Style="margin-top: 100px">
+		<BodyTemplate>
+			<InstitutionSettings @ref="institutionSettingsComponent" />
+		</BodyTemplate>
+		<FooterTemplate>
+			<Button Color="ButtonColor.Secondary" @onclick="OnHideModalClick">Close</Button>
+			<Button Color="ButtonColor.Primary" @onclick="OnSaveChanges">Save changes</Button>
+		</FooterTemplate>
+	</Modal>
 
 </div>
+
+<div class="top-right-fixed">
+	<Button Variant="Variant.Filled" @onclick="OnShowModalClick">Toggle Drawer</Button>
+</div>
+
+<style>
+	.top-right-fixed {
+		position: fixed;
+		top: 5%;
+		right: 0;
+		color: #fff; /* Optional: for visibility */
+		padding: 10px; /* Optional: for visibility */
+	}
+
+</style>
+
+
 
 <style>
 	.parent-card {
@@ -216,18 +241,7 @@
 
 			institutions = ts.OrderByDescending(x => x.InstitutionFrontPageModel.TypeEnum).ToArray();
 
-
-
-			foreach (var inst in institutions)
-			{
-				foreach(var rep in inst.ReportTabelModel) {
-                    rep.Criteria = rep.Criteria.OrderBy(x => x.CategoriText).ToList();
-                }
-				inst.Distance = GeoCalculationHelper.CalculateDistance(inst.InstitutionFrontPageModel.Koordinates.lat ?? 0.0, inst.InstitutionFrontPageModel.Koordinates.lng ?? 0.0, currentPositionResult.Position.Coords.Latitude, currentPositionResult.Position.Coords.Longitude);
-			}
-
-			searchInstitutions = institutions;
-
+			AddDistanceCAlculationToInstitution(currentPositionResult.Position.Coords.Latitude, currentPositionResult.Position.Coords.Longitude);
 		}
 		catch (Exception ex)
 		{
@@ -235,13 +249,26 @@
 			Console.WriteLine(ex);
 		}
 	}
-	 
+	private InstitutionSettings institutionSettingsComponent;
 	private static string ErrorMessage { get; set; } = null;
 	private static Gravam.Blazor.DeviceInterop.Geolocation.GeolocationResult currentPositionResult { get; set; }
 	private static IEnumerable<InstitutionTableModel> institutions { get; set; }
 	private static IEnumerable<InstitutionTableModel> searchInstitutions { get; set; }
 	private string searchString = null;
 
+	private void AddDistanceCAlculationToInstitution(double? searchPointLat, double? searchpointLng)
+	{
+		foreach (var inst in institutions)
+		{
+			foreach (var rep in inst.ReportTabelModel)
+			{
+				rep.Criteria = rep.Criteria.OrderBy(x => x.CategoriText).ToList();
+			}
+			inst.Distance = GeoCalculationHelper.CalculateDistance(inst.InstitutionFrontPageModel.Koordinates.lat ?? 0.0, inst.InstitutionFrontPageModel.Koordinates.lng ?? 0.0, searchPointLat ?? 0.0, searchpointLng ?? 0.0);
+		}
+
+		searchInstitutions = institutions;
+	}
 
 	private void ShowBtnPress(Guid nr)
 	{
@@ -277,7 +304,7 @@
 		{
 			if (string.IsNullOrWhiteSpace(searchString))
 				return true;
-			
+
 			if (searchStrings.Any(s => element.InstitutionFrontPageModel.Name.Contains(s, StringComparison.OrdinalIgnoreCase)))
 				return true;
 			return false;
@@ -290,4 +317,35 @@
 
 		return true;
 	}
+
+
+	private Modal modal;
+
+	private async Task OnShowModalClick()
+	{
+		await modal?.ShowAsync();
+	}
+
+	private async Task OnHideModalClick()
+	{
+		await modal?.HideAsync();
+	}
+
+	private async Task OnSaveChanges() {
+		var valid = await institutionSettingsComponent.Submit();
+
+		if (valid.Item1)
+		{
+			AddDistanceCAlculationToInstitution(valid.Item2.lat, valid.Item2.lng);
+
+			await modal?.HideAsync();
+		}
+    }
+
+
+	private InstitutionFilterSettings filterSettings = new InstitutionFilterSettings
+		{
+			SearchFromAdressName = "Initial Value"
+			// Initialize other properties as needed
+		};
 }

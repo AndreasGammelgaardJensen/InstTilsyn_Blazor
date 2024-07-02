@@ -1,0 +1,119 @@
+@using ModelsLib.Models
+@using Newtonsoft.Json
+@using YourPWAName.Models
+@using Blazored.FluentValidation
+@using FluentValidation
+@inject HttpClient Http
+
+
+<MudForm Model="@model" @ref="@form" Validation="@(adressDetailsValidator.ValidateValue)" ValidationDelay="0">
+    <MudTextField @bind-Value="model.Vej"
+                  For="@(() => model.Vej)"
+                    Immediate="true"
+                    Label="Address" />
+        
+    <MudNumericField @bind-Value="model.Number"
+                    For="@(() => model.Number)"
+                    Immediate="true"
+                    Label="Number" />
+
+    <MudTextField @bind-Value="model.City"
+                    For="@(() => model.City)"
+                    Immediate="true"
+                    Label="City" />
+
+    <MudTextField @bind-Value="model.Zip_code"
+                    For="@(() => model.Zip_code)"
+                    Immediate="true"
+                    Label="Country" />
+</MudForm>
+
+
+@code {
+
+    [Inject] ISnackbar Snackbar { get; set; }
+
+    MudForm form;
+
+    Address model = new Address();
+    AdressModelFluentValidator adressDetailsValidator = new AdressModelFluentValidator();
+
+
+    public class AddressModel
+    {
+        public string Road { get; set; }
+        public int Number { get; set; }
+        public string City { get; set; }
+        public string Country { get; set; }
+    }
+
+
+    public async Task<(bool, InstKoordinates)> Submit()
+    {
+        await form.Validate();
+
+        var koordinate = new InstKoordinates{lat = 0.0, lng = 0.0};
+
+        if (form.IsValid)
+        {
+            var client = new HttpClient();
+            // Create a PostAsync that sezilize a Address object to a json object   
+
+            JsonContent content = JsonContent.Create(model);
+            // var ts = await client.PostAsJsonAsync("https://tilsynsrapportapi20240608132021.azurewebsites.net/api/Coordinate", content);
+            //TODO: HANDLE PROPPER RESPONSE TYPE
+            var ts = await client.PostAsJsonAsync("https://localhost:7051/api/Coordinate", model);
+
+
+            //Deserialize the response to a InstKoordinates object  
+            var stringg = await ts.Content.ReadAsStringAsync();
+
+            JsonReader reader = new JsonTextReader(new StringReader(stringg));
+            var koordinates = new JsonSerializer().Deserialize<InstKoordinates>(reader);
+            if(koordinates is not null)
+            {
+                koordinate = koordinates;
+            }
+
+            Snackbar.Add("Submited!");
+            return (true,koordinate);
+        }
+        return (false,koordinate);
+    }
+
+    /// <summary>
+    /// A standard AbstractValidator which contains multiple rules and can be shared with the back end API
+    /// </summary>
+    /// <typeparam name="Address"></typeparam>
+    public class AdressModelFluentValidator : AbstractValidator<Address>
+    {
+        public AdressModelFluentValidator()
+        {
+            RuleFor(x => x.Vej)
+                .NotEmpty()
+                .Length(1, 100);
+
+            RuleFor(x => x.Number)
+            .NotEmpty();
+
+            RuleFor(x => x.City)
+                .NotEmpty()
+                .Length(1, 100);
+
+            RuleFor(x => x.Zip_code)
+                .NotEmpty();
+        }
+
+        public Func<object, string, Task<IEnumerable<string>>> ValidateValue => async (model, propertyName) =>
+        {
+            var result = await ValidateAsync(ValidationContext<Address>.CreateWithOptions((Address)model, x => x.IncludeProperties(propertyName)));
+            if (result.IsValid)
+                return Array.Empty<string>();
+            return result.Errors.Select(e => e.ErrorMessage);
+        };
+    }
+
+   
+}
+
+

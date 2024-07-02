@@ -1,3 +1,4 @@
+using CoreInfrastructure.Services.Geolocation;
 using DataAccess.Database;
 using Microsoft.EntityFrameworkCore;
 using TilsynsRapportApi.Repositories;
@@ -5,6 +6,13 @@ using TilsynsRapportApi.Repositories;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+var Configbuilder = new ConfigurationBuilder()
+	.SetBasePath(Directory.GetCurrentDirectory())
+	.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+	.AddEnvironmentVariables();
+
+
+IConfigurationRoot configuration = Configbuilder.Build();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -14,10 +22,13 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContextFactory<DataContext>(options =>
 {
     options.EnableSensitiveDataLogging(false);
-    options.UseSqlServer("Server=tcp:bgserverinst.database.windows.net,1433;Initial Catalog=inst-db-report;Persist Security Info=False;User ID=andreasbgjensen;Password=Firma2018;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;", options => options.EnableRetryOnFailure().CommandTimeout(60));
+    options.UseSqlServer(configuration["ConnectionStrings:SQLServerConnection"], options => options.EnableRetryOnFailure().CommandTimeout(60));
 
 });
+
 builder.Services.AddTransient<DataAccess.Interface.IInstitutionTableRepository, InstitutionTabelReporisory>();
+builder.Services.AddScoped<IGoogleGeolocationService>(provider => new GoogleGeolocationService(new HttpClient(), configuration["GOOGLE_GEOLOCATION_APIKEY"], "https://maps.googleapis.com/maps/api/geocode/json"));
+
 builder.Services.AddMemoryCache();
 builder.Services.AddCors(options =>
 {

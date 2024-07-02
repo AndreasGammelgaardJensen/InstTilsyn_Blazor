@@ -34,13 +34,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YourPWAName", "YourPWAName\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorAppPWA", "BlazorAppPWA\BlazorAppPWA.csproj", "{5D7F49C2-5E92-49BC-AE18-7A4DD2CF0540}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeocodingFunction", "GeocodingFunction\GeocodingFunction.csproj", "{E2F701AF-9B25-4B9F-BBBF-0A6ABB7724DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeocodingFunction", "GeocodingFunction\GeocodingFunction.csproj", "{E2F701AF-9B25-4B9F-BBBF-0A6ABB7724DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeolocationLib", "GeolocationLib\GeolocationLib.csproj", "{B99ED687-C947-4DB7-966E-FB1738DBB75A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeolocationLib", "GeolocationLib\GeolocationLib.csproj", "{B99ED687-C947-4DB7-966E-FB1738DBB75A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreInfrastructureTests", "CoreInfrastructureTests\CoreInfrastructureTests.csproj", "{DD1E4846-1B7C-4A45-8FE1-7FDC150A0C01}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreInfrastructureTests", "CoreInfrastructureTests\CoreInfrastructureTests.csproj", "{DD1E4846-1B7C-4A45-8FE1-7FDC150A0C01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeolocationLibTests", "GeolocationLibTests\GeolocationLibTests.csproj", "{93741A29-19F4-4B60-A1AF-CA7881F33FFD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeolocationLibTests", "GeolocationLibTests\GeolocationLibTests.csproj", "{93741A29-19F4-4B60-A1AF-CA7881F33FFD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
