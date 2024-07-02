@@ -17,17 +17,19 @@ namespace TilsynsRapportApi.Controllers
 		}
 
 		[HttpPost]
-		public async Task<InstKoordinates?> Post([FromBody] Address value)
+		public async Task<InstitutionSettingsFilterModel?> Post([FromBody] Address value)
 		{
 			var coordinateList = await _googleGeplocationService.GetKoordinatesFromAddressesAsync(new List<Address> { value });
 
-			var address = new InstKoordinates
+			var koordinate = new InstKoordinates
 			{
 				lat = coordinateList.Results.First().Geometry.Location.Lat,
                 lng = coordinateList.Results.First().Geometry.Location.Lng
             };
 
-			return address;
+			
+
+			return new InstitutionSettingsFilterModel { Address = value, Koordinates = koordinate };
 
 
         }

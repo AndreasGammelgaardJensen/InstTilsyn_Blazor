@@ -195,47 +195,70 @@
 
 </div>
 
-<div class="top-right-fixed">
-	<Button Variant="Variant.Filled" @onclick="OnShowModalClick">Toggle Drawer</Button>
-</div>
+
+<div class="top-right-fixed" >
+	<Button Variant="Variant.Filled" @onclick="OnShowModalClick">
+		<img src="search_24dp.png" alt="Search Icon" class="custom-icon-size" />
+	</Button>
+ </div>
 
 <style>
 	.top-right-fixed {
 		position: fixed;
-		top: 5%;
+		top: 10%;
 		right: 0;
 		color: #fff; /* Optional: for visibility */
-		padding: 10px; /* Optional: for visibility */
+		border: solid;
+		border-color: black;
+		border-right-color: white;
+		border-bottom-left-radius: 20px;
+		border-top-left-radius: 20px;
+		z-index: 99
 	}
 
-</style>
+	.custom-icon-size {
+		width: 16px;
+		height: 16px;
+	}
 
-
-
-<style>
 	.parent-card {
 		background-color: white;
+		.child
 
-		.child {
-			background-color: @Colors.Blue.Lighten4;
-			font-size:10px;
-		}
+	{
+		background-color: @Colors.Blue.Lighten4;
+		font-size: 10px;
+	}
 
 	.child * {
 		font-size: inherit; /* Inherit the font size from the container */
 	}
+
 	}
 
 	.tabelbutton {
 		font-size: 10px;
 	}
+	
+
 </style>
 
+
 @code {
+
+	private InstitutionSettings institutionSettingsComponent;
+	private static string ErrorMessage { get; set; } = null;
+	private static Gravam.Blazor.DeviceInterop.Geolocation.GeolocationResult currentPositionResult { get; set; }
+	private static IEnumerable<InstitutionTableModel> institutions { get; set; }
+	private static IEnumerable<InstitutionTableModel> searchInstitutions { get; set; }
+	private string searchString = null;
+	private Modal modal;
+
+
+
 	protected override async Task OnInitializedAsync()
 	{
-
-		var filterKoordinates = await localStorage.GetItemAsync<InstKoordinates>("locationFilter");
+		var filterKoordinates = await localStorage.GetItemAsync<InstitutionSettingsFilterModel>("locationFilter");
 		try
 		{
 			var client = new HttpClient();
@@ -250,7 +273,7 @@
 
 			}else
 			{
-				AddDistanceCAlculationToInstitution(filterKoordinates.lat, filterKoordinates.lng);
+				AddDistanceCAlculationToInstitution(filterKoordinates.Koordinates.lat, filterKoordinates.Koordinates.lng);
 
 			}
 
@@ -261,12 +284,7 @@
 			Console.WriteLine(ex);
 		}
 	}
-	private InstitutionSettings institutionSettingsComponent;
-	private static string ErrorMessage { get; set; } = null;
-	private static Gravam.Blazor.DeviceInterop.Geolocation.GeolocationResult currentPositionResult { get; set; }
-	private static IEnumerable<InstitutionTableModel> institutions { get; set; }
-	private static IEnumerable<InstitutionTableModel> searchInstitutions { get; set; }
-	private string searchString = null;
+	
 
 	private void AddDistanceCAlculationToInstitution(double? searchPointLat, double? searchpointLng)
 	{
@@ -330,9 +348,6 @@
 		return true;
 	}
 
-
-	private Modal modal;
-
 	private async Task OnShowModalClick()
 	{
 		await modal?.ShowAsync();
@@ -348,7 +363,7 @@
 
 		if (valid.Item1)
 		{
-			AddDistanceCAlculationToInstitution(valid.Item2.lat, valid.Item2.lng);
+			AddDistanceCAlculationToInstitution(valid.Item2.Koordinates.lat, valid.Item2.Koordinates.lng);
 			await localStorage.SetItemAsync("locationFilter", valid.Item2);
 
 
