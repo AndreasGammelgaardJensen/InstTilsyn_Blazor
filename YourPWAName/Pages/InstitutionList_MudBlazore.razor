@@ -9,6 +9,8 @@
 @inject HttpClient Http
 @inject IGeolocationService GeolocationService
 @inject IJSRuntime JS
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
+
 <PageTitle>Institutions</PageTitle>
 
 <div style="padding: 20px">
@@ -232,7 +234,8 @@
 @code {
 	protected override async Task OnInitializedAsync()
 	{
-		currentPositionResult = await GeolocationService.GetCurrentPosition();
+
+		var filterKoordinates = await localStorage.GetItemAsync<InstKoordinates>("locationFilter");
 		try
 		{
 			var client = new HttpClient();
@@ -240,8 +243,17 @@
 			// var ts = await client.GetFromJsonAsync<List<InstitutionTableModel>>("https://localhost:7051/api/Institution");
 
 			institutions = ts.OrderByDescending(x => x.InstitutionFrontPageModel.TypeEnum).ToArray();
+			if (filterKoordinates is null)
+			{
+				currentPositionResult = await GeolocationService.GetCurrentPosition();
+				AddDistanceCAlculationToInstitution(currentPositionResult.Position.Coords.Latitude, currentPositionResult.Position.Coords.Longitude);
 
-			AddDistanceCAlculationToInstitution(currentPositionResult.Position.Coords.Latitude, currentPositionResult.Position.Coords.Longitude);
+			}else
+			{
+				AddDistanceCAlculationToInstitution(filterKoordinates.lat, filterKoordinates.lng);
+
+			}
+
 		}
 		catch (Exception ex)
 		{
@@ -337,6 +349,8 @@
 		if (valid.Item1)
 		{
 			AddDistanceCAlculationToInstitution(valid.Item2.lat, valid.Item2.lng);
+			await localStorage.SetItemAsync("locationFilter", valid.Item2);
+
 
 			await modal?.HideAsync();
 		}
