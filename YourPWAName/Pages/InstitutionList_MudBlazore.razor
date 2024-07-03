@@ -183,9 +183,9 @@
 		</div>
 	}
 
-	<Modal @ref="modal" Title="Modal title" Style="margin-top: 100px">
+	<Modal @ref="modal" Title="Indstillinger" Style="margin-top: 100px">
 		<BodyTemplate>
-			<InstitutionSettings @ref="institutionSettingsComponent" />
+			<InstitutionSettings @ref="institutionSettingsComponent" filterModel="@filterModel" />
 		</BodyTemplate>
 		<FooterTemplate>
 			<Button Color="ButtonColor.Secondary" @onclick="OnHideModalClick">Close</Button>
@@ -246,10 +246,13 @@
 
 @code {
 
+	private InstitutionSettingsFilterModel filterModel; 
 	private InstitutionSettings institutionSettingsComponent;
 	private static string ErrorMessage { get; set; } = null;
 	private static Gravam.Blazor.DeviceInterop.Geolocation.GeolocationResult currentPositionResult { get; set; }
 	private static IEnumerable<InstitutionTableModel> institutions { get; set; }
+	private static IEnumerable<InstitutionTableModel> filteredinstitutions { get; set; }
+
 	private static IEnumerable<InstitutionTableModel> searchInstitutions { get; set; }
 	private string searchString = null;
 	private Modal modal;
@@ -258,7 +261,7 @@
 
 	protected override async Task OnInitializedAsync()
 	{
-		var filterKoordinates = await localStorage.GetItemAsync<InstitutionSettingsFilterModel>("locationFilter");
+		filterModel = await localStorage.GetItemAsync<InstitutionSettingsFilterModel>("locationFilter");
 		try
 		{
 			var client = new HttpClient();
@@ -266,14 +269,15 @@
 			// var ts = await client.GetFromJsonAsync<List<InstitutionTableModel>>("https://localhost:7051/api/Institution");
 
 			institutions = ts.OrderByDescending(x => x.InstitutionFrontPageModel.TypeEnum).ToArray();
-			if (filterKoordinates is null)
+			if (filterModel is null)
 			{
 				currentPositionResult = await GeolocationService.GetCurrentPosition();
 				AddDistanceCAlculationToInstitution(currentPositionResult.Position.Coords.Latitude, currentPositionResult.Position.Coords.Longitude);
 
 			}else
 			{
-				AddDistanceCAlculationToInstitution(filterKoordinates.Koordinates.lat, filterKoordinates.Koordinates.lng);
+				AddDistanceCAlculationToInstitution(filterModel.Koordinates.lat, filterModel.Koordinates.lng);
+				FilterInstitutions(filterModel);
 
 			}
 
@@ -284,7 +288,13 @@
 			Console.WriteLine(ex);
 		}
 	}
-	
+
+	private void FilterInstitutions(InstitutionSettingsFilterModel filterSettings)
+	{
+		filteredinstitutions = institutions.Where(inst => filterSettings.InstitutionTypes.Contains(inst.InstitutionFrontPageModel.TypeEnum));
+		searchInstitutions = filteredinstitutions;
+	}
+
 
 	private void AddDistanceCAlculationToInstitution(double? searchPointLat, double? searchpointLng)
 	{
@@ -330,7 +340,7 @@
 
 		var searchStrings = searchString.Split("//").ToList();
 
-		searchInstitutions = institutions.Where(element =>
+		searchInstitutions = filteredinstitutions.Where(element =>
 		{
 			if (string.IsNullOrWhiteSpace(searchString))
 				return true;
@@ -363,8 +373,11 @@
 
 		if (valid.Item1)
 		{
-			AddDistanceCAlculationToInstitution(valid.Item2.Koordinates.lat, valid.Item2.Koordinates.lng);
-			await localStorage.SetItemAsync("locationFilter", valid.Item2);
+			filterModel = valid.Item2;
+			AddDistanceCAlculationToInstitution(filterModel.Koordinates.lat, filterModel.Koordinates.lng);
+			FilterInstitutions(filterModel);
+
+			await localStorage.SetItemAsync("locationFilter", filterModel);
 
 
 			await modal?.HideAsync();

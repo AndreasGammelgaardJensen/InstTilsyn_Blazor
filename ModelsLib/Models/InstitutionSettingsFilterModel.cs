@@ -10,5 +10,6 @@ namespace ModelsLib.Models
 	{
 		public Address Address { get; set; }
 		public InstKoordinates Koordinates { get; set; }
+		public IEnumerable<InstitutionTypeEnum> InstitutionTypes { get; set; }
 	}
 }

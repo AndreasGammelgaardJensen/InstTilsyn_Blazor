@@ -28,16 +28,36 @@
                     Label="Country" />
 </MudForm>
 
+<MudSelect T="InstitutionTypeEnum" Label="Type" AnchorOrigin="Origin.BottomCenter" MultiSelection="true" @bind-SelectedValues="@selectedInstitutionTypeValues">
+    <MudSelectItem Value="@(InstitutionTypeEnum.Boernehave)" />
+    <MudSelectItem Value="@(InstitutionTypeEnum.Vuggestue)" />
+    <MudSelectItem Value="@(InstitutionTypeEnum.Dagpleje)" />
+    <MudSelectItem Value="@(InstitutionTypeEnum.Integreret)" />
+</MudSelect>
 
 @code {
-
     [Inject] ISnackbar Snackbar { get; set; }
 
-    MudForm form;
+    [Parameter]
+    public InstitutionSettingsFilterModel filterModel { get; set; }
 
-    Address model = new Address();
+
+    MudForm form;
+    IEnumerable<InstitutionTypeEnum> selectedInstitutionTypeValues;
+    Address model;
     AdressModelFluentValidator adressDetailsValidator = new AdressModelFluentValidator();
 
+
+    protected override async Task OnInitializedAsync()
+    {
+        model = filterModel?.Address?? new Address();
+        selectedInstitutionTypeValues = filterModel?.InstitutionTypes ?? new List<InstitutionTypeEnum>() {
+            InstitutionTypeEnum.Vuggestue,
+            InstitutionTypeEnum.Integreret,
+            InstitutionTypeEnum.Dagpleje,
+            InstitutionTypeEnum.Boernehave
+        };
+    }
 
     public class AddressModel
     {
@@ -74,6 +94,8 @@
             {
                 koordinate = koordinates;
             }
+
+            koordinate.InstitutionTypes = selectedInstitutionTypeValues;
 
             Snackbar.Add("Submited!");
             return (true,koordinate);
