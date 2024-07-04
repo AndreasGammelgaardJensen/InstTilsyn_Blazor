@@ -48,7 +48,7 @@
     AdressModelFluentValidator adressDetailsValidator = new AdressModelFluentValidator();
 
 
-    protected override async Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
         model = filterModel?.Address?? new Address();
         selectedInstitutionTypeValues = filterModel?.InstitutionTypes ?? new List<InstitutionTypeEnum>() {
@@ -78,11 +78,10 @@
         {
             var client = new HttpClient();
             // Create a PostAsync that sezilize a Address object to a json object   
-
-            JsonContent content = JsonContent.Create(model);
-            // var ts = await client.PostAsJsonAsync("https://tilsynsrapportapi20240608132021.azurewebsites.net/api/Coordinate", content);
+           
+            var ts = await client.PostAsJsonAsync("https://tilsynsrapportapi20240608132021.azurewebsites.net/api/Coordinate", model);
             //TODO: HANDLE PROPPER RESPONSE TYPE
-            var ts = await client.PostAsJsonAsync("https://localhost:7051/api/Coordinate", model);
+            // var ts = await client.PostAsJsonAsync("https://localhost:7051/api/Coordinate", model);
 
 
             //Deserialize the response to a InstKoordinates object  
