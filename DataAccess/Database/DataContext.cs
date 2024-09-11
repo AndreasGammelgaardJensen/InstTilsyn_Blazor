@@ -34,7 +34,10 @@ namespace DataAccess.Database
             modelBuilder.Entity<InstitutionFrontPageModelDatabasemodel>()
                 .HasKey(a => a.Id);
 
-            modelBuilder.Entity<AddressDatabasemodel>()
+			modelBuilder.Entity<InstitutionTilsynsRapportDatabasemodel>()
+				.HasKey(a => a.Id);
+
+			modelBuilder.Entity<AddressDatabasemodel>()
                 .HasKey(a => a.Id);
 
             modelBuilder.Entity<PladserDatabasemodel>()
@@ -54,6 +57,8 @@ namespace DataAccess.Database
         public DbSet<InstitutionReportCriterieaDatabasemodel> InstitutionReportCriterieaDatabasemodel => Set<InstitutionReportCriterieaDatabasemodel>();
 		public DbSet<AddressDatabasemodel> AddressDatabasemodel => Set<AddressDatabasemodel>();
         public DbSet<InstKoordinatesDatabasemodel> InstKoordinatesDatabasemodel => Set<InstKoordinatesDatabasemodel>();
+		public DbSet<InstitutionTilsynsRapportDatabasemodel> InstitutionTilsynsRapportDatabasemodel => Set<InstitutionTilsynsRapportDatabasemodel>();
+
 		public DbSet<ContactDatabasemodel> ContactDatabasemodel => Set<ContactDatabasemodel>();
 
 

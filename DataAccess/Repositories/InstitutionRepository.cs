@@ -251,23 +251,26 @@ namespace DataAccess.Repositories
             {
                 if(!tilsynsrapporter.Any(rDb=> rDb.hash == x.hash))
                 {
-                    tilsynsrapporter.Add(new InstitutionTilsynsRapportDatabasemodel
-                    {
-                        Id = Guid.NewGuid(),
-                        CreatedAt = DateTime.Now,
-                        LastChangedAt = DateTime.Now,
-                        copyDate = x.copyDate,
-                        Name = x.Name,
-                        fileUrl = x.fileUrl,
-                        documentType = x.documentType,
-                        hash = x.hash
-                    });
-                }
+                    var newTilsynsRapport = new InstitutionTilsynsRapportDatabasemodel
+					{
+						Id = Guid.NewGuid(),
+						CreatedAt = DateTime.Now,
+						LastChangedAt = DateTime.Now,
+						copyDate = x.copyDate,
+						Name = x.Name,
+						fileUrl = x.fileUrl,
+						documentType = x.documentType,
+						hash = x.hash
+					};
+                    tilsynsrapporter.Add(newTilsynsRapport);
+					_dbContext.InstitutionTilsynsRapportDatabasemodel.Add(newTilsynsRapport);
+
+				}
             });
+			
 
-
-            //Update address
-            var address = institutionDbModel.address;
+			//Update address
+			var address = institutionDbModel.address;
             address.LastChangedAt = DateTime.Now;
             address.Vej = institution.address.Vej;
             address.City = institution.address.City;
