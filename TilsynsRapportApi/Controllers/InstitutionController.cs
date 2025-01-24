@@ -14,18 +14,20 @@ namespace TilsynsRapportApi.Controllers
     public class InstitutionController : ControllerBase
     {
         private readonly IInstitutionTableRepository _repository;
+		private readonly ILogger<InstitutionController> _logger;
 
-        public InstitutionController(IInstitutionTableRepository repository)
-        {
-            _repository = repository;
-        }
+		public InstitutionController(IInstitutionTableRepository repository, ILogger<InstitutionController> logger)
+		{
+			_repository = repository;
+			_logger = logger;
+		}
 
-        // GET: api/<InstitutionController>
-        [HttpGet]
+		// GET: api/<InstitutionController>
+		[HttpGet]
         public async Task<IEnumerable<InstitutionTableModel>> Get()
         {
-
-            var tabelModel = await _repository.GetInstitutionTableModels();
+            _logger.LogInformation("Read Institutions");
+			var tabelModel = await _repository.GetInstitutionTableModels();
 
             return tabelModel;
         }

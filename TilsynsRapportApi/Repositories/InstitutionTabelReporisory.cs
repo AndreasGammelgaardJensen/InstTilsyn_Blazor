@@ -154,14 +154,17 @@ namespace TilsynsRapportApi.Repositories
                 _memoryCache.Set<List<InstitutionTableModel>>("INSTITUTION_TABEL_MODELS", institutionTalebLis, TimeSpan.FromMinutes(400));
 
                 return institutionTalebLis;
-            }catch(Exception e)
+            }
+            catch (Exception e)
             {
-                
+                if (e is Microsoft.Data.SqlClient.SqlException)
+                    throw;
+
                 Console.WriteLine(e.ToString());
                 return null;
             }
-            
-            
+
+
         }
     }
 }

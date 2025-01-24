@@ -1,31 +1,35 @@
 @using ModelsLib.Models
 @using Newtonsoft.Json
-@using YourPWAName.Models
-@using Blazored.FluentValidation
 @using FluentValidation
+@using Gravam.Blazor.DeviceInterop.Geolocation
 @inject HttpClient Http
+@inject IGeolocationService GeolocationService
+
 
 
 <MudForm Model="@model" @ref="@form" Validation="@(adressDetailsValidator.ValidateValue)" ValidationDelay="0">
+    
+    <MudCheckBox @bind-Value="UseCurrentPosition" Color="Color.Primary">Brug nuværende position</MudCheckBox>
+
     <MudTextField @bind-Value="model.Vej"
                   For="@(() => model.Vej)"
-                    Immediate="true"
-                    Label="Address" />
-        
+                  Immediate="true"
+                  Label="Vejnavn"/>
+
     <MudNumericField @bind-Value="model.Number"
-                    For="@(() => model.Number)"
-                    Immediate="true"
-                    Label="Number" />
+                     For="@(() => model.Number)"
+                     Immediate="true"
+                     Label="Husnummer"/>
 
     <MudTextField @bind-Value="model.City"
-                    For="@(() => model.City)"
-                    Immediate="true"
-                    Label="City" />
+                  For="@(() => model.City)"
+                  Immediate="true"
+                  Label="By"/>
 
     <MudTextField @bind-Value="model.Zip_code"
-                    For="@(() => model.Zip_code)"
-                    Immediate="true"
-                    Label="Country" />
+                  For="@(() => model.Zip_code)"
+                  Immediate="true"
+                  Label="Postnummer"/>
 </MudForm>
 
 <MudSelect T="InstitutionTypeEnum" Label="Type" AnchorOrigin="Origin.BottomCenter" MultiSelection="true" @bind-SelectedValues="@selectedInstitutionTypeValues">
@@ -35,21 +39,33 @@
     <MudSelectItem Value="@(InstitutionTypeEnum.Integreret)" />
 </MudSelect>
 
+<MudSlider ValueLabel="true" @bind-Value="@displayCount" Max="@MaxCount" Step="1">Antal vist</MudSlider>
+
 @code {
     [Inject] ISnackbar Snackbar { get; set; }
 
     [Parameter]
     public InstitutionSettingsFilterModel filterModel { get; set; }
-
+    [Parameter]
+    public int MaxCount { get; set; }
+    [Parameter] 
+    public int SearchCount { get; set; }
+    public int displayCount { get; set; }
+    public bool UseCurrentPosition { get; set; } = false;
 
     MudForm form;
     IEnumerable<InstitutionTypeEnum> selectedInstitutionTypeValues;
     Address model;
     AdressModelFluentValidator adressDetailsValidator = new AdressModelFluentValidator();
 
+    private int test(int t)
+    {
+        return SearchCount = t;
+    }
 
     protected override void OnInitialized()
     {
+        displayCount = SearchCount;
         model = filterModel?.Address?? new Address();
         selectedInstitutionTypeValues = filterModel?.InstitutionTypes ?? new List<InstitutionTypeEnum>() {
             InstitutionTypeEnum.Vuggestue,
@@ -68,7 +84,7 @@
     }
 
 
-    public async Task<(bool, InstitutionSettingsFilterModel)> Submit()
+    public async Task<(bool, InstitutionSettingsFilterModel, bool)> Submit()
     {
         await form.Validate();
 
@@ -76,30 +92,48 @@
 
         if (form.IsValid)
         {
-            var client = new HttpClient();
-            // Create a PostAsync that sezilize a Address object to a json object   
-           
-            var ts = await client.PostAsJsonAsync("https://tilsynsrapportapi20240608132021.azurewebsites.net/api/Coordinate", model);
-            //TODO: HANDLE PROPPER RESPONSE TYPE
-            // var ts = await client.PostAsJsonAsync("https://localhost:7051/api/Coordinate", model);
-
-
-            //Deserialize the response to a InstKoordinates object  
-            var stringg = await ts.Content.ReadAsStringAsync();
-
-            JsonReader reader = new JsonTextReader(new StringReader(stringg));
-            var koordinates = new JsonSerializer().Deserialize<InstitutionSettingsFilterModel>(reader);
-            if(koordinates is not null)
+            if (UseCurrentPosition)
             {
-                koordinate = koordinates;
+                var position = await GeolocationService.GetCurrentPosition();
+
+                InstKoordinates currentCoordinates = new InstKoordinates()
+                {
+                        lat = position.Position.Coords.Latitude,
+                        lng = position.Position.Coords.Longitude,
+                };
+
+                koordinate.Koordinates = currentCoordinates;
+            }
+            else
+            {
+                var client = new HttpClient();
+                // Create a PostAsync that sezilize a Address object to a json object   
+
+                var ts = await client.PostAsJsonAsync("https://tilsynsrapportapi20240608132021.azurewebsites.net/api/Coordinate", model);
+                //TODO: HANDLE PROPPER RESPONSE TYPE
+                // var ts = await client.PostAsJsonAsync("https://localhost:7051/api/Coordinate", model);
+
+
+                //Deserialize the response to a InstKoordinates object  
+                var stringg = await ts.Content.ReadAsStringAsync();
+
+                JsonReader reader = new JsonTextReader(new StringReader(stringg));
+                var koordinates = new JsonSerializer().Deserialize<InstitutionSettingsFilterModel>(reader);
+                if(koordinates is not null)
+                {
+                    koordinate = koordinates;
+                }
             }
 
+
+
             koordinate.InstitutionTypes = selectedInstitutionTypeValues;
+            koordinate.FilterCount = displayCount;
 
             Snackbar.Add("Submited!");
-            return (true,koordinate);
+            return (true, koordinate, UseCurrentPosition);
         }
-        return (false,koordinate);
+        return (false, koordinate, UseCurrentPosition);
     }
 
     /// <summary>

@@ -4,12 +4,13 @@
 @using Gravam.Blazor.DeviceInterop.Geolocation
 @using ModelsLib.Models
 @using ModelsLib.Models.TabelModels
-@using YourPWAName.Models
-@using YourPWAName.MyComponents
+@using Shared.Core
 @inject HttpClient Http
 @inject IGeolocationService GeolocationService
 @inject IJSRuntime JS
 @inject Blazored.LocalStorage.ILocalStorageService localStorage
+@inject IConfiguration Configuration
+
 
 <PageTitle>Institutions</PageTitle>
 
@@ -29,7 +30,7 @@
 	else
 	{
 		<div class="d-none d-md-flex">
-			<MudTable Items="@searchInstitutions" Hover="true" MultiSelection="true" Dense="true" FixedHeader="true" Height="100vh" Class="parent-card">
+			<MudTable @ref="myTable" Hover="true" MultiSelection="true" Dense="true" FixedHeader="true" Height="100vh" Class="parent-card" ServerData="LoadData">
 				<ToolBarContent>
 					<MudText Typo="Typo.h6">Institutions</MudText>
 					<MudSpacer />
@@ -40,10 +41,10 @@
 				<HeaderContent>
 					<MudTh></MudTh>
 					<MudTh></MudTh>
-				<MudTh><MudTableSortLabel SortBy="new Func<InstitutionTableModel, object>(x=>x.InstitutionFrontPageModel.Name)">Name</MudTableSortLabel></MudTh>
-					<MudTh><MudTableSortLabel SortBy="new Func<InstitutionTableModel, object>(x=>x.Distance)">Afstand</MudTableSortLabel></MudTh>
-					<MudTh><MudTableSortLabel SortBy="new Func<InstitutionTableModel, object>(x=>(int)x.InstitutionFrontPageModel.TypeEnum)">Type</MudTableSortLabel></MudTh>
-					<MudTh><MudTableSortLabel SortBy="new Func<InstitutionTableModel, object>(x=>x.InstitutionFrontPageModel.pladser.DagplejePladser)">Pladser</MudTableSortLabel></MudTh>
+					<MudTh><MudTableSortLabel SortDirectionChanged="OnSortChanged" SortLabel="@nameof(InstitutionTableModel.InstitutionFrontPageModel.Name)" SortBy="new Func<InstitutionTableModel, object>(x=>x.InstitutionFrontPageModel.Name)">Name</MudTableSortLabel></MudTh>
+					<MudTh><MudTableSortLabel SortLabel="@nameof(InstitutionTableModel.Distance)" SortBy="new Func<InstitutionTableModel, object>(x=>x.Distance)">Afstand</MudTableSortLabel></MudTh>
+					<MudTh><MudTableSortLabel SortLabel="@nameof(InstitutionTableModel.InstitutionFrontPageModel.TypeEnum)" SortBy="new Func<InstitutionTableModel, object>(x=>(int)x.InstitutionFrontPageModel.TypeEnum)">Type</MudTableSortLabel></MudTh>
+					<MudTh><MudTableSortLabel  SortLabel="@nameof(InstitutionTableModel.InstitutionFrontPageModel.pladser.DagplejePladser)" SortBy="new Func<InstitutionTableModel, object>(x=>x.InstitutionFrontPageModel.pladser.DagplejePladser)">Pladser</MudTableSortLabel></MudTh>
 				</HeaderContent>
 				<RowTemplate>
 					<MudTh></MudTh>
@@ -78,33 +79,33 @@
 					</CardHeaderContent>
 					</MudCardHeader>
 						<MudCardContent Class="pa-0 child">
-							<MudTable Items="@context.ReportTabelModel" Context="Rapport" Hover="true" Elevation="0" Class="child">
-								<HeaderContent>
-									<MudTh>Åben Rapport</MudTh>
+						    <MudTable Items="@context.ReportTabelModel" Context="Rapport" Hover="true" Elevation="0" Class="child">
+							    <HeaderContent >
+											    <MudTh Style="@Colors.Blue.Lighten4">Åben Rapport</MudTh>
 
-							@if (context.ReportTabelModel.FirstOrDefault().Criteria is not null)
-							{
-								@foreach (var indsats in context.ReportTabelModel.FirstOrDefault().Criteria)
-								{
-									<MudTh>@indsats.CategoriText</MudTh>
-								}
-							}				
-						</HeaderContent>
-						<RowTemplate>
-							<div class=" mud-table-cell d-flex justify-center align-content-center" style="height:100%">
-								<MudIconButton Icon="@Icons.Material.Filled.FileOpen" Variant="Variant.Filled" Color="Color.Primary" Size="Size.Medium" OnClick="@(() => OnFileClicked(Rapport.FileUrl))" />
-							</div>
+							        @if (context.ReportTabelModel.FirstOrDefault().Criteria is not null)
+							        {
+								        @foreach (var indsats in context.ReportTabelModel.FirstOrDefault().Criteria)
+								        {
+												    <MudTh Style="@Colors.Blue.Lighten4">@indsats.CategoriText</MudTh>
+								        }
+							        }				
+						        </HeaderContent>
+						        <RowTemplate>
+							        <div class=" mud-table-cell d-flex justify-center align-content-center" style="height:100%">
+								        <MudIconButton Icon="@Icons.Material.Filled.FileOpen" Variant="Variant.Filled" Color="Color.Primary" Size="Size.Medium" OnClick="@(() => OnFileClicked(Rapport.FileUrl))" />
+							        </div>
 
-											
-						@if (@Rapport.Criteria is not null)
-						{
-							@foreach (var tt in @Rapport.Criteria)
-							{
-								<MudTd>@tt.Indsats</MudTd>
-							}
-						}
-						</RowTemplate>
-						</MudTable>
+											        
+						            @if (@Rapport.Criteria is not null)
+						            {
+							            @foreach (var tt in @Rapport.Criteria)
+							            {
+								            <MudTd>@tt.Indsats</MudTd>
+							            }
+						            }
+						        </RowTemplate>
+						    </MudTable>
 					</MudCardContent>
 					</MudCard>
 					</td>
@@ -158,7 +159,7 @@
 										<MudTable Items="@context.ReportTabelModel" Context="Rapport" Hover="true" Elevation="0" Class="child">
 										<RowTemplate>
 
-												<MudTd DataLabel="Åben Rapport">
+												<MudTd Style="@Colors.Blue.Lighten4" DataLabel="Åben Rapport">
 												<div class=" mud-table-cell d-flex justify-center align-content-center" style="height:100%">
 														<MudIconButton Icon="@Icons.Material.Filled.FileOpen" Variant="Variant.Filled" Color="Color.Primary" Size="Size.Medium" OnClick="@(() => OnFileClicked(Rapport.FileUrl))" />
 													</div>
@@ -167,7 +168,7 @@
 											{
 												@foreach (var tt in @Rapport.Criteria)
 												{
-													<MudTd Class="d-flex tester" DataLabel="@tt.CategoriText">@tt.Indsats</MudTd>
+													<MudTd Style="@Colors.Blue.Lighten4" Class="d-flex" DataLabel="@tt.CategoriText">@tt.Indsats</MudTd>
 												}
 											}
 											
@@ -185,7 +186,7 @@
 
 	<Modal @ref="modal" Title="Indstillinger" Style="margin-top: 100px">
 		<BodyTemplate>
-			<InstitutionSettings @ref="institutionSettingsComponent" filterModel="@filterModel" />
+			<InstitutionSettings @ref="institutionSettingsComponent" filterModel="@filterModel" SearchCount="@searctCount" MaxCount="@institutions.Count()" />
 		</BodyTemplate>
 		<FooterTemplate>
 			<Button Color="ButtonColor.Secondary" @onclick="OnHideModalClick">Close</Button>
@@ -246,6 +247,7 @@
 
 @code {
 
+	private MudTable<InstitutionTableModel> myTable;
 	private InstitutionSettingsFilterModel filterModel; 
 	private InstitutionSettings institutionSettingsComponent;
 	private static string ErrorMessage { get; set; } = null;
@@ -256,30 +258,101 @@
 	private static IEnumerable<InstitutionTableModel> searchInstitutions { get; set; }
 	private string searchString = null;
 	private Modal modal;
+	private TableState _tabelState;
+	private int searctCount { get; set; }
+
+	private void OnSortChanged(MudBlazor.SortDirection state)
+	{
+		// Sort the items based on the current TableState
+	}
+
+	private async Task<TableData<InstitutionTableModel>> LoadData(TableState state)
+	{
+		// Access sorting information
+		var sortLabel = state.SortLabel;
+		var sortDirection = state.SortDirection;
+		_tabelState = state;
+
+		// Load data based on the current TableState
+		if(institutions is null)
+		{
+			var client = new HttpClient();
+			institutions = await client.GetFromJsonAsync<List<InstitutionTableModel>>("https://localhost:7051/api/Institution");
+			searchInstitutions = institutions;
+		}
+
+		return new TableData<InstitutionTableModel>
+			{
+				Items = Sorting(searchInstitutions),
+				TotalItems = searchInstitutions.Count()
+			};
+	}
+
+	private IEnumerable<InstitutionTableModel> Sorting(IEnumerable<InstitutionTableModel> institutions)
+	{
+		if(_tabelState is null) return institutions;
+
+		var sortLabel = _tabelState.SortLabel;
+		var sortDirection = _tabelState.SortDirection;
+
+		if (sortLabel != null)
+		{
+			switch (sortLabel)
+			{
+				case "Name":
+					institutions = institutions.OrderByDirection(sortDirection, o => o.InstitutionFrontPageModel.Name);
+					break;
+				case "Distance":
+					institutions = institutions.OrderByDirection(sortDirection, o => o.Distance);
+					break;
+				case "TypeEnum":
+					institutions = institutions.OrderByDirection(sortDirection, o => o.InstitutionFrontPageModel.TypeEnum);
+					break;
+				case "DagplejePladser":
+					institutions = institutions.OrderByDirection(sortDirection, o => o.InstitutionFrontPageModel.pladser.DagplejePladser);
+					break;
+				default:
+					institutions = institutions.OrderByDirection(sortDirection, o => o.Distance);
+					break;
+			}
+		}
+		else
+		{
+			institutions = institutions.OrderByDirection(MudBlazor.SortDirection.Ascending, o => o.Distance);
+		}
 
 
+		return institutions;
+	}
 
 	protected override async Task OnInitializedAsync()
 	{
 		filterModel = await localStorage.GetItemAsync<InstitutionSettingsFilterModel>("locationFilter");
+		if (filterModel is not null)
+			filterModel.FilterCount = filterModel?.FilterCount == 0 ? 1 : filterModel.FilterCount;
+
 		try
 		{
 			var client = new HttpClient();
-			var ts = await client.GetFromJsonAsync<List<InstitutionTableModel>>("https://tilsynsrapportapi20240608132021.azurewebsites.net/api/Institution");
+			var ts = await client.GetFromJsonAsync<List<InstitutionTableModel>>(Configuration["ApplicationSettings:InstitutionApiBaseUrl"]);
 			// var ts = await client.GetFromJsonAsync<List<InstitutionTableModel>>("https://localhost:7051/api/Institution");
 
 			institutions = ts.OrderByDescending(x => x.InstitutionFrontPageModel.TypeEnum).ToArray();
+			searchInstitutions = institutions;
 			if (filterModel is null)
 			{
 				currentPositionResult = await GeolocationService.GetCurrentPosition();
-				AddDistanceCAlculationToInstitution(currentPositionResult.Position.Coords.Latitude, currentPositionResult.Position.Coords.Longitude);
+				if (currentPositionResult.Position is not null)
+				    await AddDistanceCAlculationToInstitution(currentPositionResult.Position.Coords.Latitude, currentPositionResult.Position.Coords.Longitude);
 
 			}else
 			{
-				AddDistanceCAlculationToInstitution(filterModel.Koordinates.lat, filterModel.Koordinates.lng);
-				FilterInstitutions(filterModel);
+				await AddDistanceCAlculationToInstitution(filterModel.Koordinates.lat, filterModel.Koordinates.lng);
+				await FilterInstitutions(filterModel);
 
 			}
+
+			searctCount = filterModel?.FilterCount ?? searchInstitutions.Count();
 
 		}
 		catch (Exception ex)
@@ -289,16 +362,17 @@
 		}
 	}
 
-	private void FilterInstitutions(InstitutionSettingsFilterModel filterSettings)
+	private async Task FilterInstitutions(InstitutionSettingsFilterModel filterSettings)
 	{
+		institutions = Sorting(institutions);
 		filteredinstitutions = institutions.Where(inst => filterSettings.InstitutionTypes.Contains(inst.InstitutionFrontPageModel.TypeEnum));
-		searchInstitutions = filteredinstitutions;
-	}
+        searchInstitutions = filteredinstitutions.Take(filterSettings.FilterCount);
+    }
 
 
-	private void AddDistanceCAlculationToInstitution(double? searchPointLat, double? searchpointLng)
+	private async Task AddDistanceCAlculationToInstitution(double? searchPointLat, double? searchpointLng)
 	{
-		foreach (var inst in institutions)
+		foreach (var inst in searchInstitutions)
 		{
 			foreach (var rep in inst.ReportTabelModel)
 			{
@@ -307,7 +381,7 @@
 			inst.Distance = GeoCalculationHelper.CalculateDistance(inst.InstitutionFrontPageModel.Koordinates.lat ?? 0.0, inst.InstitutionFrontPageModel.Koordinates.lng ?? 0.0, searchPointLat ?? 0.0, searchpointLng ?? 0.0);
 		}
 
-		searchInstitutions = institutions;
+		searchInstitutions = searchInstitutions;
 	}
 
 	private void ShowBtnPress(Guid nr)
@@ -371,23 +445,21 @@
 	private async Task OnSaveChanges() {
 		var valid = await institutionSettingsComponent.Submit();
 
+
+		var sortLabel = _tabelState.SortLabel;
+		var sortDirection = _tabelState.SortDirection;
 		if (valid.Item1)
 		{
 			filterModel = valid.Item2;
-			AddDistanceCAlculationToInstitution(filterModel.Koordinates.lat, filterModel.Koordinates.lng);
-			FilterInstitutions(filterModel);
+			await FilterInstitutions(filterModel);
+			searchInstitutions = searchInstitutions.Take(filterModel.FilterCount);
+
+			await AddDistanceCAlculationToInstitution(filterModel.Koordinates.lat, filterModel.Koordinates.lng);
 
 			await localStorage.SetItemAsync("locationFilter", filterModel);
 
-
+			await myTable.ReloadServerData();
 			await modal?.HideAsync();
 		}
     }
-
-
-	private InstitutionFilterSettings filterSettings = new InstitutionFilterSettings
-		{
-			SearchFromAdressName = "Initial Value"
-			// Initialize other properties as needed
-		};
 }

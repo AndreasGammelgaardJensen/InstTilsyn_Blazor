@@ -10,15 +10,19 @@ namespace TilsynsRapportApi.Controllers
     public class CoordinateController : ControllerBase
     {
 		private readonly IGoogleGeolocationService _googleGeplocationService;
+		private readonly ILogger<CoordinateController> _logger;
 
-		public CoordinateController(IGoogleGeolocationService googleGeplocationService)
+
+		public CoordinateController(IGoogleGeolocationService googleGeplocationService, ILogger<CoordinateController> logger)
 		{
 			_googleGeplocationService = googleGeplocationService;
+			_logger = logger;
 		}
 
 		[HttpPost]
 		public async Task<InstitutionSettingsFilterModel?> Post([FromBody] Address value)
 		{
+			_logger.LogInformation("Post Coordinates");
 			var coordinateList = await _googleGeplocationService.GetKoordinatesFromAddressesAsync(new List<Address> { value });
 
 			var koordinate = new InstKoordinates

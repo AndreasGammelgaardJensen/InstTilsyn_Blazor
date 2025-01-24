@@ -5,7 +5,6 @@ using DataAccess.Interface;
 using DataAccess.Interfaces;
 using GeolocationLib.Google;
 using Microsoft.Azure.Functions.Worker;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore;
 using ModelsLib.Models;
 using ModelsLib.ResponseModels;
