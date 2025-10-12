@@ -1,0 +1,439 @@
+@page "/institutions/agent"
+@using System.Linq.Expressions
+
+@using GeolocationLib
+@using Gravam.Blazor.DeviceInterop.Geolocation
+@using ModelsLib.Models
+@using ModelsLib.Models.TabelModels
+@using Shared.Core
+@inject HttpClient Http
+@inject IGeolocationService GeolocationService
+@inject IJSRuntime JS
+@inject IConfiguration Configuration
+@inject IDialogService Dialog
+@inject Blazored.LocalStorage.ILocalStorageService LocalStorage
+
+<PageTitle>Institutions – Agent View</PageTitle>
+
+<MudPaper Elevation="2" Class="agent-hero d-flex flex-column align-center text-center" id="agentHero">
+    <div class="hero-blur"></div>
+    <div class="hero-main">
+        <h1 class="display-6 fw-bold mb-2 hero-title">Explore Institutions</h1>
+        <p class="lead mb-4 hero-sub">An energizing overview – search, filter and dive into details.</p>
+    </div>
+    <div class="d-flex flex-wrap gap-2 justify-center toolbar-responsive hero-toolbar">
+        <MudTextField @bind-Value="_search" Placeholder="Search name (use // to OR)" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" Class="search-box" Immediate="true" OnDebounceIntervalElapsed="@( _ => ApplySearch() )" DebounceInterval="250" />
+        <MudSelect T="string" Label="Sort" Value="_sortKey" ValueChanged="OnSortChanged" ValueExpression="() => _sortKey" Class="sort-select" Dense="true" AnchorOrigin="Origin.BottomCenter">
+            <MudSelectItem Value="@("distance")">Distance</MudSelectItem>
+            <MudSelectItem Value="@("name")">Name</MudSelectItem>
+            <MudSelectItem Value="@("type")">Type</MudSelectItem>
+            <MudSelectItem Value="@("capacity")">Capacity</MudSelectItem>
+        </MudSelect>
+        <MudIconButton Icon="@Icons.Material.Filled.MyLocation" Color="Color.Secondary" OnClick="GetLocation" Disabled="_loadingLocation" />
+        <Button Variant="Variant.Filled" @onclick="OnShowModalClick">
+            <img src="search_24dp.png" alt="Search Icon" class="custom-icon-size" />
+        </Button>
+    </div>
+    <div class="active-filters mt-2 hero-filters" hidden="@(!_activeFilters.Any())">
+        @foreach(var chip in _activeFilters)
+        {
+            <MudChip OnClose="() => RemoveFilter(chip)" CloseIcon="@Icons.Material.Filled.Close" Color="Color.Info" Variant="Variant.Outlined" Size="Size.Small" Deletable="true">@chip</MudChip>
+        }
+    </div>
+</MudPaper>
+
+@if (_loading && _institutions is null)
+{
+    <div class="d-flex justify-content-center my-6">
+        <MudProgressCircular Indeterminate="true" Size="Size.Large" Color="Color.Primary" />
+    </div>
+}
+else if (_error is not null)
+{
+    <MudAlert Severity="Severity.Error">@_error</MudAlert>
+}
+else if (_view.Any() == false)
+{
+    <MudEmptyState Icon="@Icons.Material.Filled.SearchOff" Title="No matches" Content="Try adjusting your search or filters." />
+}
+else
+{
+    <MudContainer MaxWidth="MaxWidth.False" Class="py-4">
+        <Virtualize Items="_view" Context="inst" ItemSize="360">
+            <div class="mb-3" @key="inst.InstitutionFrontPageModel?.Id">
+                <MudCard Class="institution-card h-100 d-flex flex-column" Elevation="3">
+                    <MudCardHeader>
+                        <CardHeaderContent>
+                            <div class="d-flex flex-column w-100">
+                                <div class="d-flex align-center justify-between">
+                                    <div>
+                                        <MudText Typo="Typo.subtitle1" Class="fw-semibold" Title="@inst.InstitutionFrontPageModel?.Name">@inst.InstitutionFrontPageModel?.Name</MudText>
+                                    </div>
+                                    <div class="d-flex align-center">
+                                        @if (inst.Distance is not null)
+                                        {
+                                            <MudChip Color="Color.Primary" Variant="Variant.Filled" Size="Size.Small" Class="ms-2 distance-chip">@($"{inst.Distance:0.0} km")</MudChip>
+                                        }
+                                        <MudIconButton Size="Size.Small" Color="Color.Info" Class="ms-1" Variant="Variant.Outlined" Icon="@(_pinned.Contains(inst.InstitutionFrontPageModel.Id)? Icons.Material.Filled.PushPin : Icons.Material.Outlined.PushPin)" OnClick="@(() => TogglePin(inst))" />
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-wrap gap-1 mt-1">
+                                    <MudChip Color="Color.Secondary" Variant="Variant.Text" Size="Size.Small">@inst.InstitutionFrontPageModel?.TypeEnum</MudChip>
+                                    <MudChip Color="Color.Info" Variant="Variant.Text" Size="Size.Small">@DefinePladser(inst.InstitutionFrontPageModel)</MudChip>
+                                    @if (inst.ReportTabelModel?.Any() == true)
+                                    {
+                                        <MudChip Color="Color.Success" Variant="Variant.Text" Size="Size.Small">@inst.ReportTabelModel.Count rpt</MudChip>
+                                    }
+                                    else
+                                    {
+                                        <MudChip Color="Color.Warning" Variant="Variant.Outlined" Size="Size.Small">No reports</MudChip>
+                                    }
+                                </div>
+                            </div>
+                        </CardHeaderContent>
+                    </MudCardHeader>
+                    <MudCardContent Class="pt-0">
+                        <MudText Typo="Typo.body2" Class="mb-2 ellipsis-3">@inst.InstitutionFrontPageModel?.profile</MudText>
+                        <div class="contact-row">
+                            <div class="contact-item">
+                                <MudIcon Icon="@Icons.Material.Filled.Place" Size="Size.Small" />
+                                <span>@inst.InstitutionFrontPageModel?.address?.AddressToString()</span>
+                            </div>
+                            <div class="contact-item">
+                                <MudIcon Icon="@Icons.Material.Filled.Email" Size="Size.Small" />
+                                <span>@inst.InstitutionFrontPageModel?.Contact?.Email</span>
+                            </div>
+                            <div class="contact-item">
+                                <MudIcon Icon="@Icons.Material.Filled.Phone" Size="Size.Small" />
+                                <span>@inst.InstitutionFrontPageModel?.Contact?.Phone</span>
+                            </div>
+                        </div>
+                    </MudCardContent>
+                    <MudSpacer />
+                    <MudCardActions Class="pt-0">
+                        <MudButton Variant="Variant.Text" StartIcon="@Icons.Material.Filled.Info" Color="Color.Primary" OnClick="() => Toggle(inst)">@((inst.ShowAdditionalInfo)? "Hide" : "Details")</MudButton>
+                        @if (!string.IsNullOrWhiteSpace(inst.InstitutionFrontPageModel?.Contact?.HomePage))
+                        {
+                            <MudIconButton Icon="@Icons.Material.Filled.OpenInNew" Color="Color.Primary" Size="Size.Small" OnClick="() => OpenSite(inst.InstitutionFrontPageModel.Contact.HomePage)" />
+                        }
+                    </MudCardActions>
+                    @if (inst.ShowAdditionalInfo)
+                    {
+                        <MudDivider />
+                        <div class="px-4 pb-3 fade-in">
+                            @if (inst.ReportTabelModel?.Any() == true)
+                            {
+                                <!-- Desktop / Tablet (md and up): wide comparative table -->
+                                <MudHidden Breakpoint="Breakpoint.SmAndDown">
+                                    <MudTable Items="inst.ReportTabelModel" Dense="true" Hover="true" Class="report-table desktop-report-table" Elevation="0">
+                                        <HeaderContent>
+                                            <MudTh>Report</MudTh>
+                                            @if (inst.ReportTabelModel.FirstOrDefault()?.Criteria is not null)
+                                            {
+                                                @foreach (var c in inst.ReportTabelModel.First().Criteria)
+                                                {
+                                                    <MudTh>@c.CategoriText</MudTh>
+                                                }
+                                            }
+                                        </HeaderContent>
+                                        <RowTemplate>
+                                            <MudTd>
+                                                <MudIconButton Icon="@Icons.Material.Filled.FileOpen" Color="Color.Primary" OnClick="() => OnFileClicked(context.FileUrl)" />
+                                            </MudTd>
+                                            @if (context.Criteria is not null)
+                                            {
+                                                @foreach (var crit in context.Criteria)
+                                                {
+                                                    <MudTd>@crit.Indsats</MudTd>
+                                                }
+                                            }
+                                        </RowTemplate>
+                                    </MudTable>
+                                </MudHidden>
+
+                                <!-- Mobile (sm and down): per-report compact tables -->
+                                <MudHidden Breakpoint="Breakpoint.MdAndUp">
+                                    <div class="mobile-report-list">
+                                        @foreach (var rep in inst.ReportTabelModel)
+                                        {
+                                            <div class="mobile-report">
+                                                <div class="mobile-report-header d-flex align-center mb-1">
+                                                    <MudIconButton Icon="@Icons.Material.Filled.FileOpen" Size="Size.Small" Color="Color.Primary" OnClick="() => OnFileClicked(rep.FileUrl)" />
+                                                    <MudText Typo="Typo.caption" Class="ms-1">Report</MudText>
+                                                </div>
+                                                <table class="crit-mobile-table">
+                                                    <tbody>
+                                                    @if (rep.Criteria is not null)
+                                                    {
+                                                        foreach (var crit in rep.Criteria)
+                                                        {
+                                                            <tr>
+                                                                <th>@crit.CategoriText</th>
+                                                                <td>@crit.Indsats</td>
+                                                            </tr>
+                                                        }
+                                                    }
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        }
+                                    </div>
+                                </MudHidden>
+                            }
+                            else
+                            {
+                                <MudText Typo="Typo.caption" Class="text-muted">No reports available.</MudText>
+                            }
+                        </div>
+                    }
+                </MudCard>
+            </div>
+        </Virtualize>
+    </MudContainer>
+}
+<Modal @ref="modal" Title="Indstillinger" Style="margin-top: 100px">
+		<BodyTemplate>
+			<InstitutionSettings @ref="institutionSettingsComponent" filterModel="@filterModel" SearchCount="@searctCount" MaxCount="@_institutions.Count()" />
+		</BodyTemplate>
+		<FooterTemplate>
+			<Button Color="ButtonColor.Secondary" @onclick="OnHideModalClick">Close</Button>
+			<Button Color="ButtonColor.Primary" @onclick="OnSaveChanges">Save changes</Button>
+		</FooterTemplate>
+	</Modal>
+
+<MudFab Icon="@Icons.Material.Filled.Refresh" Color="Color.Primary" Class="refresh-fab" OnClick="Reload" />
+
+@code {
+    [Parameter] public IEnumerable<InstitutionTableModel>? Institutions { get; set; }
+    private IEnumerable<InstitutionTableModel>? _institutions;
+    private InstitutionSettings institutionSettingsComponent;
+    private InstitutionSettingsFilterModel filterModel; 
+    private int searctCount { get; set; }
+    private InstKoordinates _location;
+
+    private List<InstitutionTableModel> _view = new();
+    private bool _loading = true;
+    private string? _error;
+    private string _search = string.Empty;
+    private string _sortKey = "distance";
+    private bool _showOnlyWithReports;
+    private bool _loadingLocation;
+    private double? _distanceMaxKm;
+    private HashSet<InstitutionTypeEnum> _typeFilters = new();
+    private List<string> _activeFilters = new();
+    private HashSet<Guid> _pinned = new();
+    private List<Guid> _pinOrder = new();
+    private Modal modal;
+
+    private const string PinnedStorageKey = "pinnedInstitutionIds";
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            if (Institutions is not null)
+                _institutions = Institutions.ToList();
+            else
+            {
+                var url = Configuration["ApplicationSettings:InstitutionApiBaseUrl"];
+                _institutions = await Http.GetFromJsonAsync<List<InstitutionTableModel>>(url);
+            }
+            _institutions ??= new List<InstitutionTableModel>();
+            await ComputeDistance();
+            NormalizeReports();
+            // Load pinned ids from local storage
+            try {
+                var stored = await LocalStorage.GetItemAsync<List<Guid>>(PinnedStorageKey);
+                if(stored is not null && stored.Count>0){
+                    _pinOrder = stored.Distinct().ToList();
+                    _pinned = new HashSet<Guid>(_pinOrder);
+                }
+            } catch { }
+            ApplyAll();
+        }
+        catch (Exception ex) { _error = ex.Message; }
+        finally { _loading = false; }
+    }
+
+    private void NormalizeReports()
+    {
+        if (_institutions is null) return;
+        foreach (var inst in _institutions)
+        {
+            if (inst.ReportTabelModel is null) continue;
+            foreach (var rep in inst.ReportTabelModel)
+                if (rep.Criteria != null) rep.Criteria = rep.Criteria.OrderBy(c => c.CategoriText).ToList();
+        }
+    }
+
+    private async Task ComputeDistance()
+    {
+        try
+        {
+            filterModel = await LocalStorage.GetItemAsync<InstitutionSettingsFilterModel>("locationFilter") ?? new();
+
+            _location = filterModel.Koordinates;
+            if (_location is null) {
+                _loadingLocation = true;
+                var result = await GeolocationService.GetCurrentPosition();
+                _location = new InstKoordinates { lat = result.Position?.Coords?.Latitude ?? 0, lng = result.Position?.Coords?.Longitude ?? 0 };
+            };
+            if (_location.lat is not null && _location.lng is not null && _institutions is not null)
+            {
+                foreach (var inst in _institutions)
+                    inst.Distance = GeoCalculationHelper.CalculateDistance(inst.InstitutionFrontPageModel?.Koordinates?.lat ?? 0, inst.InstitutionFrontPageModel?.Koordinates?.lng ?? 0, _location.lat?? 0.0, _location.lng?? 0.0);
+            }
+        }
+        catch { }
+        finally { _loadingLocation = false; }
+    }
+
+    private void ApplyAll() { ApplySearch(); ApplySort(); }
+
+    private void ApplySearch()
+    {
+        if (_institutions is null) return;
+        IEnumerable<InstitutionTableModel> q = _institutions;
+        if (!string.IsNullOrWhiteSpace(_search))
+        {
+            var parts = _search.Split("//", StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+            q = q.Where(i => i.InstitutionFrontPageModel?.Name != null && parts.Any(p => i.InstitutionFrontPageModel.Name.Contains(p, StringComparison.OrdinalIgnoreCase)));
+        }
+        if (_showOnlyWithReports) q = q.Where(i => i.ReportTabelModel?.Any() == true);
+        if (_typeFilters.Any()) q = q.Where(i => _typeFilters.Contains(i.InstitutionFrontPageModel.TypeEnum));
+        if (_distanceMaxKm is not null) q = q.Where(i => (i.Distance ?? double.MaxValue) <= _distanceMaxKm);
+        _view = q.ToList();
+        BuildActiveFilters();
+        ApplySort();
+    }
+
+    private void BuildActiveFilters()
+    {
+        _activeFilters.Clear();
+        if (_showOnlyWithReports) _activeFilters.Add("Reports");
+        if (_typeFilters.Any()) _activeFilters.AddRange(_typeFilters.Select(t => t.ToString()));
+        if (_distanceMaxKm is not null) _activeFilters.Add($"<= {_distanceMaxKm:0.#} km");
+    }
+
+    private void RemoveFilter(string chip)
+    {
+        if (chip == "Reports") _showOnlyWithReports = false;
+        else if (chip.EndsWith(" km")) _distanceMaxKm = null;
+        else if (Enum.TryParse<InstitutionTypeEnum>(chip, out var t)) _typeFilters.Remove(t);
+        ApplySearch();
+    }
+
+
+    private Task OnSortChanged(string value){ _sortKey = value; ApplySort(); return Task.CompletedTask; }
+    private async Task GetLocation(){ await ComputeDistance(); ApplySort(); }
+    private string DefinePladser(InstitutionFrontPageModel direction){ if(direction==null||direction.pladser==null) return string.Empty; return direction.TypeEnum switch { InstitutionTypeEnum.Vuggestue => direction.pladser.VuggestuePladser.ToString(), InstitutionTypeEnum.Boernehave => direction.pladser.BoernehavePladser.ToString(), InstitutionTypeEnum.Dagpleje => direction.pladser.DagplejePladser.ToString(), InstitutionTypeEnum.Integreret => $"Børnehave {direction.pladser.BoernehavePladser}, Vuggestue {direction.pladser.VuggestuePladser}", _ => string.Empty}; }
+    private Task OnFileClicked(string fileUrl){ JS.InvokeVoidAsync("openInNewTab", fileUrl); return Task.CompletedTask; }
+    private void OpenSite(string url){ if(!url.StartsWith("http",StringComparison.OrdinalIgnoreCase)) url = "https://"+url; JS.InvokeVoidAsync("openInNewTab", url); }
+    private void Reload(){ _search = string.Empty; _showOnlyWithReports=false; _sortKey="distance"; _typeFilters.Clear(); _distanceMaxKm=null; ApplyAll(); }
+    private void ApplySort(){
+        if(_view is null) return;
+        IEnumerable<InstitutionTableModel> sorted = _sortKey switch {
+            "name" => _view.OrderBy(i=>i.InstitutionFrontPageModel?.Name),
+            "type" => _view.OrderBy(i=>i.InstitutionFrontPageModel?.TypeEnum),
+            "capacity" => _view.OrderByDescending(i=> TotalCapacity(i)),
+            _ => _view.OrderBy(i=> i.Distance ?? double.MaxValue)
+        };
+        if(_pinned.Any())
+        {
+            var dict = sorted.ToDictionary(i => i.InstitutionFrontPageModel.Id, i => i);
+            var pinnedPart = new List<InstitutionTableModel>(_pinOrder.Count);
+            foreach(var id in _pinOrder)
+                if(dict.TryGetValue(id, out var inst)) pinnedPart.Add(inst);
+            var remaining = sorted.Where(x => !_pinned.Contains(x.InstitutionFrontPageModel.Id));
+            _view = pinnedPart.Concat(remaining).ToList();
+        }
+        else
+        {
+            _view = sorted.ToList();
+        }
+    }
+    private int TotalCapacity(InstitutionTableModel i)=> i?.InstitutionFrontPageModel?.pladser is null ? 0 : (i.InstitutionFrontPageModel.pladser.BoernehavePladser + i.InstitutionFrontPageModel.pladser.VuggestuePladser + i.InstitutionFrontPageModel.pladser.DagplejePladser);
+    private void Toggle(InstitutionTableModel inst) => inst.ShowAdditionalInfo = !inst.ShowAdditionalInfo;
+    private async Task TogglePin(InstitutionTableModel inst)
+    {
+        var id = inst.InstitutionFrontPageModel.Id;
+        if(_pinned.Contains(id))
+        {
+            _pinned.Remove(id);
+            _pinOrder.Remove(id);
+        }
+        else
+        {
+            _pinned.Add(id);
+            _pinOrder.Add(id);
+        }
+        await LocalStorage.SetItemAsync(PinnedStorageKey, _pinOrder);
+        ApplySort();
+    }
+
+    private async Task OnShowModalClick()
+    {
+        await modal?.ShowAsync();
+    }
+
+    private async Task OnHideModalClick()
+    {
+        await modal?.HideAsync();
+    }
+
+    private async Task OnSaveChanges() {
+        var valid = await institutionSettingsComponent.Submit();
+
+        if (valid.Item1)
+        {
+            filterModel = valid.Item2;
+
+            _location = new InstKoordinates { lat = valid.Item2.Koordinates.lat, lng = valid.Item2.Koordinates.lng };
+            await ComputeDistance();
+            await LocalStorage.SetItemAsync("locationFilter", filterModel);
+
+            await modal?.HideAsync();
+		}
+    }
+
+    private string Truncate(string? value, int max) => string.IsNullOrEmpty(value) || value.Length <= max ? value ?? string.Empty : value.Substring(0, max) + "…";
+}
+
+@code { public record FilterDialogResult(HashSet<InstitutionTypeEnum> SelectedTypes, double? MaxDistanceKm, bool ShowOnlyReports); }
+
+@* Inline dialog UI *@
+@if (false) { <FilterDialogInline /> }
+
+<style>
+    .agent-hero { position:sticky; top:0; z-index:30; transition:height .35s ease, padding .35s ease, background .35s ease; backdrop-filter: blur(6px); }
+    .agent-hero .hero-main { transition: opacity .3s ease, transform .3s ease; }
+    .agent-hero .hero-toolbar { transition: padding .3s ease, gap .3s ease; margin-bottom: 10px }
+    .agent-hero .hero-filters { transition: margin .3s ease; }
+    .agent-hero.shrunk { padding: .5rem .75rem 0.4rem .75rem; background: rgba(255,255,255,0.85); box-shadow: 0 2px 6px -2px rgba(0,0,0,.25); }
+    .agent-hero.shrunk .hero-main { opacity:0; pointer-events:none; height:0; transform: translateY(-10px); }
+    .agent-hero.shrunk .hero-toolbar { justify-content:flex-start; }
+    .agent-hero.shrunk .hero-filters { margin-top:.25rem; }
+    .agent-hero .hero-title, .agent-hero .hero-sub { margin:0; }
+    .search-box { min-width: 260px; } .sort-select { width: 140px; }
+    .institution-card { transition: transform .25s ease, box-shadow .25s ease; border-radius: 18px; } .institution-card:hover { transform: translateY(-6px); box-shadow: 0 8px 26px -4px rgba(0,0,0,.25); }
+    .institution-card .distance-chip { font-weight: 600; }
+    .institution-card .mud-icon-button { transition: transform .2s ease; }
+    .institution-card .mud-icon-button:hover { transform: scale(1.1); }
+    .ellipsis-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .report-table td, .report-table th { white-space: nowrap; }
+    .fade-in { animation: fadeIn .35s ease; } @@keyframes fadeIn { from { opacity:0; transform: translateY(4px);} to { opacity:1; transform:translateY(0);} }
+    .refresh-fab { position: fixed; bottom: 2rem; right: 2rem; }
+    .vertical-institution-list .mud-item { width:100%; } .vertical-institution-list .institution-card { margin-bottom: 1rem; }
+    .contact-row { display:flex; flex-wrap:wrap; gap:.75rem; margin-bottom:.5rem; } .contact-item { display:inline-flex; align-items:center; gap:.35rem; font-size:.75rem; background:rgba(0,0,0,.04); padding:.25rem .5rem; border-radius:14px; }
+    .virtualizer-wrapper { position:relative; }
+    .crit-cell { display:flex; flex-direction:column; line-height:1.1; }
+    .crit-cat { font-size:.65rem; font-weight:600; text-transform:uppercase; letter-spacing:.5px; color: var(--mud-palette-primary); }
+    @@media (min-width: 600px){ .crit-cat { display:none; } .crit-cell { flex-direction:row; gap:.25rem; } }
+    @@media (max-width: 600px){ .toolbar-responsive { flex-direction:column; align-items:stretch; } .search-box { width:100%; } .contact-item { font-size:.70rem; } .institution-card { border-radius:14px; } }
+    .mobile-report-list { display:flex; flex-direction:column; gap:1rem; }
+    .mobile-report { border:1px solid var(--mud-palette-divider); border-radius:12px; padding:.6rem .8rem; background:var(--mud-palette-surface); box-shadow:0 1px 4px rgba(0,0,0,.08); }
+    .crit-mobile-table { width:100%; border-collapse:collapse; }
+    .crit-mobile-table th { text-align:left; font-weight:600; font-size:.72rem; padding:.35rem .5rem .35rem 0; width:42%; vertical-align:top; }
+    .crit-mobile-table td { font-size:.72rem; padding:.35rem 0 .35rem .25rem; }
+    .crit-mobile-table tr:not(:last-child) th, .crit-mobile-table tr:not(:last-child) td { border-bottom:1px solid var(--mud-palette-divider); }
+</style>

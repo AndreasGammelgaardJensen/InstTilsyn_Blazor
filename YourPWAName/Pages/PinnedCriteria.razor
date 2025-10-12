@@ -1,0 +1,217 @@
+@page "/pinned/criteria"
+@using ModelsLib.Models
+@using ModelsLib.Models.TabelModels
+@using Shared.Core
+@using GeolocationLib
+@using Gravam.Blazor.DeviceInterop.Geolocation
+@inject IConfiguration Configuration
+@inject HttpClient Http
+@inject Blazored.LocalStorage.ILocalStorageService LocalStorage
+@inject IGeolocationService GeolocationService
+
+<PageTitle>Pinned Criteria Overview</PageTitle>
+
+<MudPaper Class="pa-4 mb-4" Elevation="2">
+    <div class="d-flex flex-wrap gap-2 align-center">
+        <MudText Typo="Typo.h5" Class="me-4 mb-0">Pinned Institutions – Criteria Matrix</MudText>
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" StartIcon="@Icons.Material.Filled.Refresh" Disabled="_loading" OnClick="Reload">Reload</MudButton>
+        <MudSpacer />
+        <MudText Typo="Typo.caption" Class="text-muted">Showing @_pinnedInstitutions.Count institution(s)</MudText>
+    </div>
+</MudPaper>
+
+@if (_loading)
+{
+    <MudProgressLinear Indeterminate="true" Color="Color.Primary" />
+}
+else if (!_pinnedInstitutions.Any())
+{
+    <MudAlert Severity="Severity.Info">No pinned institutions found. Pin some from the agent list.</MudAlert>
+}
+else if (!_allCategories.Any())
+{
+    <MudAlert Severity="Severity.Warning">Pinned institutions have no criteria data.</MudAlert>
+}
+else
+{
+    <MudHidden Breakpoint="Breakpoint.SmAndDown">
+        <MudTable Items="_pinnedInstitutions" Dense="true" Bordered="true" Hover="true" Class="criteria-matrix" Elevation="1">
+            <HeaderContent>
+                <MudTh StickyLeft="true" Class="matrix-first-col">Institution</MudTh>
+                @foreach (var cat in _allCategories)
+                {
+                    <MudTh>@cat</MudTh>
+                }
+            </HeaderContent>
+            <RowTemplate>
+                <MudTd StickyLeft="true" Class="matrix-first-col fw-semibold">
+                    <div class="d-flex align-center gap-1">
+                        <span>@context.InstitutionFrontPageModel?.Name</span>
+                        @if (context.Distance is not null)
+                        {
+                            <MudChip Size="Size.Small" Color="Color.Primary" Variant="Variant.Outlined" Class="distance-chip">@($"{context.Distance:0.0} km")</MudChip>
+                        }
+                    </div>
+                </MudTd>
+                @foreach (var cat in _allCategories)
+                {
+                    <MudTd>@ResolveCriteria(context, cat)</MudTd>
+                }
+            </RowTemplate>
+        </MudTable>
+    </MudHidden>
+
+    <MudHidden Breakpoint="Breakpoint.MdAndUp">
+        <div class="mobile-criteria-container">
+            @foreach (var inst in _pinnedInstitutions)
+            {
+                <MudPaper Class="mobile-inst-card" Elevation="1">
+                    <div class="d-flex align-center justify-between mb-2">
+                        <MudText Typo="Typo.subtitle2" Class="fw-semibold text-truncate" Title="@inst.InstitutionFrontPageModel?.Name">@inst.InstitutionFrontPageModel?.Name</MudText>
+                        @if (inst.Distance is not null)
+                        {
+                            <MudChip Size="Size.Small" Color="Color.Primary" Variant="Variant.Outlined" Class="distance-chip">@($"{inst.Distance:0.0} km")</MudChip>
+                        }
+                    </div>
+                    <table class="mobile-kv-table">
+                        <tbody>
+                            @foreach (var cat in _allCategories)
+                            {
+                                <tr>
+                                    <th>@cat</th>
+                                    <td>@ResolveCriteria(inst, cat)</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </MudPaper>
+            }
+        </div>
+    </MudHidden>
+}
+
+<style>
+    .criteria-matrix { overflow-x:auto; }
+    .criteria-matrix th, .criteria-matrix td { white-space:nowrap; font-size:0.80rem; }
+    .criteria-matrix .matrix-first-col { position:sticky; left:0; background:var(--mud-palette-surface); z-index:3; box-shadow: 4px 0 6px -4px rgba(0,0,0,.25);}
+    .criteria-matrix .distance-chip { font-weight:500; }
+    /* Mobile layout */
+    .mobile-criteria-container { display:flex; flex-direction:column; gap:1rem; }
+    .mobile-inst-card { padding:.85rem .9rem; border-radius:14px; }
+    .mobile-kv-table { width:100%; border-collapse:collapse; }
+    .mobile-kv-table th { text-align:left; font-weight:600; font-size:.72rem; padding:.4rem .6rem .4rem 0; width:42%; vertical-align:top; }
+    .mobile-kv-table td { font-size:.72rem; padding:.4rem 0 .4rem .25rem; }
+    .mobile-kv-table tr:not(:last-child) th, .mobile-kv-table tr:not(:last-child) td { border-bottom:1px solid var(--mud-palette-divider); }
+    @@media (max-width: 700px){ .criteria-matrix { display:none; } }
+</style>
+
+@code {
+    private const string PinnedStorageKey = "pinnedInstitutionIds";
+    private bool _loading = true;
+    private List<InstitutionTableModel> _pinnedInstitutions = new();
+    private List<string> _allCategories = new();
+    private bool _distanceComputed;
+    private InstitutionSettingsFilterModel filterModel;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadAsync();
+        _ = ComputeDistancesAsync(); // fire & forget background distance calculation
+    }
+
+    private async Task LoadAsync()
+    {
+        _loading = true;
+        _pinnedInstitutions.Clear();
+        _allCategories.Clear();
+        _distanceComputed = false;
+        try
+        {
+            var ids = await LocalStorage.GetItemAsync<List<Guid>>(PinnedStorageKey) ?? new();
+            if (ids.Any())
+            {
+                var url = Configuration["ApplicationSettings:InstitutionApiBaseUrl"]; // expecting list endpoint
+                var all = await Http.GetFromJsonAsync<List<InstitutionTableModel>>(url) ?? new();
+                _pinnedInstitutions = ids.Select(id => all.FirstOrDefault(x => x.InstitutionFrontPageModel.Id == id))
+                                         .Where(x => x != null).ToList();
+                // Normalize criteria ordering per institution
+                foreach(var inst in _pinnedInstitutions)
+                {
+                    if(inst.ReportTabelModel is null) continue;
+                    foreach(var rep in inst.ReportTabelModel)
+                        if(rep.Criteria != null)
+                            rep.Criteria = rep.Criteria.OrderBy(c=> c.CategoriText).ToList();
+                }
+                _allCategories = _pinnedInstitutions
+                    .SelectMany(i => i.ReportTabelModel ?? Enumerable.Empty<ReportTabelModel>())
+                    .SelectMany(r => r.Criteria ?? new List<CriteriaModel>())
+                    .Select(c => c.CategoriText)
+                    .Where(s => !string.IsNullOrWhiteSpace(s))
+                    .Distinct(StringComparer.OrdinalIgnoreCase)
+                    .OrderBy(s => s)
+                    .ToList();
+            }
+        }
+        catch { }
+        finally { _loading = false; }
+    }
+
+    private async Task ComputeDistancesAsync()
+    {
+        try
+        {
+            filterModel = await LocalStorage.GetItemAsync<InstitutionSettingsFilterModel>("locationFilter") ?? new();
+
+            if (filterModel is not null && filterModel.Koordinates.lat is not null && filterModel.Koordinates.lng is not null)
+            {
+                foreach (var inst in _pinnedInstitutions)
+                {
+
+                    inst.Distance = GeoCalculationHelper.CalculateDistance(
+                        inst.InstitutionFrontPageModel?.Koordinates?.lat ?? 0,
+                        inst.InstitutionFrontPageModel?.Koordinates?.lng ?? 0,
+                        filterModel.Koordinates.lat ?? 0,
+                        filterModel.Koordinates.lng ?? 0) ;
+                }
+
+            }else
+            {
+                var result = await GeolocationService.GetCurrentPosition();
+                var coords = result?.Position?.Coords;
+                if (coords is null) return;
+                foreach (var inst in _pinnedInstitutions)
+                {
+                    inst.Distance = GeoCalculationHelper.CalculateDistance(
+                        inst.InstitutionFrontPageModel?.Koordinates?.lat ?? 0,
+                        inst.InstitutionFrontPageModel?.Koordinates?.lng ?? 0,
+                        coords.Latitude,
+                        coords.Longitude);
+                }
+                
+            }
+
+
+            _distanceComputed = true;
+            StateHasChanged();
+        }
+        catch { /* ignore geolocation failures */ }
+    }
+
+    private string ResolveCriteria(InstitutionTableModel inst, string category)
+    {
+        if(inst.ReportTabelModel == null) return string.Empty;
+        foreach(var rep in inst.ReportTabelModel)
+        {
+            var crit = rep.Criteria?.FirstOrDefault(c => string.Equals(c.CategoriText, category, StringComparison.OrdinalIgnoreCase));
+            if(crit != null) return crit.Indsats;
+        }
+        return "-"; // no value
+    }
+
+    private async Task Reload()
+    {
+        await LoadAsync();
+        _ = ComputeDistancesAsync();
+    }
+}

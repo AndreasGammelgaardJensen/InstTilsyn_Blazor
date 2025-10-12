@@ -1,13 +1,15 @@
 ﻿@page "/"
+@using ModelsLib.Models
+@using ModelsLib.Models.TabelModels
 @inject NavigationManager Navigation
-
+@inject IConfiguration Configuration
+@inject HttpClient Http
+@inject Blazored.LocalStorage.ILocalStorageService LocalStorage
 
 <PageTitle>Home</PageTitle>
 
-
-<div class="d-flex justify-content-center align-content-center pt-15" style="height: 500px">
+<div class="d-flex justify-content-center align-content-center pt-15" style="min-height: 420px">
     <MudGrid Class="pt-4" Style="height:100%">
-
         <MudItem xs="12" sm="6" Style="height:100%">
             <MudImage Src="images/happy-falily.jpg" Width="500" Height="300" Alt="Familie" Elevation="25" Class="rounded-lg ma-4" />
         </MudItem>
@@ -16,15 +18,104 @@
                 <MudText Typo="Typo.h2">Institutions-guide til børnefamilier</MudText>
                 <MudText Typo="Typo.h5">Se og sammenlign tilsynsrapporter fra institutioner i dit nærområde</MudText>
             </div>
-
-
             <MudButton Class="mt-15 ml-15 mr-15" Variant="Variant.Filled" Size="Size.Large" Color="Color.Tertiary" OnClick="NavigateToAnotherPage">Start Her</MudButton>
-
-
-         
         </MudItem>
     </MudGrid>
 </div>
+
+<MudDivider Class="my-6" />
+
+<MudContainer MaxWidth="MaxWidth.False">
+    <MudText Typo="Typo.h5" Class="mb-2">Pinned Institutions</MudText>
+    @if (_loadingPinned)
+    {
+        <MudProgressLinear Indeterminate="true" Color="Color.Primary" />
+    }
+    else if (_pinnedInstitutions?.Any() != true)
+    {
+        <MudAlert Severity="Severity.Info" Dense="true">Ingen fastgjorte institutioner endnu. Gå til listen og pin nogle.</MudAlert>
+    }
+    else
+    {
+        <MudGrid GutterSize="3">
+            @foreach (var inst in _pinnedInstitutions)
+            {
+                <MudItem xs="12" sm="6" md="4" lg="3">
+                    <MudCard Class="pinned-card h-100 d-flex flex-column" Elevation="2">
+                        <MudCardHeader>
+                            <CardHeaderContent>
+                                <MudText Typo="Typo.subtitle2" Class="fw-semibold text-truncate" Title="@inst.InstitutionFrontPageModel?.Name">@inst.InstitutionFrontPageModel?.Name</MudText>
+                            </CardHeaderContent>
+                        </MudCardHeader>
+                        <MudCardContent Class="pt-0">
+                            <MudText Typo="Typo.body2" Class="mb-1">@inst.InstitutionFrontPageModel?.TypeEnum - @DefinePladser(inst.InstitutionFrontPageModel)</MudText>
+                            <MudText Typo="Typo.caption" Class="mb-2 text-truncate">@inst.InstitutionFrontPageModel?.address?.AddressToString()</MudText>
+                            <MudChip Color="Color.Primary" Variant="Variant.Outlined" Size="Size.Small">@((inst.ReportTabelModel?.Count ?? 0)) reports</MudChip>
+                        </MudCardContent>
+                        <MudSpacer />
+                        <MudCardActions>
+                            <MudButton Variant="Variant.Outlined" Size="Size.Small" Color="Color.Primary" OnClick="() => NavigateToInstitution(inst.InstitutionFrontPageModel.Id)">Open</MudButton>
+                        </MudCardActions>
+                    </MudCard>
+                </MudItem>
+            }
+        </MudGrid>
+    }
+</MudContainer>
+
+<style>
+    .pinned-card { transition: box-shadow .25s ease, transform .25s ease; }
+    .pinned-card:hover { transform: translateY(-4px); box-shadow: 0 6px 18px -4px rgba(0,0,0,.25); }
+</style>
+
 @code {
-    private void NavigateToAnotherPage() => Navigation.NavigateTo("/institutions");
+    private bool _loadingPinned = true;
+    private List<InstitutionTableModel> _pinnedInstitutions = new();
+    private const string PinnedStorageKey = "pinnedInstitutionIds";
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadPinnedAsync();
+    }
+
+    private async Task LoadPinnedAsync()
+    {
+        _loadingPinned = true;
+        try
+        {
+            var ids = await LocalStorage.GetItemAsync<List<Guid>>(PinnedStorageKey) ?? new List<Guid>();
+            if (ids.Any())
+            {
+                var url = Configuration["ApplicationSettings:InstitutionApiBaseUrl"];
+                var all = await Http.GetFromJsonAsync<List<InstitutionTableModel>>(url) ?? new List<InstitutionTableModel>();
+                _pinnedInstitutions = ids.Select(id => all.FirstOrDefault(x => x.InstitutionFrontPageModel.Id == id))
+                                         .Where(x => x != null).ToList();
+            }
+        }
+        catch { }
+        finally
+        {
+            _loadingPinned = false;
+        }
+    }
+
+    private void NavigateToAnotherPage() => Navigation.NavigateTo("/institutions/agent");
+
+    private void NavigateToInstitution(Guid id)
+    {
+        Navigation.NavigateTo($"/institutions/agent#inst-{id}");
+    }
+
+    private string DefinePladser(InstitutionFrontPageModel direction)
+    {
+        if (direction == null || direction.pladser == null) return string.Empty;
+        return direction.TypeEnum switch
+        {
+            InstitutionTypeEnum.Vuggestue => direction.pladser.VuggestuePladser.ToString(),
+            InstitutionTypeEnum.Boernehave => direction.pladser.BoernehavePladser.ToString(),
+            InstitutionTypeEnum.Dagpleje => direction.pladser.DagplejePladser.ToString(),
+            InstitutionTypeEnum.Integreret => $"Børnehave {direction.pladser.BoernehavePladser}, Vuggestue {direction.pladser.VuggestuePladser}",
+            _ => string.Empty
+        };
+    }
 }
